@@ -1,0 +1,10 @@
+D:\Learning\C#\Hệ thống quản lý bán vé xem phhim\Hệ thống quản lý bán vé xem phhim\bin\Debug\Hệ thống quản lý bán vé xem phhim.exe.config
+D:\Learning\C#\Hệ thống quản lý bán vé xem phhim\Hệ thống quản lý bán vé xem phhim\bin\Debug\Hệ thống quản lý bán vé xem phhim.exe
+D:\Learning\C#\Hệ thống quản lý bán vé xem phhim\Hệ thống quản lý bán vé xem phhim\bin\Debug\Hệ thống quản lý bán vé xem phhim.pdb
+D:\Learning\C#\Hệ thống quản lý bán vé xem phhim\Hệ thống quản lý bán vé xem phhim\obj\Debug\Hệ thống quản lý bán vé xem phhim.csprojAssemblyReference.cache
+D:\Learning\C#\Hệ thống quản lý bán vé xem phhim\Hệ thống quản lý bán vé xem phhim\obj\Debug\Hệ_thống_quản_lý_bán_vé_xem_phhim.Properties.Resources.resources
+D:\Learning\C#\Hệ thống quản lý bán vé xem phhim\Hệ thống quản lý bán vé xem phhim\obj\Debug\Hệ thống quản lý bán vé xem phhim.csproj.GenerateResource.cache
+D:\Learning\C#\Hệ thống quản lý bán vé xem phhim\Hệ thống quản lý bán vé xem phhim\obj\Debug\Hệ thống quản lý bán vé xem phhim.csproj.CoreCompileInputs.cache
+D:\Learning\C#\Hệ thống quản lý bán vé xem phhim\Hệ thống quản lý bán vé xem phhim\obj\Debug\Hệ thống quản lý bán vé xem phhim.exe
+D:\Learning\C#\Hệ thống quản lý bán vé xem phhim\Hệ thống quản lý bán vé xem phhim\obj\Debug\Hệ thống quản lý bán vé xem phhim.pdb
+D:\Learning\C#\Hệ thống quản lý bán vé xem phhim\Hệ thống quản lý bán vé xem phhim\obj\Debug\Tickets_Sale_System.Form1.resources

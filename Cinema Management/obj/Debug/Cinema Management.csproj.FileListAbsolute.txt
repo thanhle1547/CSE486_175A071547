@@ -1,0 +1,19 @@
+D:\Learning\C#\Cinema Management\Tickets_Sale_System\obj\Debug\Cinema Management.csprojAssemblyReference.cache
+D:\Learning\C#\Cinema Management\Tickets_Sale_System\obj\Debug\Cinema_Management.SalesForm.resources
+D:\Learning\C#\Cinema Management\Tickets_Sale_System\obj\Debug\Cinema_Management.LoginForm.resources
+D:\Learning\C#\Cinema Management\Tickets_Sale_System\obj\Debug\Tickets_Sale_System.Properties.Resources.resources
+D:\Learning\C#\Cinema Management\Tickets_Sale_System\obj\Debug\Cinema Management.csproj.GenerateResource.cache
+D:\Learning\C#\Cinema Management\Tickets_Sale_System\obj\Debug\Cinema Management.csproj.CoreCompileInputs.cache
+D:\Learning\C#\Cinema Management\Tickets_Sale_System\obj\Debug\Tickets_Sale_System.exe
+D:\Learning\C#\Cinema Management\Tickets_Sale_System\obj\Debug\Tickets_Sale_System.pdb
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\Tickets_Sale_System.exe.config
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\Tickets_Sale_System.exe
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\Tickets_Sale_System.pdb
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Cinema Management.csprojAssemblyReference.cache
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Cinema_Management.SalesForm.resources
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Cinema_Management.LoginForm.resources
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Tickets_Sale_System.Properties.Resources.resources
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Cinema Management.csproj.GenerateResource.cache
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Cinema Management.csproj.CoreCompileInputs.cache
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Tickets_Sale_System.exe
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Tickets_Sale_System.pdb

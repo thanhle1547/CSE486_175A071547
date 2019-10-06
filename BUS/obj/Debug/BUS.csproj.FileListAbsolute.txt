@@ -1,0 +1,5 @@
+D:\Learning\C#\Cinema Management\BUS\bin\Debug\BUS.dll
+D:\Learning\C#\Cinema Management\BUS\bin\Debug\BUS.pdb
+D:\Learning\C#\Cinema Management\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\Learning\C#\Cinema Management\BUS\obj\Debug\BUS.dll
+D:\Learning\C#\Cinema Management\BUS\obj\Debug\BUS.pdb

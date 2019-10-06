@@ -1,0 +1,85 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Sales_App
+{
+    public partial class SalesForm : Form
+    {
+        public SalesForm()
+        {
+            InitializeComponent();
+        }
+
+        private void Lb_NhanVien_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        #region Windows Methods
+        private void Btn_Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        // https://stackoverflow.com/questions/3501151/maximize-a-window-programmatically-and-prevent-the-user-from-changing-the-window
+        private void Btn_Minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Btn_Maximize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = this.WindowState == FormWindowState.Maximized ?
+                                    FormWindowState.Normal : FormWindowState.Maximized;
+        }
+
+        // C1
+        // https://laptrinhvb.net/bai-viet/chuyen-de-csharp/---Csharp----Di-chuyen-form-khong-can-thanh-title-bar/e4bd0fe8d3df74f1.html
+        private void Header_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                // Thả chuột, bắt bởi sự kiện mouse down
+                header.Capture = false;
+
+                // Tạo và gửi một message WM_NCLBUTTONDOWN
+                const int WM_NCLBUTTONDOWN = 0x00A1;
+                const int HTCAPTION = 2;
+                Message m = Message.Create(this.Handle // lấy cửa sổ bao quanh control
+                                           , WM_NCLBUTTONDOWN, new IntPtr(HTCAPTION), IntPtr.Zero);
+                this.DefWndProc(ref m);
+            }
+        }
+
+        // Cho phép ứng dụng thu nhỏ được khi click vào icon dưới taskbar
+        const int WS_MINIMIZEBOX = 0x20000;
+        const int CS_DBLCLKS = 0x8;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.Style |= WS_MINIMIZEBOX;
+                cp.ClassStyle |= CS_DBLCLKS;
+                return cp;
+            }
+        }
+
+        // C2
+        // https://stackoverflow.com/questions/1592876/make-a-borderless-form-movable
+        #endregion
+    }
+}

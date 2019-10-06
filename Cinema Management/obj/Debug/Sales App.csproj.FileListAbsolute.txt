@@ -1,0 +1,16 @@
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales App.csprojAssemblyReference.cache
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales_App.SalesForm.resources
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales_App.LoginForm.resources
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales_App.Properties.Resources.resources
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales App.csproj.GenerateResource.cache
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales App.csproj.CoreCompileInputs.cache
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\Sales App.exe.config
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\Sales App.exe
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\Sales App.pdb
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\BUS.dll
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\DTO.dll
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\BUS.pdb
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\DTO.pdb
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales App.csproj.CopyComplete
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales App.exe
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales App.pdb
