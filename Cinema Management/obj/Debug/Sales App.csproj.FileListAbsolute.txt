@@ -14,3 +14,7 @@ D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\DTO.pdb
 D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales App.csproj.CopyComplete
 D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales App.exe
 D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales App.pdb
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\DAO.dll
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\DAO.pdb
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\CustomControl.dll
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\CustomControl.pdb

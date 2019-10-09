@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Book_Tickets_App
 {
-    public partial class Form1 : Form
+    public partial class BookForm : Form
     {
-        public Form1()
+        public BookForm()
         {
             InitializeComponent();
         }

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTO
+namespace DTO // Value Object / Data Transfer Object
 {
     public class Account_KH
     {
-        private int id;
+        /*private int id;
         private string username;
         private string password;
         private string hoten;
@@ -24,7 +24,7 @@ namespace DTO
             this.id = id;
             this.username = username;
             this.password = password;
-        }
+        }*/
 
         public int ID { get => id; set => id = value; }
         public string Username { get => username; set => username = value; }

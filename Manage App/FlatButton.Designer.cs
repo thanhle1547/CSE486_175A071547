@@ -1,6 +1,6 @@
-﻿namespace Sales_App
+﻿namespace Manage_App
 {
-    partial class Round_Button
+    partial class FlatButton
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         }
 
         #endregion

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
 namespace Sales_App
 {
@@ -17,14 +18,9 @@ namespace Sales_App
             InitializeComponent();
         }
 
-        private void Lb_NhanVien_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            menu_Account.Text =
         }
 
         #region Windows Methods
@@ -80,6 +76,64 @@ namespace Sales_App
 
         // C2
         // https://stackoverflow.com/questions/1592876/make-a-borderless-form-movable
+        #endregion
+
+        #region Menu Tài khoản
+        private void Mi_ChangeAcc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Mi_SignOut_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Lb_NhanVien_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region Tab Lấy vé
+        private void Btn_LayMaVe_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region Tab Chọn ghế
+        private void Btn_HuyGhe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_XacNhanGhe_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region Tab Bán vé
+        private void Btn_Xoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_ThanhToan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Huy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_ChonGhe_Click(object sender, EventArgs e)
+        {
+            tP_ChonGhe.Hide();
+        }
         #endregion
     }
 }

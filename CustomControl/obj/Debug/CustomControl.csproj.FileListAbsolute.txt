@@ -1,0 +1,7 @@
+D:\Learning\C#\Cinema Management\CustomControl\bin\Debug\CustomControl.dll
+D:\Learning\C#\Cinema Management\CustomControl\bin\Debug\CustomControl.pdb
+D:\Learning\C#\Cinema Management\CustomControl\obj\Debug\CustomControl.csproj.CoreCompileInputs.cache
+D:\Learning\C#\Cinema Management\CustomControl\obj\Debug\CustomControl.dll
+D:\Learning\C#\Cinema Management\CustomControl\obj\Debug\CustomControl.pdb
+D:\Learning\C#\Cinema Management\CustomControl\obj\Debug\Sales_App.SoDoPhong1.resources
+D:\Learning\C#\Cinema Management\CustomControl\obj\Debug\CustomControl.csproj.GenerateResource.cache

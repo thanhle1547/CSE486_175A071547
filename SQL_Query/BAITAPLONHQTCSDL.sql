@@ -174,7 +174,7 @@ CREATE TABLE NhanVien
 	IDNhanVien int NOT NULL PRIMARY KEY Identity(1,1),
 	HoTen nvarchar(30),
 	NgaySinh date,
-	Quan nvarchar(20),
+	Que nvarchar(20),
 	SoChungMinhThu varchar(15),
 	GioiTinh nvarchar(3) CHECK (GioiTinh = N'Nam' or GioiTinh = N'Nữ'),
 )

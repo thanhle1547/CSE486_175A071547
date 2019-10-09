@@ -37,7 +37,7 @@
             this.btn_Close = new System.Windows.Forms.Button();
             this.ckB_ShowPass = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.round_Button1 = new Sales_App.Round_Button();
+            this.btn_DangNhap = new CustomControl.Round_Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,26 +142,26 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Đăng nhập";
             // 
-            // round_Button1
+            // btn_DangNhap
             // 
-            this.round_Button1.BackColor = System.Drawing.Color.White;
-            this.round_Button1.BackColor1 = System.Drawing.Color.White;
-            this.round_Button1.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.round_Button1.ButtonColor = System.Drawing.SystemColors.Window;
-            this.round_Button1.FlatAppearance.BorderSize = 0;
-            this.round_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.round_Button1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.round_Button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.round_Button1.Location = new System.Drawing.Point(84, 366);
-            this.round_Button1.Name = "round_Button1";
-            this.round_Button1.OnHoverBorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.round_Button1.OnHoverButtonColor = System.Drawing.Color.DeepSkyBlue;
-            this.round_Button1.OnHoverTextColor = System.Drawing.Color.White;
-            this.round_Button1.Size = new System.Drawing.Size(183, 43);
-            this.round_Button1.TabIndex = 9;
-            this.round_Button1.Text = "Đăng nhập";
-            this.round_Button1.TextColor = System.Drawing.Color.Black;
-            this.round_Button1.UseVisualStyleBackColor = false;
+            this.btn_DangNhap.BackColor = System.Drawing.Color.White;
+            this.btn_DangNhap.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_DangNhap.ButtonColor = System.Drawing.SystemColors.Window;
+            this.btn_DangNhap.FlatAppearance.BorderSize = 0;
+            this.btn_DangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DangNhap.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DangNhap.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_DangNhap.Location = new System.Drawing.Point(84, 366);
+            this.btn_DangNhap.Name = "btn_DangNhap";
+            this.btn_DangNhap.OnHoverBorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_DangNhap.OnHoverButtonColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_DangNhap.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_DangNhap.Size = new System.Drawing.Size(183, 43);
+            this.btn_DangNhap.TabIndex = 9;
+            this.btn_DangNhap.Text = "Đăng nhập";
+            this.btn_DangNhap.TextColor = System.Drawing.Color.Black;
+            this.btn_DangNhap.UseVisualStyleBackColor = false;
+            this.btn_DangNhap.Click += new System.EventHandler(this.Btn_DangNhap_Click);
             // 
             // LoginForm
             // 
@@ -170,7 +170,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(350, 429);
-            this.Controls.Add(this.round_Button1);
+            this.Controls.Add(this.btn_DangNhap);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ckB_ShowPass);
             this.Controls.Add(this.pictureBox1);
@@ -204,6 +204,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.CheckBox ckB_ShowPass;
         private System.Windows.Forms.Label label3;
-        private Round_Button round_Button1;
+        private CustomControl.Round_Button btn_DangNhap;
     }
 }

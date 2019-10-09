@@ -82,12 +82,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Round Button.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Round Button.Designer.cs">
-      <DependentUpon>Round Button.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Sales App.resx">
       <DependentUpon>Sales App.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +145,10 @@
     <ProjectReference Include="..\BUS\BUS.csproj">
       <Project>{ca35a17f-21a7-4b4d-b12c-bfdc38179a1b}</Project>
       <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomControl\CustomControl.csproj">
+      <Project>{1ef2b44d-817a-4602-a7cd-85f1a1a09188}</Project>
+      <Name>CustomControl</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{ecc9cc9d-acb6-4bf1-b829-d34f0935e6db}</Project>

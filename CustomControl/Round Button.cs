@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sales_App
+namespace CustomControl
 {
     // https://github.com/SaLaaRHuSyN/AddTextUsingButtons/blob/master/RoundButtonDemo/Button_WOC.cs
 
@@ -46,6 +46,8 @@ namespace Sales_App
 
             this.FlatAppearance.BorderSize = 0;
             this.FlatStyle = FlatStyle.Flat;
+            this.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            this.FlatAppearance.MouseOverBackColor = Color.Transparent;
         }
 
 
@@ -155,7 +157,5 @@ namespace Sales_App
                 Invalidate();
             }
         }
-
-        public Color BackColor1 { get => _BackColor; set { _BackColor = value; Invalidate(); } }
     }
 }

@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Text.RegularExpressions;
 
-namespace DAO
+namespace DAO // Data Access Layer
 {
     class DataProvider
     {
@@ -21,6 +21,9 @@ namespace DAO
 
         private DataProvider()
         {
+            // https://medium.com/@kevalpatel2106/how-to-make-the-perfect-singleton-de6b951dfdb0
+            if (ins != null)
+                throw new Exception("Use 'ins' to get the single instance of this class");
             Cnn = new SqlConnection(cnnStr);
             Cnn.Open();
         }
@@ -98,7 +101,7 @@ namespace DAO
 
                 return cmd.ExecuteNonQuery();
             }
-            catch (Exception e) when (e is SqlException)
+            catch (SqlException e)
             {
                 throw (e);
             }
@@ -119,7 +122,7 @@ namespace DAO
                 adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
             }
-            catch (Exception e) when (e is SqlException)
+            catch (SqlException e)
             {
                 throw (e);
             }

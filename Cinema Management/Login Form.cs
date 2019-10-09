@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using BUS;
 
-namespace Sales_App
+namespace Sales_App // Presentation Layer (GUI)
 {
     public partial class LoginForm : Form
     {
@@ -16,6 +18,8 @@ namespace Sales_App
         {
             InitializeComponent();
         }
+
+        SalesForm form;
 
         // C# - Adding a Simple Drop Shadow in Borderless WinForm
         // https://www.youtube.com/watch?v=UoYD_6VgazE
@@ -40,6 +44,24 @@ namespace Sales_App
         private void TxB_Pass_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Btn_DangNhap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (AccountKH_BUS.Ins.Login(txB_UserName.Text, txB_Pass.Text))
+                {
+                    form = new SalesForm();
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác", "Lỗi đăng nhập");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
     }
 }
