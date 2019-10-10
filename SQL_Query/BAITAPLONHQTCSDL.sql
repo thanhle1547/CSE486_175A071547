@@ -137,7 +137,8 @@ Create Table P_DN
 -- #########################
 CREATE TABLE LichChieuPhim
 (
-	ID_PDN int NOT NULL PRIMARY KEY,
+	ID_LichChieu int NOT NULL PRIMARY KEY Identity(1,1),
+	ID_PDN int NOT NULL,
 	IDPhongChieuphim tinyint,
 	ThoiGianChieu smalldatetime,
 
@@ -150,12 +151,16 @@ CREATE TABLE LichChieuPhim
 CREATE TABLE Account_KH
 (
 	IDKhachHang int NOT NULL PRIMARY KEY Identity(1,1),
-	TenDangNhap varchar(20) UNIQUE,
+	TenDangNhap varchar(20),
 	MatKhau varchar(10),
 )
 
 --Alter Table Account_KH
---	Add Unique (TenDangNhap)
+--	Add Unique (TenDangNhap) bỏ
+--Alter Table Account_KH
+--	Alter Column TenDangNhap varchar(20)
+--Alter Table Account_KH
+--	Alter Column MatKhau varchar(16)
 
 CREATE TABLE KhachHang
 (
@@ -188,7 +193,7 @@ CREATE TABLE ChucVu
 CREATE TABLE Account_NV
 (
 	IDNhanVien int NOT NULL PRIMARY KEY,
-	TenDangNhap varchar(20) UNIQUE,
+	TenDangNhap varchar(20),
 	MatKhau varchar(10),
 	IDChucVu tinyint,
 
@@ -197,7 +202,11 @@ CREATE TABLE Account_NV
 )
 
 --Alter Table Account_NV
---	Add Unique (TenDangNhap)
+--	Add Unique (TenDangNhap) bỏ
+--Alter Table Account_NV
+--	Alter Column TenDangNhap varchar(20)
+--Alter Table Account_NV
+--	Alter Column MatKhau varchar(16)
 
 -- #########################
 -- Đơn giá_Định dạng
@@ -228,38 +237,34 @@ CREATE TABLE HoaDon_POS
 	TongTien real,
 )
 
- CREATE TABLE ChiTietHD_POS
+CREATE TABLE ChiTietHD_POS
 (
 	IDHoaDon int NOT NULL,
-	IDPhim int NOT NULL,
-	IDPhongChieuphim tinyint NOT NULL,
+	ID_LichChieu int NOT NULL,
 	TG_MuaVe smalldatetime, -- Thời gian mua vé
 	SoLuongVe tinyint,
 	MaGheNgoi varchar(25),
 	GheVIP bit,
 	ThanhTien real,
-	Primary key (IDHoaDon, IDPhim, IDPhongChieuphim),
+	Primary key (IDHoaDon, ID_LichChieu),
 
 	FOREIGN KEY (IDHoaDon) REFERENCES HoaDon_POS(IDHoaDon),
-	FOREIGN KEY (IDPhim) REFERENCES Phim(IDPhim),
-	FOREIGN KEY (IDPhongChieuphim) REFERENCES PhongChieuphim(IDPhongChieuphim)
+	FOREIGN KEY (ID_LichChieu) REFERENCES LichChieuPhim(ID_LichChieu)
 )
 
- CREATE TABLE ChiTietHD_KH
+CREATE TABLE ChiTietHD_KH
 (
 	IDHoaDonKH varchar(20) NOT NULL,
-	IDPhim int NOT NULL,
-	IDPhongChieuphim tinyint NOT NULL,
+	ID_LichChieu int NOT NULL,
 	TG_MuaVe smalldatetime, -- Thời gian mua vé
 	SoLuongVe tinyint,
 	MaGheNgoi varchar(25),
 	GheVIP bit,
 	ThanhTien real,
-	Primary key (IDHoaDonKH, IDPhim, IDPhongChieuphim),
+	Primary key (IDHoaDonKH, ID_LichChieu),
 
 	FOREIGN KEY (IDHoaDonKH) REFERENCES HoaDon_KH(IDHoaDonKH),
-	FOREIGN KEY (IDPhim) REFERENCES Phim(IDPhim),
-	FOREIGN KEY (IDPhongChieuphim) REFERENCES PhongChieuphim(IDPhongChieuphim)
+	FOREIGN KEY (ID_LichChieu) REFERENCES LichChieuPhim(ID_LichChieu)
 )
 
 
@@ -269,3 +274,37 @@ CREATE TABLE HoaDon_POS
 Delete From NgonNgu
 -- DBCC CHECKIDENT('tableName', RESEED, NEW_RESEED_VALUE)
 DBCC CHECKIDENT('NgonNgu', RESEED, 0)
+
+
+
+-- SQL Case Sensitive String Compare
+-- https://stackoverflow.com/a/15471754
+Alter Table Account_NV
+	Alter Column TenDangNhap nvarchar(20)
+		COLLATE SQl_Latin1_General_CP1_CS_AS --  CS = Case Sensitive, AS = Accent sensitive
+--The object 'UQ__Account___55F68FC062998A23' is dependent on column 'TenDangNhap'.
+-- Msg 4922, Level 16, State 9, Line 277
+-- ALTER TABLE ALTER COLUMN TenDangNhap failed because one or more objects access this column.
+
+-- Sửa lại
+-- https://stackoverflow.com/a/1514262
+Alter Table Account_NV
+	Drop Constraint UQ__Account___55F68FC062998A23
+
+Alter Table Account_NV
+	Alter Column TenDangNhap nvarchar(20)
+		COLLATE SQl_Latin1_General_CP1_CS_AS
+
+Create UNIQUE INDEX UIX_TenDN_NV On Account_NV(TenDangNhap)
+-- Drop INDEX Account_NV.UIX_TenDN_NV -- alter column type
+
+
+Alter Table Account_KH
+	Drop Constraint UQ__Account___55F68FC043D58C74
+
+Alter Table Account_KH
+	Alter Column TenDangNhap nvarchar(20)
+		COLLATE SQl_Latin1_General_CP1_CS_AS
+		
+Create UNIQUE INDEX UIX_TenDN_KH On Account_KH(TenDangNhap)
+--Drop INDEX Account_KH.UIX_TenDN_KH
