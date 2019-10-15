@@ -35,6 +35,9 @@ CREATE TABLE NhaSanXuat
 	TenNSX nvarchar(20)
 )
 
+--ALter Table NhaSanXuat
+--	Alter Column TenNSX nvarchar(50)
+
 CREATE TABLE TheLoai
 (
 	IDTheLoai tinyint NOT NULL PRIMARY KEY Identity(1,1),
@@ -145,7 +148,9 @@ CREATE TABLE LichChieuPhim
 	FOREIGN KEY (IDPhongChieuphim) REFERENCES PhongChieuphim(IDPhongChieuphim),
 	FOREIGN KEY (ID_PDN) REFERENCES P_DN(ID_PDN)
 )
-
+-- Rename column
+-- https://stackoverflow.com/a/16296669
+--Exec sp_rename 'LichChieuPhim.IDPhongChieuphim', 'IDPhongChieuPhim', 'COLUMN'
 
 -- #########################
 CREATE TABLE Account_KH
@@ -173,6 +178,9 @@ CREATE TABLE KhachHang
 
 	FOREIGN KEY (IDKhachHang) REFERENCES Account_KH(IDKhachHang)
 )
+
+--Alter Table KhachHang
+--	Drop Column Que, SoChungMinhThu
 
 CREATE TABLE NhanVien
 (
