@@ -34,6 +34,11 @@ As
 
 
 -- View lấy lịch chiếu phim
+Create View View_Laylichchieuphim
+as
+Select ID_LichChieu,ID_PDN,IDPhongChieuPhim,ThoiGianChieu
+From LichChieuPhim l
+Where l.ID_LichChieu=PhongChieuPhim.IDPhongChieuPhim
 
 create View v_lichchieupim_Phim
 As 
@@ -57,6 +62,12 @@ As
     From KhachHang
 
 
+-- View lấy các dữ liệu liên quan của 1 khách hàng
+--Create view View_KhachHang
+--As
+--Select kh.IDKhachHanq,HoTen,NgaySinh,GioiTinh
+--From Kha
+--Where KhachHang.IDKhachhanq = Account_KH.IDKhachHang and 
 
 
 
@@ -64,8 +75,10 @@ As
 
 
 
+GO
 -- View lấy các dữ liệu liên quan của 1 nhân viên
-create View v_dl_NhanVien(IDNhanVien,HoTen,NgaySinh,GioiTinh)
+Create view View_Nhanvien
 As
-   select IDNhanVien,HoTen,NgaySinh,GioiTinh
-    From NhanVien
+Select nv.IDNhanVien ,HoTen,NgaySinh,Que,SoChungMinhThu,GioiTinh
+From NhanVien nv,Account_NV a,ChucVu cv
+Where nv.IDNhanVien=a.IDNhanVien and cv.IDChucVu=a.IDChucvu
