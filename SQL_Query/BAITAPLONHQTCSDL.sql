@@ -172,8 +172,8 @@ CREATE TABLE KhachHang
 	IDKhachHang int NOT NULL PRIMARY KEY,
 	HoTen nvarchar(30),
 	NgaySinh date,
-	Que nvarchar(20),
-	SoChungMinhThu varchar(15),
+	--Que nvarchar(20),
+	--SoChungMinhThu varchar(15),
 	GioiTinh nvarchar(3) CHECK (GioiTinh= N'Nam' or GioiTinh= N'Nữ'),
 
 	FOREIGN KEY (IDKhachHang) REFERENCES Account_KH(IDKhachHang)
