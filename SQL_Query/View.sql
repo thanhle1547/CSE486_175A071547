@@ -1,20 +1,23 @@
 ﻿-- View lấy các dữ liệu liên quan của 1 bộ phim
-Create View v_dl_Phim
-As
-	Select IDPhim, 
-		From Phim
+
 
 
 
 
 -- View lấy lịch chiếu phim
+Create View View_Laylichchieuphim
+as
+Select ID_LichChieu,ID_PDN,IDPhongChieuPhim,ThoiGianChieu
+From LichChieuPhim l
+Where l.ID_LichChieu=PhongChieuPhim.IDPhongChieuPhim
 
 
 
 
 
 
-GO
+
+
 -- View lấy các dữ liệu liên quan của 1 khách hàng
 --Create view View_KhachHang
 --As
