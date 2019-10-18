@@ -57,7 +57,7 @@ End
 
 
 
--- Store Procedure trả về số ghế còn trống (thường, VIP) 
+-- Store Procedure trả về số ghế còn trống (thường, VIP) theo lịch chiếu của mỗi phim
 -- THAM SỐ: ID_LichChieu
 -- tổng hợp từ số vé trong cả 2 bảng ChiTietHD_POS & ChiTietHD_KH 
 -- nối từ ID_LichChieu trong bảng LichChieuPhim

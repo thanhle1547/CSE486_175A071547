@@ -68,6 +68,8 @@ CREATE TABLE DaoDien
 	TenDaoien nvarchar(20)
 )
 
+--Exec sp_rename 'DaoDien.TenDaoien', 'TenDaoDien', 'COLUMN'
+
 CREATE TABLE DienVien
 (
 	IDDienVien int NOT NULL PRIMARY KEY Identity(1,1),
@@ -155,7 +157,7 @@ CREATE TABLE LichChieuPhim
 -- #########################
 CREATE TABLE Account_KH
 (
-	IDKhachHang int NOT NULL PRIMARY KEY Identity(1,1),
+	IDKhachHang varchar(9) NOT NULL PRIMARY KEY,
 	TenDangNhap varchar(20),
 	MatKhau varchar(10),
 )
@@ -169,7 +171,7 @@ CREATE TABLE Account_KH
 
 CREATE TABLE KhachHang
 (
-	IDKhachHang int NOT NULL PRIMARY KEY,
+	IDKhachHang varchar(9) NOT NULL PRIMARY KEY,
 	HoTen nvarchar(30),
 	NgaySinh date,
 	--Que nvarchar(20),
@@ -181,6 +183,12 @@ CREATE TABLE KhachHang
 
 --Alter Table KhachHang
 --	Drop Column Que, SoChungMinhThu
+
+-- IDKhachHang là 1 chuỗi gồm 9 kí tự ghép bởi millisecond + minutes + date + months
+--Alter Table Account_KH
+--	Alter Column IDKhachHang varchar(9)
+--Alter Table KhachHang
+--	Alter Column IDKhachHang varchar(9)
 
 CREATE TABLE NhanVien
 (
@@ -216,6 +224,7 @@ CREATE TABLE Account_NV
 --Alter Table Account_NV
 --	Alter Column MatKhau varchar(16)
 
+
 -- #########################
 -- Đơn giá_Định dạng
 CREATE TABLE DonGia_DD
@@ -231,7 +240,7 @@ CREATE TABLE DonGia_DD
 	Foreign key (ID_DinhDang) References DinhDang(ID_DinhDang)
 )
 
-CREATE TABLE HoaDon_KH
+/*CREATE TABLE HoaDon_KH
 (
 	IDHoaDonKH varchar(20) NOT NULL PRIMARY KEY,
 	IDKhachHang int,
@@ -244,36 +253,47 @@ CREATE TABLE HoaDon_POS
 	IDHoaDon int NOT NULL PRIMARY KEY,
 	TongTien real,
 )
+*/
+/*Drop Table HoaDon_KH
+Drop Table HoaDon_POS*/
 
-CREATE TABLE ChiTietHD_POS
+CREATE TABLE Booking_POS	 --ChiTietHD_POS
 (
-	IDHoaDon int NOT NULL,
+	ID int NOT NULL,
 	ID_LichChieu int NOT NULL,
 	TG_MuaVe smalldatetime, -- Thời gian mua vé
 	SoLuongVe tinyint,
-	MaGheNgoi varchar(25),
+	MaGheNgoi varchar(max),
 	GheVIP bit,
-	ThanhTien real,
-	Primary key (IDHoaDon, ID_LichChieu),
+	TongTien real, --ThanhTien
+	Primary key (ID, ID_LichChieu),
 
-	FOREIGN KEY (IDHoaDon) REFERENCES HoaDon_POS(IDHoaDon),
+	-- FOREIGN KEY (IDHoaDon) REFERENCES HoaDon_POS(IDHoaDon),
 	FOREIGN KEY (ID_LichChieu) REFERENCES LichChieuPhim(ID_LichChieu)
 )
 
-CREATE TABLE ChiTietHD_KH
+--Alter Table ChiTietHD_POS
+--	Alter Column MaGheNgoi varchar(max)
+
+CREATE TABLE Booking_Client -- ChiTietHD_KH
 (
-	IDHoaDonKH varchar(20) NOT NULL,
+	ID varchar(6) NOT NULL,
+	IDKhachHang varchar(9),
 	ID_LichChieu int NOT NULL,
 	TG_MuaVe smalldatetime, -- Thời gian mua vé
 	SoLuongVe tinyint,
-	MaGheNgoi varchar(25),
+	MaGheNgoi varchar(max),
 	GheVIP bit,
-	ThanhTien real,
-	Primary key (IDHoaDonKH, ID_LichChieu),
+	TongTien real,
+	Primary key (ID, ID_LichChieu),
 
-	FOREIGN KEY (IDHoaDonKH) REFERENCES HoaDon_KH(IDHoaDonKH),
-	FOREIGN KEY (ID_LichChieu) REFERENCES LichChieuPhim(ID_LichChieu)
+	-- FOREIGN KEY (IDHoaDonKH) REFERENCES HoaDon_KH(IDHoaDonKH),
+	FOREIGN KEY (ID_LichChieu) REFERENCES LichChieuPhim(ID_LichChieu),
+	FOREIGN KEY (IDKhachHang) REFERENCES Account_KH(IDKhachHang)
 )
+
+--Alter Table ChiTietHD_KH
+--	Alter Column IDHoaDonKH varchar(6)
 
 
 
