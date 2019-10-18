@@ -11,7 +11,7 @@ As
 			P_DN.ID_DinhDang,IDPhim,ID_PDN,
 			NgonNgu.ID_NgonNgu,NgonNgu,
 			DinhDang.ID_DinhDang,TenDinhDang,
-			DonGia_DD.Thu,DonGia
+			DonGia_DD.ID_DinhDang,Thu,DonGia
 
 
 	 from Phim p,  P_DaoDien pdd,  DaoDien d, P_DienVien pdv, DienVien dv ,P_Theloai pt,  TheLoai t,  P_DN pdn, DonGia_DD dg,  NgonNgu nn, DinhDang dd
@@ -25,7 +25,7 @@ As
 	 and   p.IDPhim=pdn.IDPhim
 	 and   pdn.ID_NgonNgu=nn.ID_NgonNgu
 	 and   pdn.ID_DinhDang=dd.ID_DinhDang
-	 and   dd.ID_DinhDang=dg.DonGia
+	 and   dd.ID_DinhDang=dg.ID_DinhDang
 
 
 
