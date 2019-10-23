@@ -61,3 +61,34 @@ End
 -- THAM SỐ: ID_LichChieu
 -- tổng hợp từ số vé trong cả 2 bảng ChiTietHD_POS & ChiTietHD_KH 
 -- nối từ ID_LichChieu trong bảng LichChieuPhim
+
+
+
+
+
+go
+
+-- Store Proc nối dl DienVien, DaoDien
+Create proc view_DienVien
+	as
+		select P_DienVien.IDPhim, STRING_AGG( DienVien.TenDienVien, ', ') as TenDienVien
+			from DienVien,P_DienVien
+				where DienVien.IDDienVien=P_DienVien.IDDienVien
+					group by P_DienVien.IDPhim
+
+GO
+
+CREATE PROC view_DaoDien
+	as 
+		select pdv.IDPhim, STRING_AGG( TenDaoDien, ', ') TenDaoDien
+			from DaoDien dd, P_DaoDien pdv
+				where dd.IDDaoDien=pdv.IDDaoDien
+					group by pdv.IDPhim
+					
+
+
+-- Store Proc trả về lịch chiếu của 1 bộ phim từ view_LichChieuPhim
+-- tham số đầu vào là IDPhim, Ngày mà khách hàng chọn
+Create Proc LichChieu
+As
+	Select 

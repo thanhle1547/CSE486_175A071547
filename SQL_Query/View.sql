@@ -1,24 +1,34 @@
-﻿-- View lấy các dữ liệu liên quan của 1 bộ phim
+﻿Create View v_DienVien_Phim
+As
+	Select P_DienVien.IDPhim, STRING_AGG(DienVien.TenDienVien, ', ') As TenDienVien
+		From DienVien, P_DienVien
+			Where DienVien.IDDienVien = P_DienVien.IDDienVien
+				Group by P_DienVien.IDPhim
+GO
+Create View v_DaoDien_Phim
+As
+	Select pdv.IDPhim, STRING_AGG(TenDaoDien, ', ') TenDaoDien
+		From DaoDien dd, P_DaoDien pdv
+			Where dd.IDDaoDien = pdv.IDDaoDien
+				Group by pdv.IDPhim
+
+
+
+-- View lấy các dữ liệu liên quan của 1 bộ phim
 go
 Create View v_dl_Phim
 As
-	 select Phim.KhoiChieu, poster, Thoiluong, MoTa,
-	        P_DaoDien.IDPhim,
-			DaoDien.TenDaoDien,
-			DienVien.IDPhim,TenDienVien,
-			P_DienVien.IDphim,IDdienVien,
-			P_TheLoai.IDPhim, TheLoai.TenTheLoai,
-			P_DN.ID_DinhDang,IDPhim,ID_PDN,
-			NgonNgu.ID_NgonNgu,NgonNgu,
-			DinhDang.ID_DinhDang,TenDinhDang,
-			DonGia_DD.ID_DinhDang,Thu,DonGia
+	 select p.IDPhim, KhoiChieu, poster, Thoiluong, p.MoTa,
+			t.TenTheLoai,
+			pdn.IDPhim,ID_PDN,
+			nn.ID_NgonNgu,NgonNgu
+	
 
 
-	 from Phim p,  P_DaoDien pdd,  DaoDien d, P_DienVien pdv, DienVien dv ,P_Theloai pt,  TheLoai t,  P_DN pdn, DonGia_DD dg,  NgonNgu nn, DinhDang dd
-	 where p.IDPhim = pdv.IDPhim
-	 and   pdv.IDDienVien=dv.IDDienVien
+	 from Phim p,v_DienVien_Phim pdv, v_DaoDien_Phim pdd ,P_Theloai pt,  TheLoai t,  P_DN pdn, DonGia_DD dg, 
+	 NgonNgu nn, DinhDang dd
+	 where p.IDPhim = pdv.IDPhim 
 	 and   p.IDPhim=pdd.IDPhim
-	 and   Pdd.IDDaoDien=d.IDDaoDien
 	 and   p.IDPhim=pt.IDPhim
 	 and   pt.IDTheLoai=t.IDTheLoai
 	 and   p.IDPhim=pdn.IDPhim
@@ -32,7 +42,7 @@ As
 
 
 
-
+GO
 -- View lấy lịch chiếu phim
 Create View View_Laylichchieuphim
 as
@@ -51,7 +61,13 @@ As
 	 
 	       
 
-
+Select p.IDPhim, TenPhim, d.TenDinhDang, n.NgonNgu, c.TenPhong, ThoiGianChieu
+From P_DN dn, LichChieuPhim l, DinhDang d, NgonNgu n, Phim p, PhongChieuPhim c
+Where p.IDPhim = 1
+	and dn.ID_PDN = l.ID_PDN 
+	and dn.ID_DinhDang = d.ID_DinhDang
+	and dn.ID_NgonNgu = n.ID_NgonNgu
+	and dn.ID_PDN = l.IDPhongChieuPhim
 
 
 
@@ -82,3 +98,17 @@ As
 Select nv.IDNhanVien ,HoTen,NgaySinh,Que,SoChungMinhThu,GioiTinh
 From NhanVien nv,Account_NV a,ChucVu cv
 Where nv.IDNhanVien=a.IDNhanVien and cv.IDChucVu=a.IDChucvu
+
+
+
+
+
+-- View tổng hợp dl lịch chiếu phim tính tới ngày hiện tại
+view_LichChieuPhim
+
+TenPhim
+DinhDang 
+NgonNgu
+TenPhong 
+ThoiGian 
+-- View tổng hợp dl của phim theo định dạng và ngôn ngữ

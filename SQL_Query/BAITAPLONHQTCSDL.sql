@@ -144,7 +144,7 @@ CREATE TABLE LichChieuPhim
 (
 	ID_LichChieu int NOT NULL PRIMARY KEY Identity(1,1),
 	ID_PDN int NOT NULL,
-	IDPhongChieuphim tinyint,
+	IDPhongChieuPhim tinyint,
 	ThoiGianChieu smalldatetime,
 
 	FOREIGN KEY (IDPhongChieuphim) REFERENCES PhongChieuphim(IDPhongChieuphim),
