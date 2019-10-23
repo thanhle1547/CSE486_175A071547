@@ -28,3 +28,35 @@ as
 				where dd.IDDaoDien=pdv.IDDaoDien
 					group by pdv.IDPhim
 select * from  DienVien_Phim()
+
+
+Go
+
+
+create function getIDPhimDangChieu()
+  RETURNS @bien TABLE (IDPhim int)
+As
+	begin
+		insert into @bien
+	    select IDPhim
+		from LichChieuPhim lcp, P_DN pdn
+			where ThoiGianChieu>=GETDATE()
+			and lcp.ID_PDN = pdn.ID_PDN
+
+	   return
+	end
+  
+GO
+
+create function getIDPhimSapChieu()
+  RETURNS @bien TABLE (IDPhim int)
+As
+	begin
+		insert into @bien
+	    select IDPhim
+		from Phim 
+			where KhoiChieu>=convert( date,  GETDATE())
+		return
+	end
+
+

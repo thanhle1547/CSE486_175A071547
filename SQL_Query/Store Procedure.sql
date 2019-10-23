@@ -38,6 +38,7 @@ End
 
 
 
+
 -- Store Procedure lấy thông tin tổng hợp của 1 tài khoản nhân viên
 
 
@@ -52,17 +53,44 @@ End
 
 
 
-
-
-
-
-
 -- Store Procedure trả về số ghế còn trống (thường, VIP) theo lịch chiếu của mỗi phim
 -- THAM SỐ: ID_LichChieu
 -- tổng hợp từ số vé trong cả 2 bảng ChiTietHD_POS & ChiTietHD_KH 
 -- nối từ ID_LichChieu trong bảng LichChieuPhim
+GO 
+
+create proc st_ghetrong
+As
+	begin
+		declare @pos table (SoLuongVe int,MaGheNgoi nvarchar(max), GheVip bit)
+		 insert into @pos
+		select sum (SoLuongVe) SoLuongVe,
+			   STRING_AGG (MaGheNgoi,', ') as MaGhe,
+			   GheVIP
+			from Booking_POS 
+				group by GheVIP
 
 
+
+		declare @client table (SoLuongVe int,MaGheNgoi nvarchar(max), GheVip bit)
+		 insert into @client
+		select sum (SoLuongVe) SoLuongVe,
+			   STRING_AGG (MaGheNgoi,', ') as MaGhe,
+			   GheVIP
+			from Booking_Client 
+				group by GheVIP
+
+		select sum (SoLuongVe) SoLuongVe,
+			   STRING_AGG (MaGheNgoi,', ') as MaGhe,
+			   GheVIP
+			from (select * from @client union select * from @POS) as t
+				group by GheVIP
+
+	end
+
+
+
+   
 
 
 
@@ -89,6 +117,3 @@ CREATE PROC view_DaoDien
 
 -- Store Proc trả về lịch chiếu của 1 bộ phim từ view_LichChieuPhim
 -- tham số đầu vào là IDPhim, Ngày mà khách hàng chọn
-Create Proc LichChieu
-As
-	Select 
