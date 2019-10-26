@@ -3,8 +3,9 @@ As
 	Select P_DienVien.IDPhim, STRING_AGG(DienVien.TenDienVien, ', ') As TenDienVien
 		From DienVien, P_DienVien
 			Where IDPhim in ( 
-				select * from dbo.getIDPhimDangChieu() 
-				union select * from dbo.getIDPhimSapChieu()
+				Select * from dbo.getIDPhimDangChieu() 
+					UNION ALL Select * from dbo.getIDPhimSapChieu()
+		-- UNION ALL chạy nhanh hơn lệnh UNION vì nó không kiểm tra các bản ghi trùng lặp
 				)
 			and DienVien.IDDienVien = P_DienVien.IDDienVien
 			    Group by P_DienVien.IDPhim
@@ -16,65 +17,65 @@ As
 	Select pdv.IDPhim, STRING_AGG(TenDaoDien, ', ') TenDaoDien
 		From DaoDien dd, P_DaoDien pdv
 			Where IDPhim in ( 
-				select * from dbo.getIDPhimDangChieu() 
-				union select * from dbo.getIDPhimSapChieu()
+				Select * from dbo.getIDPhimDangChieu() 
+					UNION ALL Select * from dbo.getIDPhimSapChieu()
 				)
 			and dd.IDDaoDien = pdv.IDDaoDien
 				Group by pdv.IDPhim
 
 GO
 
-create View v_TheLoai_Phim
+Create View v_TheLoai_Phim
 As
 	Select ptl.IDPhim, STRING_AGG(TenTheLoai, ', ') TenTheLoai
 		From TheLoai tl, P_TheLoai ptl
 			Where IDPhim in ( 
-				select * from dbo.getIDPhimDangChieu() 
-				union select * from dbo.getIDPhimSapChieu()
+				Select * from dbo.getIDPhimDangChieu() 
+					UNION ALL Select * from dbo.getIDPhimSapChieu()
 				)
 			and tl.IDTheLoai = ptl.IDTheLoai
-				group by ptl.IDPhim
+				Group by ptl.IDPhim
 GO
 
-create View v_DinhDangNN
+Create View v_DinhDangNN
 As
-	select pdn.ID_PDN,IDPhim ,
-		   nn.ngonngu,
-		   dd.TenDinhDang
+	Select pdn.ID_PDN, IDPhim,
+		   nn.ngonngu, dd.TenDinhDang
 		From P_DN pdn, NgonNgu nn, DinhDang dd
-			where pdn.ID_NgonNgu = nn.ID_NgonNgu
+			Where pdn.ID_NgonNgu = nn.ID_NgonNgu
 			and   pdn.ID_DinhDang = dd.ID_DinhDang
 
--- View lấy các dữ liệu liên quan của 1 bộ phim
 
+-- View lấy các dữ liệu liên quan của 1 bộ phim
 Create View v_DuLieu_Phim
 As
-	 select p.IDPhim, poster,
-	        pdv.TenDienVien,
-			pdd.TenDaoDien,
-			vtl.TenTheLoai,
-			NgonNgu,KhoiChieu,Thoiluong, p.MoTa
-	 from Phim p,v_DienVien_Phim pdv, v_DaoDien_Phim pdd ,v_TheLoai_Phim vtl,  v_DinhDangNN vddnn
-	 where p.IDPhim = pdv.IDPhim 
-	 and   p.IDPhim=pdd.IDPhim
-	 and   p.IDPhim=vtl.IDPhim
-	 and   p.IDPhim=vddnn.IDPhim
+	 Select p.IDPhim, TenPhim, TenNSX, Poster,
+	        TenDienVien as DienVien, TenDaoDien as DaoDien, TenTheLoai as TheLoai,
+			TenDinhDang as DinhDang, NgonNgu, KhoiChieu, Thoiluong, Rated, MoTa
+	 From Phim p, NhaSanXuat nsx, v_DienVien_Phim pdv, v_DaoDien_Phim pdd, v_TheLoai_Phim vtl, v_DinhDangNN vdn
+	 Where p.IDPhim = pdv.IDPhim
+	 and   p.ID_NSX = nsx.ID_NSX
+	 and   p.IDPhim = pdd.IDPhim
+	 and   p.IDPhim = vtl.IDPhim
+	 and   p.IDPhim = vdn.IDPhim
 
 GO
--- View lấy lịch chiếu phim
 
-create View v_lichchieupim_Phim
+
+-- View lấy lịch chiếu phim
+Create View v_LichChieuPhim
 As 
-    select lcp.ID_LichChieu,lcp.ID_PDN , pcp.TenPhong,ThoiGianChieu,  
-		   vdd.NgonNgu,vdd.TenDinhDang
-		from LichChieuPhim lcp,  PhongChieuPhim pcp,v_DinhDangNN vdd
-			where ThoiGianChieu>= GETDATE()
-			and lcp.IDPhongChieuPhim = pcp.IDPhongChieuPhim
+    Select IDPhim, ID_LichChieu, lcp.ID_PDN , TenPhong, ThoiGianChieu,  
+		   TenDinhDang, NgonNgu
+		From LichChieuPhim lcp, PhongChieuPhim pcp, v_DinhDangNN vdd
+			Where ThoiGianChieu >= GETDATE()
+			and lcp.IDPhong = pcp.IDPhong
 			and lcp.ID_PDN = vdd.ID_PDN
+
 
 GO    
 -- View lấy các dữ liệu liên quan của 1 khách hàng
-create View v_dl_KhachHang(IDKhachHang,HoTen,NgaySinh,GioiTinh)
+create View v_dl_KhachHang (IDKhachHang,HoTen,NgaySinh,GioiTinh)
 As
    select kh.IDKhachHang,HoTen,GioiTinh,    
           ackh.TenDangNhap
@@ -86,10 +87,10 @@ GO
 -- View lấy các dữ liệu liên quan của 1 nhân viên
 Create View v_dl_Nhanvien
 As
-	Select nv.IDNhanVien ,HoTen,NgaySinh,Que,SoChungMinhThu,GioiTinh,cv.ChucVu
+	Select nv.IDNhanVien, HoTen, NgaySinh, Que, SoChungMinhThu, GioiTinh, ChucVu
 		From NhanVien nv,Account_NV a,ChucVu cv
-			Where nv.IDNhanVien=a.IDNhanVien 
-			and cv.IDChucVu=a.IDChucvu
+			Where nv.IDNhanVien = a.IDNhanVien 
+			and cv.IDChucVu = a.IDChucvu
 
 
 

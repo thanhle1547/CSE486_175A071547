@@ -26,7 +26,7 @@ CREATE TABLE PhongChieuPhim
    SoGheThuong tinyint,
    SoGheVIP tinyint,
 )
-
+--Exec sp_rename 'PhongChieuPhim.IDPhongChieuphim', 'IDPhong', 'COLUMN'
 
 -- #########################
 CREATE TABLE NhaSanXuat
@@ -153,6 +153,7 @@ CREATE TABLE LichChieuPhim
 -- Rename column
 -- https://stackoverflow.com/a/16296669
 --Exec sp_rename 'LichChieuPhim.IDPhongChieuphim', 'IDPhongChieuPhim', 'COLUMN'
+--Exec sp_rename 'LichChieuPhim.IDPhongChieuphim', 'IDPhong', 'COLUMN'
 
 -- #########################
 CREATE TABLE Account_KH
@@ -226,19 +227,33 @@ CREATE TABLE Account_NV
 
 
 -- #########################
--- Đơn giá_Định dạng
-CREATE TABLE DonGia_DD
+CREATE TABLE ThoiGian
+(
+	ID_TG tinyint NOT NULL Primary key,
+	TG_BatDau time,
+	TG_KetThuc time
+)
+
+-- Đơn giá_Định dạng_Thời gian
+CREATE TABLE DonGia
 (
 	ID_DinhDang tinyint NOT NULL,
 	Thu tinyint CHECK (Thu > 0 and Thu < 8), -- theo SQL Chủ nhật ~ 1, Thứ 2 ~ 2
 	-- Dùng hàm DatePart để kiểm tra ngày đặt vé với thứ
-	TG_BatDau time,
-	TG_KetThuc time,
+	ID_TG tinyint,
 	DonGia real,
 	MoTa nvarchar(max),
+	Primary key (ID_DinhDang, Thu, ID_TG),
 
-	Foreign key (ID_DinhDang) References DinhDang(ID_DinhDang)
+	Foreign key (ID_DinhDang) References DinhDang(ID_DinhDang),
+	Foreign key (ID_TG) References ThoiGian(ID_TG)
 )
+
+-- http://www.sqlservertutorial.net/sql-server-basics/sql-server-rename-table/
+-- EXEC sp_rename 'old_table_name', 'new_table_name'
+-- Exec sp_rename 'DonGia_DD', 'DonGia'
+--Alter Table DonGia
+--	Drop Column MoTa
 
 /*CREATE TABLE HoaDon_KH
 (
