@@ -64,38 +64,57 @@ As
 
 
 GO 
-Create Function Get_GhePhim(@IDPhim int)
+Alter Function Get_GhePhim(@IDPhim int)
 	RETURNS @t TABLE (ID_LichChieu int, SoLuongVe int)
 As
 	Begin
-		declare @id table (ID_LichChieu int)
+		declare @id table (ID_LichChieu int, SoGhe int)
 		Insert into @id
-			Select ID_LichChieu From v_LichChieuPhim Where IDPhim = @IDPhim
-
-		declare @pos table (ID_LichChieu int, SoLuongVe int)
-		Insert into @pos
-			select ID_LichChieu,
-				   sum (SoLuongVe) SoLuongVe
-				from Booking_POS
-					Where ID_LichChieu in (Select * From @id)
+			Select ID_LichChieu, Sum(SoGheThuong + SoGheVIP) as SoGhe
+				From v_LichChieuPhim v, PhongChieuPhim p
+					Where IDPhim = @IDPhim and v.TenPhong = p.TenPhong
 						Group by ID_LichChieu
 
-		declare @client table (ID_LichChieu int, SoLuongVe int)
-		Insert into @client
-			select ID_LichChieu,
-				   sum (SoLuongVe) SoLuongVe
-				from Booking_Client 
-					Where ID_LichChieu in (Select * From @id)
-						Group by ID_LichChieu
+		-- https://stackoverflow.com/questions/14877797/how-to-sum-two-fields-within-an-sql-query/14877850
+		declare @pc table (ID_LichChieu int, SoLuongVe int, SoLuongVe2 int)
+		Insert into @pc
+			select i.ID_LichChieu,
+				   sum(p.SoLuongVe) SoLuongVe,
+				   sum(c.SoLuongVe) SoLuongVe2
+				   --COALESCE(sum(p.SoLuongVe), 0) SoLuongVe,
+				   --COALESCE(sum(c.SoLuongVe), 0) SoLuongVe2
+				   -- (Case sum (SoLuongVe) When null then 0 else sum (SoLuongVe) End) SoLuongVe
+				from Booking_POS p, @id i, Booking_Client c
+					Where p.ID_LichChieu in (Select ID_LichChieu From @id) and c.ID_LichChieu in (Select ID_LichChieu From @id)
+						Group by i.ID_LichChieu
+			UNION ALL Select ID_LichChieu, 0, 0 From @id
+
+		declare @total table (ID_LichChieu int, SoLuongVe int)
+		Insert into @total
+			select  p.ID_LichChieu,
+					SoLuongVe + SoLuongVe2 as SoLuongVe
+				from @pc p
+
+			--declare @tot table (ID_LichChieu int, SoLuongVe int)
+			--Insert into @tot
+			--		Select (Select SoGhe from @id) - (Select SoLuongVe from  @total)
 
 		Insert into @t
-			select ID_LichChieu,
-				   sum (SoLuongVe) SoLuongVe
-				from (select * from @client UNION ALL select * from @POS) as t
+			select  i.ID_LichChieu,
+					(Select SoGhe from @id) - Sum(SoLuongVe) as SoLuongVe
+				from @total t, @id i
 				-- UNION ALL chạy nhanh hơn lệnh UNION vì nó không kiểm tra các bản ghi trùng lặp
-					group by ID_LichChieu
+					Where t.ID_LichChieu = i.ID_LichChieu
+						group by i.ID_LichChieu
 		return
 	End
+
+Select * From dbo.Get_GhePhim(1)
+
+--Select COALESCE(Sum(TongTien), 0) From Booking_Client
+-- Select ISNULL(ID_LichChieu, 0) From Booking_Client ->> TH 0 có dl -> 0 đc, kể cả COALESCE
+--Select COALESCE(ID_LichChieu, (Select ID_LichChieu From v_LichChieuPhim)) From Booking_Client 
+
 
 GO 
 Create Function Get_MaGhe(@ID_LichChieu int)
@@ -114,3 +133,6 @@ As
 		Declare @result varchar(max) = Concat(@pos, ' , ', @client)
 		return @result
 	End
+
+Select dbo.Get_MaGhe(8)
+Print dbo.Get_MaGhe(8)

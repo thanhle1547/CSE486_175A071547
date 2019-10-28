@@ -22,12 +22,24 @@ Begin
 	Select a.IDKhachHang
 		From Account_KH a, KhachHang n
 			Where TenDangNhap = @userName and MatKhau = @passWord
-				and a.IDNhanVien = n.IDKhachHang
+				and a.IDKhachHang = n.IDKhachHang
 	/*if (@HoTen = '')
 		return;
 	Select @HoTen as HoTen*/
 End
 
+
+GO
+-- Store Procedure
+Create Proc SignUp_KH @IDKhachHang varchar(9), @userName varchar(20), @passWord varchar(16),
+	@HoTen nvarchar(30), @NgaySinh date, @GioiTinh nvarchar(3)
+As
+Begin
+	Insert into Account_KH
+		Values (@IDKhachHang, @userName, @passWord)
+	Insert into KhachHang
+		Values (@IDKhachHang, COALESCE(@HoTen, 'unknown'), COALESCE(@NgaySinh, null), COALESCE(@GioiTinh, '') )
+End
 
 -- Store Procedure lấy thông tin tổng hợp của 1 tài khoản khách hàng
 
@@ -38,9 +50,20 @@ End
 
 
 
-
+GO
 -- Store Procedure lấy thông tin tổng hợp của 1 tài khoản nhân viên
-
+Create Proc Get_dsNV @IDChucVu tinyint
+As
+Begin
+	--Declare @HoTen nvarchar(30)
+	Select HoTen, a.IDNhanVien
+		From Account_NV a, NhanVien n
+			Where TenDangNhap = @userName and MatKhau = @passWord
+				and a.IDNhanVien = n.IDNhanVien
+	/*if (@HoTen = '')
+		return;
+	Select @HoTen as HoTen*/
+End
 
 
 
@@ -120,28 +143,52 @@ GO
 -- Tránh tiền tố “sp_” với tên store procedure người dùng tự định nghĩa 
 -- bởi vì SQL server đầu tiên tìm kiếm những thủ tục người dùng định nghĩa 
 -- trong cơ sở dử liệu master và sau đó mới sử dụng phiên làm việc của cơ sở dữ liệu hiện hành
-Create Proc Get_dlPhim @comingSoon bit = 0
+Alter Proc Get_Movies @comingSoon bit = 0, @all bit = 0
 As
 	if (@comingSoon = 0)
-		Select * From v_DuLieu_Phim	Where IDPhim in (Select * From dbo.getIDPhimDangChieu() )
+		Begin
+			if (@all = 0)
+				Select IDPhim, TenPhim, Poster, ThoiLuong, Rated From v_DuLieu_Phim	Where IDPhim in (Select * From dbo.getIDPhimDangChieu() )
+			else
+				Select * From v_DuLieu_Phim	Where IDPhim in (Select * From dbo.getIDPhimDangChieu() )
+		End
 	else
-		Select * From v_DuLieu_Phim	Where IDPhim in  (Select * From dbo.getIDPhimSapChieu() )
+		Begin
+			if (@all = 0)
+				Select IDPhim, TenPhim, Poster, ThoiLuong, Rated From v_DuLieu_Phim	Where IDPhim in (Select * From dbo.getIDPhimSapChieu() )
+			else
+				Select * From v_DuLieu_Phim	Where IDPhim in (Select * From dbo.getIDPhimSapChieu() )
+		End
 
-Exec Get_dlPhim
+Exec Get_Movies 1
+
+
+GO
+Create Proc Get_MovieInfors @id int
+As
+	Select DaoDien, DienVien, TheLoai, KhoiChieu, NgonNgu, MoTa, DinhDang From v_DuLieu_Phim Where IDPhim = @id
+
+
+
 
 
 GO
 -- Store Proc trả về lịch chiếu của 1 bộ phim từ view_LichChieuPhim theo NGÀY + số ghế đã đặt
 -- tham số đầu vào là IDPhim, Ngày mà khách hàng chọn
-Create Proc Get_LichChieu_Ngay @IDPhim int, @Ngay date
+Alter Proc Get_LichChieu_Ngay @IDPhim int, @Ngay date
 As
-	Begin
+	Select v.ID_LichChieu, ThoiGianChieu as ThoiGian, TenDinhDang as DinhDang, NgonNgu, TenPhong, SoLuongVe as SoGheTrong
+							-- dùng TenPhong thay cho id
+			From v_LichChieuPhim v, (Select * From Get_GhePhim(@IDPhim)) g
+				Where cast(ThoiGianChieu as date) = @Ngay and v.IDPhim = @IDPhim and g.ID_LichChieu = v.ID_LichChieu
+		
+	/*Begin
 		Select ID_LichChieu, ThoiGianChieu, TenDinhDang, NgonNgu, TenPhong
 							-- dùng TenPhong thay cho id
 			From v_LichChieuPhim v
-				Where v.IDPhim = @IDPhim
+				Where v.IDPhim = @IDPhim and cast(ThoiGianChieu as date) = @Ngay
 		Select * From Get_GhePhim(@IDPhim)
-	End
+	End*/
 	/*Select v.ID_LichChieu, ThoiGianChieu, TenDinhDang, NgonNgu, TenPhong, SoLuongVe, MaGhe
 							-- dùng TenPhong thay cho id
 		From v_LichChieuPhim v, (Select * From Get_GhePhim()) s
@@ -238,7 +285,7 @@ End
 
 GO
 -- Store Proc INSERT 1 bộ phim
-Create Proc isrt_Movie @IDPhim int, @TenPhim nvarchar(max), @Poster image,
+Alter Proc isrt_Movie @IDPhim int, @TenPhim nvarchar(max), @Poster image = null,
 	@ThoiLuong tinyint, @KhoiChieu date, @Rated char(3), @MoTa nvarchar(max),
 	@ID_NSX int = null, @IDs_DienVien varchar(20), @IDs_DaoDien varchar(20), 
 	@IDs_NgonNgu varchar(20), @IDs_DinhDang varchar(20), @IDs_TheLoai varchar(20)
@@ -299,3 +346,23 @@ Begin
 			Exec isrt_MovieInfs 'P_DN', 'IDPhim, ID_DinhDang, ID_NgonNgu', @IDPhim, @IDs_DinhDang, @IDs_NgonNgu
 		End
 End
+
+
+
+GO
+-- Trả về Đơn giá của phim lựa chọn
+Alter Proc Get_DonGia @ID_LichChieu int, @TenDinhDang varchar(5)
+As
+	Select DonGia
+		From v_LichChieuPhim l, v_DonGia d
+			Where ID_LichChieu = @ID_LichChieu 
+			and   d.TenDinhDang = @TenDinhDang
+			and   DatePart(WEEKDAY, ThoiGianChieu) = Thu
+			and   cast(ThoiGianChieu as Time) between TG_BatDau and TG_KetThuc
+
+GO
+Exec Get_DonGia 9, '2D'
+
+Select * From v_LichChieuPhim
+Select * From v_DonGia
+			

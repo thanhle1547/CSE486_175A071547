@@ -4,7 +4,7 @@ On Primary
 	Name = QLRapChieuPhim_Data,
 	Filename = 'D:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\Data\QLRapChieuPhim_data.mdf',	
 	Size = 10 MB,
-	MaxSize = 20 MB,
+	MaxSize = 40 MB,
 	FileGrowth = 1 MB
 )
 Log On
@@ -21,7 +21,7 @@ Use QLRapChieuPhim
 -- #########################
 CREATE TABLE PhongChieuPhim
 (
-   IDPhongChieuPhim tinyint NOT NULL PRIMARY KEY,
+   IDPhong tinyint NOT NULL PRIMARY KEY,
    TenPhong varchar(5),
    SoGheThuong tinyint,
    SoGheVIP tinyint,
@@ -144,10 +144,10 @@ CREATE TABLE LichChieuPhim
 (
 	ID_LichChieu int NOT NULL PRIMARY KEY Identity(1,1),
 	ID_PDN int NOT NULL,
-	IDPhongChieuPhim tinyint,
+	IDPhong tinyint,
 	ThoiGianChieu smalldatetime,
 
-	FOREIGN KEY (IDPhongChieuphim) REFERENCES PhongChieuphim(IDPhongChieuphim),
+	FOREIGN KEY (IDPhong) REFERENCES PhongChieuphim(IDPhong),
 	FOREIGN KEY (ID_PDN) REFERENCES P_DN(ID_PDN)
 )
 -- Rename column
@@ -351,3 +351,17 @@ Alter Table Account_KH
 		
 Create UNIQUE INDEX UIX_TenDN_KH On Account_KH(TenDangNhap)
 --Drop INDEX Account_KH.UIX_TenDN_KH
+
+-- There is insufficient system memory in resource pool 'default' to run this query
+-- http://sqlserverlearner.com/2011/there-is-insufficient-system-memory-in-resource-pool-default-to-run-this-query
+DBCC FREESYSTEMCACHE ('ALL')
+
+
+-- get column names
+SELECT *
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = N'PhongChieuPhim'
+
+SELECT STRING_AGG(COLUMN_NAME, ', ')
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = N'NhaSanXuat'

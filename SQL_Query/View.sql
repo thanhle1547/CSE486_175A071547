@@ -63,27 +63,33 @@ GO
 
 
 -- View lấy lịch chiếu phim
-Create View v_LichChieuPhim
+ALter View v_LichChieuPhim
 As 
-    Select IDPhim, ID_LichChieu, lcp.ID_PDN , TenPhong, ThoiGianChieu,  
+    Select vdd.IDPhim, ID_LichChieu, lcp.ID_PDN , lcp.IDPhong, TenPhong, 
+		   ThoiGianChieu, DateAdd(Minute, ThoiLuong, ThoiGianChieu) as ThoiGianKetThuc,
 		   TenDinhDang, NgonNgu
-		From LichChieuPhim lcp, PhongChieuPhim pcp, v_DinhDangNN vdd
+		From LichChieuPhim lcp, PhongChieuPhim pcp, v_DinhDangNN vdd, Phim p
 			Where ThoiGianChieu >= GETDATE()
 			and lcp.IDPhong = pcp.IDPhong
 			and lcp.ID_PDN = vdd.ID_PDN
+			and vdd.IDPhim = p.IDPhim
 
+Select * From v_LichChieuPhim
 
 GO    
 -- View lấy các dữ liệu liên quan của 1 khách hàng
-create View v_dl_KhachHang (IDKhachHang,HoTen,NgaySinh,GioiTinh)
+Alter View v_dl_KhachHang (IDKhachHang,HoTen,NgaySinh,GioiTinh)
 As
-   select kh.IDKhachHang,HoTen,GioiTinh,    
-          ackh.TenDangNhap
+   select kh.IDKhachHang, HoTen, NgaySinh, GioiTinh
 		From KhachHang kh, Account_KH ackh
 			where kh.IDKhachHang = ackh.IDKhachHang
 
 GO
 
+Select * From v_dl_KhachHang
+
+
+GO
 -- View lấy các dữ liệu liên quan của 1 nhân viên
 Create View v_dl_Nhanvien
 As
@@ -92,6 +98,19 @@ As
 			Where nv.IDNhanVien = a.IDNhanVien 
 			and cv.IDChucVu = a.IDChucvu
 
+Select * From v_dl_Nhanvien
+
+Select * From v_dl_Nhanvien Where ChucVu = 'Admin'
+
+
+GO
+-- View tổng hợp đơn giá
+Alter View v_DonGia
+As
+	Select TenDinhDang, Thu, TG_BatDau, TG_KetThuc, DonGia
+		From ThoiGian g, DonGia d, DinhDang dd
+			Where g.ID_TG = d.ID_TG
+			and dd.ID_DinhDang = d.ID_DinhDang
 
 
 
