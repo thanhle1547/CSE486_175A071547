@@ -1,2 +1,9 @@
 # Ignore folder named `.vs`
 vs/
+QLRapChieuPhim_data.mdf
+QLRapChieuPhim_log.ldf
+.vs/Cinema Management/v16/.suo
+.vs/Cinema Management/v16/Server/sqlite3/storage.ide
+Manage App/publish/setup.exe
+.vs/Cinema Management/v16/.suo
+.vs/Cinema Management/v16/Server/sqlite3/storage.ide
