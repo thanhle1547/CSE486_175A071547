@@ -1,0 +1,30 @@
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\Book Tickets App.exe.config
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\Book Tickets App.exe
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\Book Tickets App.pdb
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\BUS.dll
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\CustomControl.dll
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\DAO.dll
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\DTO.dll
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\LollipoUi.dll
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\MaterialSkin.dll
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\BUS.pdb
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\CustomControl.pdb
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\DAO.pdb
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\DTO.pdb
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book Tickets App.csprojAssemblyReference.cache
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book_Tickets_App.AccountForm.resources
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book_Tickets_App.BookForm.resources
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book_Tickets_App.LoginForm.resources
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book_Tickets_App.Paying_Tickets.resources
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book_Tickets_App.PickingSeat.resources
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book_Tickets_App.MovieDetailts.resources
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book_Tickets_App.Properties.Resources.resources
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book Tickets App.csproj.GenerateResource.cache
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book Tickets App.csproj.CopyComplete
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book Tickets App.exe
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book Tickets App.pdb
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book_Tickets_App.SignUp_Form.resources
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\Book Tickets App.exe.manifest
+D:\Learning\C#\Cinema Management\Book Tickets App\bin\Debug\Book Tickets App.application
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book Tickets App.exe.manifest
+D:\Learning\C#\Cinema Management\Book Tickets App\obj\Debug\Book Tickets App.application

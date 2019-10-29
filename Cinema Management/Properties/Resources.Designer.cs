@@ -63,6 +63,16 @@ namespace Sales_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cinema_Pastel_Glyph_100_white {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cinema-Pastel Glyph-100-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_delete_15 {
             get {
                 object obj = ResourceManager.GetObject("icons8_delete_15", resourceCulture);
@@ -73,9 +83,29 @@ namespace Sales_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_delete_15_white {
+            get {
+                object obj = ResourceManager.GetObject("icons8-delete-15-white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_delete_25 {
             get {
                 object obj = ResourceManager.GetObject("icons8_delete_25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_delete_25_white {
+            get {
+                object obj = ResourceManager.GetObject("icons8-delete-25-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +126,16 @@ namespace Sales_App.Properties {
         internal static System.Drawing.Bitmap icons8_subtract_15 {
             get {
                 object obj = ResourceManager.GetObject("icons8_subtract_15", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_subtract_15_white {
+            get {
+                object obj = ResourceManager.GetObject("icons8-subtract-15-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

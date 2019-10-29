@@ -34,17 +34,23 @@
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Ad Astra", 1);
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.header = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_Minimize = new System.Windows.Forms.Button();
             this.btn_Maximize = new System.Windows.Forms.Button();
             this.btn_Close = new System.Windows.Forms.Button();
+            this.menu = new System.Windows.Forms.MenuStrip();
+            this.menu_Account = new System.Windows.Forms.ToolStripMenuItem();
+            this.mi_Account = new System.Windows.Forms.ToolStripMenuItem();
+            this.mi_ChangeAcc = new System.Windows.Forms.ToolStripMenuItem();
+            this.mi_SignOut = new System.Windows.Forms.ToolStripMenuItem();
             this.imgList_Phim = new System.Windows.Forms.ImageList(this.components);
             this.lv_DsPhim = new System.Windows.Forms.ListView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -54,6 +60,12 @@
             this.txB_TienDu = new System.Windows.Forms.TextBox();
             this.txB_TienKhachTra = new System.Windows.Forms.TextBox();
             this.dgv_dsDatVe = new System.Windows.Forms.DataGridView();
+            this.col_TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_SlgVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ViTriGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_VeVIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_PhongChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txB_TongTien = new System.Windows.Forms.TextBox();
             this.btn_ThanhToan = new CustomControl.Round_Button();
             this.btn_Huy = new CustomControl.Round_Button();
@@ -83,10 +95,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tP_ChonGhe = new System.Windows.Forms.TabPage();
             this.p_ChonGhe = new System.Windows.Forms.Panel();
-            this.soDoPhong11 = new Sales_App.SoDoPhong1();
+            this.label14 = new System.Windows.Forms.Label();
             this.btn_HuyGhe = new CustomControl.Round_Button();
             this.btn_XacNhanGhe = new CustomControl.Round_Button();
-            this.label14 = new System.Windows.Forms.Label();
             this.tP_LayVe = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,18 +109,10 @@
             this.btn_LayMaVe = new System.Windows.Forms.Button();
             this.txB_MaVe = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.menu = new System.Windows.Forms.MenuStrip();
-            this.menu_Account = new System.Windows.Forms.ToolStripMenuItem();
-            this.mi_ChangeAcc = new System.Windows.Forms.ToolStripMenuItem();
-            this.mi_SignOut = new System.Windows.Forms.ToolStripMenuItem();
-            this.col_TenPhim = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_SlgVe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ViTriGhe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_VeVIP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_PhongChieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imgList_Icon = new System.Windows.Forms.ImageList(this.components);
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menu.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tP_DsPhim.SuspendLayout();
             this.tP_BanVe.SuspendLayout();
@@ -124,12 +127,12 @@
             this.tP_LayVe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // header
             // 
-            this.header.BackColor = System.Drawing.Color.Snow;
+            this.header.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.header.Controls.Add(this.label16);
             this.header.Controls.Add(this.pictureBox1);
             this.header.Controls.Add(this.btn_Minimize);
             this.header.Controls.Add(this.btn_Maximize);
@@ -142,9 +145,20 @@
             this.header.TabIndex = 0;
             this.header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Header_MouseDown);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(53, 7);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(122, 21);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Ticket Sales App";
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Sales_App.Properties.Resources.icons8_movie_Cute_Clipart_512;
+            this.pictureBox1.Image = global::Sales_App.Properties.Resources.icons8_cinema_Pastel_Glyph_100_white;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -160,8 +174,8 @@
             this.btn_Minimize.FlatAppearance.BorderSize = 0;
             this.btn_Minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Minimize.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_Minimize.Image = ((System.Drawing.Image)(resources.GetObject("btn_Minimize.Image")));
-            this.btn_Minimize.Location = new System.Drawing.Point(927, -2);
+            this.btn_Minimize.Image = global::Sales_App.Properties.Resources.icons8_subtract_15_white;
+            this.btn_Minimize.Location = new System.Drawing.Point(927, 2);
             this.btn_Minimize.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Minimize.Name = "btn_Minimize";
             this.btn_Minimize.Size = new System.Drawing.Size(43, 31);
@@ -176,7 +190,7 @@
             this.btn_Maximize.FlatAppearance.BorderSize = 0;
             this.btn_Maximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Maximize.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_Maximize.Location = new System.Drawing.Point(970, -1);
+            this.btn_Maximize.Location = new System.Drawing.Point(970, 2);
             this.btn_Maximize.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Maximize.Name = "btn_Maximize";
             this.btn_Maximize.Size = new System.Drawing.Size(43, 30);
@@ -189,10 +203,12 @@
             this.btn_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_Close.FlatAppearance.BorderSize = 0;
+            this.btn_Close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Crimson;
+            this.btn_Close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
             this.btn_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Close.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_Close.Image = ((System.Drawing.Image)(resources.GetObject("btn_Close.Image")));
-            this.btn_Close.Location = new System.Drawing.Point(1013, 0);
+            this.btn_Close.Image = global::Sales_App.Properties.Resources.icons8_delete_15_white;
+            this.btn_Close.Location = new System.Drawing.Point(1013, 2);
             this.btn_Close.Margin = new System.Windows.Forms.Padding(0);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
@@ -200,6 +216,68 @@
             this.btn_Close.TabIndex = 1;
             this.btn_Close.UseVisualStyleBackColor = true;
             this.btn_Close.Click += new System.EventHandler(this.Btn_Close_Click);
+            // 
+            // menu
+            // 
+            this.menu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.menu.AutoSize = false;
+            this.menu.BackColor = System.Drawing.Color.Transparent;
+            this.menu.Dock = System.Windows.Forms.DockStyle.None;
+            this.menu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menu_Account});
+            this.menu.Location = new System.Drawing.Point(800, 0);
+            this.menu.Name = "menu";
+            this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.menu.Size = new System.Drawing.Size(127, 35);
+            this.menu.TabIndex = 3;
+            this.menu.Text = "Tên nhân viên";
+            // 
+            // menu_Account
+            // 
+            this.menu_Account.BackColor = System.Drawing.Color.Transparent;
+            this.menu_Account.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mi_Account,
+            this.mi_ChangeAcc,
+            this.mi_SignOut});
+            this.menu_Account.ForeColor = System.Drawing.Color.White;
+            this.menu_Account.Name = "menu_Account";
+            this.menu_Account.Size = new System.Drawing.Size(117, 31);
+            this.menu_Account.Text = "Tên nhân viên";
+            this.menu_Account.DropDownClosed += new System.EventHandler(this.menu_Account_DropDownClosed);
+            this.menu_Account.DropDownOpened += new System.EventHandler(this.menu_Account_DropDownOpened);
+            this.menu_Account.MouseEnter += new System.EventHandler(this.Menu_Account_MouseEnter);
+            this.menu_Account.MouseLeave += new System.EventHandler(this.Menu_Account_MouseLeave);
+            // 
+            // mi_Account
+            // 
+            this.mi_Account.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.mi_Account.ForeColor = System.Drawing.Color.White;
+            this.mi_Account.Name = "mi_Account";
+            this.mi_Account.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.mi_Account.Size = new System.Drawing.Size(207, 29);
+            this.mi_Account.Text = "Tài khoản";
+            this.mi_Account.Click += new System.EventHandler(this.Mi_Account_Click);
+            // 
+            // mi_ChangeAcc
+            // 
+            this.mi_ChangeAcc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.mi_ChangeAcc.ForeColor = System.Drawing.Color.White;
+            this.mi_ChangeAcc.Name = "mi_ChangeAcc";
+            this.mi_ChangeAcc.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.mi_ChangeAcc.Size = new System.Drawing.Size(207, 29);
+            this.mi_ChangeAcc.Text = "Thay đổi tài khoản";
+            this.mi_ChangeAcc.Click += new System.EventHandler(this.Mi_ChangeAcc_Click);
+            // 
+            // mi_SignOut
+            // 
+            this.mi_SignOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
+            this.mi_SignOut.ForeColor = System.Drawing.Color.White;
+            this.mi_SignOut.Name = "mi_SignOut";
+            this.mi_SignOut.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.mi_SignOut.Size = new System.Drawing.Size(207, 29);
+            this.mi_SignOut.Text = "Đăng xuất";
+            this.mi_SignOut.Click += new System.EventHandler(this.Mi_SignOut_Click);
             // 
             // imgList_Phim
             // 
@@ -226,7 +304,7 @@
             this.lv_DsPhim.Location = new System.Drawing.Point(13, 28);
             this.lv_DsPhim.Margin = new System.Windows.Forms.Padding(10, 25, 10, 5);
             this.lv_DsPhim.Name = "lv_DsPhim";
-            this.lv_DsPhim.Size = new System.Drawing.Size(1016, 582);
+            this.lv_DsPhim.Size = new System.Drawing.Size(1016, 577);
             this.lv_DsPhim.TabIndex = 1;
             this.lv_DsPhim.UseCompatibleStateImageBehavior = false;
             // 
@@ -240,8 +318,11 @@
             this.tabControl1.Controls.Add(this.tP_ChonGhe);
             this.tabControl1.Controls.Add(this.tP_LayVe);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.ImageList = this.imgList_Icon;
+            this.tabControl1.ItemSize = new System.Drawing.Size(165, 30);
             this.tabControl1.Location = new System.Drawing.Point(0, 37);
             this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(10, 4);
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1056, 665);
             this.tabControl1.TabIndex = 2;
@@ -249,25 +330,27 @@
             // tP_DsPhim
             // 
             this.tP_DsPhim.Controls.Add(this.lv_DsPhim);
-            this.tP_DsPhim.Location = new System.Drawing.Point(4, 29);
+            this.tP_DsPhim.ImageKey = "icons8-grid-2-Material Rounded-100.png";
+            this.tP_DsPhim.Location = new System.Drawing.Point(4, 34);
             this.tP_DsPhim.Name = "tP_DsPhim";
             this.tP_DsPhim.Padding = new System.Windows.Forms.Padding(3);
-            this.tP_DsPhim.Size = new System.Drawing.Size(1048, 632);
+            this.tP_DsPhim.Size = new System.Drawing.Size(1048, 627);
             this.tP_DsPhim.TabIndex = 0;
-            this.tP_DsPhim.Text = "    Danh sách phim    ";
+            this.tP_DsPhim.Text = "   Danh sách phim    ";
             this.tP_DsPhim.UseVisualStyleBackColor = true;
             // 
             // tP_BanVe
             // 
+            this.tP_BanVe.BackColor = System.Drawing.Color.White;
             this.tP_BanVe.Controls.Add(this.splitContainer1);
             this.tP_BanVe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tP_BanVe.Location = new System.Drawing.Point(4, 29);
+            this.tP_BanVe.ImageKey = "icons8-movie-ticket-Material Rounded-100.png";
+            this.tP_BanVe.Location = new System.Drawing.Point(4, 34);
             this.tP_BanVe.Name = "tP_BanVe";
             this.tP_BanVe.Padding = new System.Windows.Forms.Padding(3);
-            this.tP_BanVe.Size = new System.Drawing.Size(1048, 632);
+            this.tP_BanVe.Size = new System.Drawing.Size(1048, 627);
             this.tP_BanVe.TabIndex = 1;
-            this.tP_BanVe.Text = "    Bán vé    ";
-            this.tP_BanVe.UseVisualStyleBackColor = true;
+            this.tP_BanVe.Text = "   Bán vé    ";
             // 
             // splitContainer1
             // 
@@ -313,7 +396,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Size = new System.Drawing.Size(1048, 624);
+            this.splitContainer1.Size = new System.Drawing.Size(1048, 619);
             this.splitContainer1.SplitterDistance = 648;
             this.splitContainer1.SplitterWidth = 8;
             this.splitContainer1.TabIndex = 1;
@@ -323,7 +406,7 @@
             this.txB_TienDu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txB_TienDu.BackColor = System.Drawing.SystemColors.Control;
             this.txB_TienDu.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txB_TienDu.Location = new System.Drawing.Point(150, 577);
+            this.txB_TienDu.Location = new System.Drawing.Point(150, 572);
             this.txB_TienDu.Name = "txB_TienDu";
             this.txB_TienDu.ReadOnly = true;
             this.txB_TienDu.Size = new System.Drawing.Size(151, 33);
@@ -334,7 +417,7 @@
             this.txB_TienKhachTra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txB_TienKhachTra.BackColor = System.Drawing.Color.Snow;
             this.txB_TienKhachTra.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txB_TienKhachTra.Location = new System.Drawing.Point(150, 524);
+            this.txB_TienKhachTra.Location = new System.Drawing.Point(150, 519);
             this.txB_TienKhachTra.Name = "txB_TienKhachTra";
             this.txB_TienKhachTra.Size = new System.Drawing.Size(151, 33);
             this.txB_TienKhachTra.TabIndex = 11;
@@ -372,15 +455,56 @@
             this.dgv_dsDatVe.Margin = new System.Windows.Forms.Padding(6);
             this.dgv_dsDatVe.Name = "dgv_dsDatVe";
             this.dgv_dsDatVe.RowHeadersWidth = 30;
-            this.dgv_dsDatVe.Size = new System.Drawing.Size(634, 427);
+            this.dgv_dsDatVe.Size = new System.Drawing.Size(634, 422);
             this.dgv_dsDatVe.TabIndex = 0;
+            // 
+            // col_TenPhim
+            // 
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.col_TenPhim.DefaultCellStyle = dataGridViewCellStyle3;
+            this.col_TenPhim.HeaderText = "Tên phim";
+            this.col_TenPhim.Name = "col_TenPhim";
+            this.col_TenPhim.Width = 300;
+            // 
+            // col_SlgVe
+            // 
+            this.col_SlgVe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.col_SlgVe.DefaultCellStyle = dataGridViewCellStyle4;
+            this.col_SlgVe.HeaderText = "Số lượng vé";
+            this.col_SlgVe.Name = "col_SlgVe";
+            // 
+            // col_ViTriGhe
+            // 
+            this.col_ViTriGhe.HeaderText = "Vị trí ghế";
+            this.col_ViTriGhe.Name = "col_ViTriGhe";
+            this.col_ViTriGhe.Visible = false;
+            // 
+            // col_VeVIP
+            // 
+            this.col_VeVIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.col_VeVIP.HeaderText = "Vé VIP";
+            this.col_VeVIP.Name = "col_VeVIP";
+            this.col_VeVIP.Width = 84;
+            // 
+            // col_ThoiGian
+            // 
+            this.col_ThoiGian.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_ThoiGian.HeaderText = "Thời gian chiếu";
+            this.col_ThoiGian.Name = "col_ThoiGian";
+            // 
+            // col_PhongChieu
+            // 
+            this.col_PhongChieu.HeaderText = "Phòng Chiếu";
+            this.col_PhongChieu.Name = "col_PhongChieu";
+            this.col_PhongChieu.Visible = false;
             // 
             // txB_TongTien
             // 
             this.txB_TongTien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txB_TongTien.BackColor = System.Drawing.SystemColors.Control;
             this.txB_TongTien.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txB_TongTien.Location = new System.Drawing.Point(150, 466);
+            this.txB_TongTien.Location = new System.Drawing.Point(150, 461);
             this.txB_TongTien.Name = "txB_TongTien";
             this.txB_TongTien.ReadOnly = true;
             this.txB_TongTien.Size = new System.Drawing.Size(151, 33);
@@ -396,7 +520,7 @@
             this.btn_ThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ThanhToan.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_ThanhToan.Location = new System.Drawing.Point(431, 492);
+            this.btn_ThanhToan.Location = new System.Drawing.Point(431, 487);
             this.btn_ThanhToan.Name = "btn_ThanhToan";
             this.btn_ThanhToan.OnHoverBorderColor = System.Drawing.Color.Fuchsia;
             this.btn_ThanhToan.OnHoverButtonColor = System.Drawing.Color.Fuchsia;
@@ -418,7 +542,7 @@
             this.btn_Huy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Huy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Huy.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_Huy.Location = new System.Drawing.Point(467, 560);
+            this.btn_Huy.Location = new System.Drawing.Point(467, 555);
             this.btn_Huy.Name = "btn_Huy";
             this.btn_Huy.OnHoverBorderColor = System.Drawing.Color.Crimson;
             this.btn_Huy.OnHoverButtonColor = System.Drawing.Color.Crimson;
@@ -434,7 +558,7 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 473);
+            this.label5.Location = new System.Drawing.Point(19, 468);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 20);
             this.label5.TabIndex = 0;
@@ -444,7 +568,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 584);
+            this.label7.Location = new System.Drawing.Point(19, 579);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(30, 20);
             this.label7.TabIndex = 0;
@@ -454,7 +578,7 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 531);
+            this.label6.Location = new System.Drawing.Point(19, 526);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 20);
             this.label6.TabIndex = 0;
@@ -467,7 +591,7 @@
             this.cB_DinhDang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cB_DinhDang.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cB_DinhDang.FormattingEnabled = true;
-            this.cB_DinhDang.Location = new System.Drawing.Point(194, 216);
+            this.cB_DinhDang.Location = new System.Drawing.Point(166, 216);
             this.cB_DinhDang.Name = "cB_DinhDang";
             this.cB_DinhDang.Size = new System.Drawing.Size(127, 33);
             this.cB_DinhDang.TabIndex = 14;
@@ -478,7 +602,7 @@
             this.cB_NgonNgu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cB_NgonNgu.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cB_NgonNgu.FormattingEnabled = true;
-            this.cB_NgonNgu.Location = new System.Drawing.Point(194, 273);
+            this.cB_NgonNgu.Location = new System.Drawing.Point(166, 273);
             this.cB_NgonNgu.Name = "cB_NgonNgu";
             this.cB_NgonNgu.Size = new System.Drawing.Size(127, 33);
             this.cB_NgonNgu.TabIndex = 14;
@@ -492,7 +616,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(30, 115);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(300, 3);
+            this.label8.Size = new System.Drawing.Size(272, 3);
             this.label8.TabIndex = 13;
             // 
             // btn_ChonGhe
@@ -510,7 +634,7 @@
             this.txB_ChonGhe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txB_ChonGhe.BackColor = System.Drawing.Color.Snow;
             this.txB_ChonGhe.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txB_ChonGhe.Location = new System.Drawing.Point(194, 475);
+            this.txB_ChonGhe.Location = new System.Drawing.Point(166, 475);
             this.txB_ChonGhe.Name = "txB_ChonGhe";
             this.txB_ChonGhe.ReadOnly = true;
             this.txB_ChonGhe.Size = new System.Drawing.Size(141, 33);
@@ -525,7 +649,7 @@
             this.txB_TenPhim.Location = new System.Drawing.Point(23, 159);
             this.txB_TenPhim.Name = "txB_TenPhim";
             this.txB_TenPhim.ReadOnly = true;
-            this.txB_TenPhim.Size = new System.Drawing.Size(312, 33);
+            this.txB_TenPhim.Size = new System.Drawing.Size(284, 33);
             this.txB_TenPhim.TabIndex = 11;
             // 
             // btn_Xoa
@@ -538,7 +662,7 @@
             this.btn_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Xoa.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_Xoa.Location = new System.Drawing.Point(242, 36);
+            this.btn_Xoa.Location = new System.Drawing.Point(214, 36);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.OnHoverBorderColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_Xoa.OnHoverButtonColor = System.Drawing.Color.DeepSkyBlue;
@@ -554,7 +678,7 @@
             // 
             this.num_SlgVe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.num_SlgVe.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num_SlgVe.Location = new System.Drawing.Point(235, 330);
+            this.num_SlgVe.Location = new System.Drawing.Point(207, 330);
             this.num_SlgVe.Maximum = new decimal(new int[] {
             10,
             0,
@@ -579,7 +703,7 @@
             // 
             this.lb_Nhan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_Nhan.AutoSize = true;
-            this.lb_Nhan.Location = new System.Drawing.Point(254, 387);
+            this.lb_Nhan.Location = new System.Drawing.Point(226, 387);
             this.lb_Nhan.Name = "lb_Nhan";
             this.lb_Nhan.Size = new System.Drawing.Size(47, 20);
             this.lb_Nhan.TabIndex = 0;
@@ -598,7 +722,7 @@
             // 
             this.lb_PhongSo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_PhongSo.AutoSize = true;
-            this.lb_PhongSo.Location = new System.Drawing.Point(254, 431);
+            this.lb_PhongSo.Location = new System.Drawing.Point(226, 431);
             this.lb_PhongSo.Name = "lb_PhongSo";
             this.lb_PhongSo.Size = new System.Drawing.Size(47, 20);
             this.lb_PhongSo.TabIndex = 0;
@@ -697,15 +821,16 @@
             // tP_ChonGhe
             // 
             this.tP_ChonGhe.Controls.Add(this.p_ChonGhe);
+            this.tP_ChonGhe.Controls.Add(this.label14);
             this.tP_ChonGhe.Controls.Add(this.btn_HuyGhe);
             this.tP_ChonGhe.Controls.Add(this.btn_XacNhanGhe);
-            this.tP_ChonGhe.Controls.Add(this.label14);
-            this.tP_ChonGhe.Location = new System.Drawing.Point(4, 29);
+            this.tP_ChonGhe.ImageKey = "cinema-chair-24.png";
+            this.tP_ChonGhe.Location = new System.Drawing.Point(4, 34);
             this.tP_ChonGhe.Name = "tP_ChonGhe";
             this.tP_ChonGhe.Padding = new System.Windows.Forms.Padding(3);
-            this.tP_ChonGhe.Size = new System.Drawing.Size(1048, 632);
+            this.tP_ChonGhe.Size = new System.Drawing.Size(1048, 627);
             this.tP_ChonGhe.TabIndex = 2;
-            this.tP_ChonGhe.Text = "    Chọn ghế    ";
+            this.tP_ChonGhe.Text = "   Chọn ghế    ";
             this.tP_ChonGhe.UseVisualStyleBackColor = true;
             // 
             // p_ChonGhe
@@ -717,7 +842,7 @@
             this.p_ChonGhe.Location = new System.Drawing.Point(0, 64);
             this.p_ChonGhe.Margin = new System.Windows.Forms.Padding(0);
             this.p_ChonGhe.Name = "p_ChonGhe";
-            this.p_ChonGhe.Size = new System.Drawing.Size(1048, 563);
+            this.p_ChonGhe.Size = new System.Drawing.Size(1048, 558);
             this.p_ChonGhe.TabIndex = 12;
             // 
             // soDoPhong11
@@ -726,18 +851,32 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.soDoPhong11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(200)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.soDoPhong11.GheVuaChon = null;
             this.soDoPhong11.Location = new System.Drawing.Point(-1, 0);
             this.soDoPhong11.Margin = new System.Windows.Forms.Padding(0);
             this.soDoPhong11.Name = "soDoPhong11";
-            this.soDoPhong11.Size = new System.Drawing.Size(1044, 557);
+            this.soDoPhong11.Size = new System.Drawing.Size(1044, 558);
             this.soDoPhong11.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(483, 20);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(82, 23);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Chọn ghế";
             // 
             // btn_HuyGhe
             // 
             this.btn_HuyGhe.BackColor = System.Drawing.Color.Transparent;
-            this.btn_HuyGhe.BorderColor = System.Drawing.Color.Peru;
+            this.btn_HuyGhe.BorderColor = System.Drawing.Color.White;
             this.btn_HuyGhe.ButtonColor = System.Drawing.SystemColors.Window;
             this.btn_HuyGhe.FlatAppearance.BorderSize = 0;
+            this.btn_HuyGhe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_HuyGhe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_HuyGhe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_HuyGhe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_HuyGhe.ForeColor = System.Drawing.Color.Transparent;
@@ -760,6 +899,8 @@
             this.btn_XacNhanGhe.BorderColor = System.Drawing.Color.Transparent;
             this.btn_XacNhanGhe.ButtonColor = System.Drawing.SystemColors.Window;
             this.btn_XacNhanGhe.FlatAppearance.BorderSize = 0;
+            this.btn_XacNhanGhe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_XacNhanGhe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_XacNhanGhe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_XacNhanGhe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_XacNhanGhe.ForeColor = System.Drawing.Color.Transparent;
@@ -775,28 +916,18 @@
             this.btn_XacNhanGhe.UseVisualStyleBackColor = false;
             this.btn_XacNhanGhe.Click += new System.EventHandler(this.Btn_XacNhanGhe_Click);
             // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(483, 20);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(82, 23);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Chọn ghế";
-            // 
             // tP_LayVe
             // 
+            this.tP_LayVe.BackColor = System.Drawing.Color.White;
             this.tP_LayVe.Controls.Add(this.dataGridView1);
             this.tP_LayVe.Controls.Add(this.panel1);
-            this.tP_LayVe.Location = new System.Drawing.Point(4, 29);
+            this.tP_LayVe.ImageKey = "icons8-movie-ticket-Material Rounded-100.png";
+            this.tP_LayVe.Location = new System.Drawing.Point(4, 34);
             this.tP_LayVe.Name = "tP_LayVe";
             this.tP_LayVe.Padding = new System.Windows.Forms.Padding(3);
-            this.tP_LayVe.Size = new System.Drawing.Size(1048, 632);
+            this.tP_LayVe.Size = new System.Drawing.Size(1048, 627);
             this.tP_LayVe.TabIndex = 3;
-            this.tP_LayVe.Text = "    Lấy vé    ";
-            this.tP_LayVe.UseVisualStyleBackColor = true;
+            this.tP_LayVe.Text = "   Lấy vé    ";
             // 
             // dataGridView1
             // 
@@ -830,7 +961,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(6);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 30;
-            this.dataGridView1.Size = new System.Drawing.Size(1000, 370);
+            this.dataGridView1.Size = new System.Drawing.Size(1000, 365);
             this.dataGridView1.TabIndex = 14;
             // 
             // dataGridViewTextBoxColumn1
@@ -872,7 +1003,6 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btn_LayMaVe);
             this.panel1.Controls.Add(this.txB_MaVe);
             this.panel1.Controls.Add(this.label15);
@@ -884,11 +1014,15 @@
             // btn_LayMaVe
             // 
             this.btn_LayMaVe.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_LayMaVe.BackColor = System.Drawing.Color.Fuchsia;
+            this.btn_LayMaVe.BackColor = System.Drawing.Color.White;
+            this.btn_LayMaVe.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btn_LayMaVe.FlatAppearance.BorderSize = 2;
+            this.btn_LayMaVe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_LayMaVe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
             this.btn_LayMaVe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_LayMaVe.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_LayMaVe.ForeColor = System.Drawing.Color.White;
-            this.btn_LayMaVe.Location = new System.Drawing.Point(519, 29);
+            this.btn_LayMaVe.ForeColor = System.Drawing.Color.Black;
+            this.btn_LayMaVe.Location = new System.Drawing.Point(520, 30);
             this.btn_LayMaVe.Name = "btn_LayMaVe";
             this.btn_LayMaVe.Size = new System.Drawing.Size(91, 33);
             this.btn_LayMaVe.TabIndex = 15;
@@ -901,110 +1035,36 @@
             this.txB_MaVe.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txB_MaVe.BackColor = System.Drawing.Color.Snow;
             this.txB_MaVe.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txB_MaVe.Location = new System.Drawing.Point(199, 29);
+            this.txB_MaVe.Location = new System.Drawing.Point(200, 30);
             this.txB_MaVe.Name = "txB_MaVe";
             this.txB_MaVe.Size = new System.Drawing.Size(286, 33);
             this.txB_MaVe.TabIndex = 13;
+            this.txB_MaVe.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label15
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(107, 33);
+            this.label15.Location = new System.Drawing.Point(108, 34);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(57, 23);
             this.label15.TabIndex = 12;
             this.label15.Text = "Mã vé";
             // 
-            // menu
+            // imgList_Icon
             // 
-            this.menu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.menu.AutoSize = false;
-            this.menu.BackColor = System.Drawing.Color.Transparent;
-            this.menu.Dock = System.Windows.Forms.DockStyle.None;
-            this.menu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu_Account});
-            this.menu.Location = new System.Drawing.Point(800, 0);
-            this.menu.Name = "menu";
-            this.menu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menu.Size = new System.Drawing.Size(127, 35);
-            this.menu.TabIndex = 3;
-            this.menu.Text = "Tên nhân viên";
-            // 
-            // menu_Account
-            // 
-            this.menu_Account.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mi_ChangeAcc,
-            this.mi_SignOut});
-            this.menu_Account.Name = "menu_Account";
-            this.menu_Account.Size = new System.Drawing.Size(117, 31);
-            this.menu_Account.Text = "Tên nhân viên";
-            // 
-            // mi_ChangeAcc
-            // 
-            this.mi_ChangeAcc.Name = "mi_ChangeAcc";
-            this.mi_ChangeAcc.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.mi_ChangeAcc.Size = new System.Drawing.Size(207, 29);
-            this.mi_ChangeAcc.Text = "Thay đổi tài khoản";
-            this.mi_ChangeAcc.Click += new System.EventHandler(this.Mi_ChangeAcc_Click);
-            // 
-            // mi_SignOut
-            // 
-            this.mi_SignOut.AutoSize = false;
-            this.mi_SignOut.Name = "mi_SignOut";
-            this.mi_SignOut.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.mi_SignOut.Size = new System.Drawing.Size(207, 29);
-            this.mi_SignOut.Text = "Đăng xuất";
-            this.mi_SignOut.Click += new System.EventHandler(this.Mi_SignOut_Click);
-            // 
-            // col_TenPhim
-            // 
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.col_TenPhim.DefaultCellStyle = dataGridViewCellStyle3;
-            this.col_TenPhim.HeaderText = "Tên phim";
-            this.col_TenPhim.Name = "col_TenPhim";
-            this.col_TenPhim.Width = 300;
-            // 
-            // col_SlgVe
-            // 
-            this.col_SlgVe.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.col_SlgVe.DefaultCellStyle = dataGridViewCellStyle4;
-            this.col_SlgVe.HeaderText = "Số lượng vé";
-            this.col_SlgVe.Name = "col_SlgVe";
-            // 
-            // col_ViTriGhe
-            // 
-            this.col_ViTriGhe.HeaderText = "Vị trí ghế";
-            this.col_ViTriGhe.Name = "col_ViTriGhe";
-            this.col_ViTriGhe.Visible = false;
-            // 
-            // col_VeVIP
-            // 
-            this.col_VeVIP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.col_VeVIP.HeaderText = "Vé VIP";
-            this.col_VeVIP.Name = "col_VeVIP";
-            this.col_VeVIP.Width = 84;
-            // 
-            // col_ThoiGian
-            // 
-            this.col_ThoiGian.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_ThoiGian.HeaderText = "Thời gian chiếu";
-            this.col_ThoiGian.Name = "col_ThoiGian";
-            // 
-            // col_PhongChieu
-            // 
-            this.col_PhongChieu.HeaderText = "Phòng Chiếu";
-            this.col_PhongChieu.Name = "col_PhongChieu";
-            this.col_PhongChieu.Visible = false;
+            this.imgList_Icon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgList_Icon.ImageStream")));
+            this.imgList_Icon.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgList_Icon.Images.SetKeyName(0, "cinema-chair-24.png");
+            this.imgList_Icon.Images.SetKeyName(1, "icons8-movie-ticket-Material Rounded-100.png");
+            this.imgList_Icon.Images.SetKeyName(2, "icons8-grid-2-Material Rounded-100.png");
             // 
             // SalesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1056, 701);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.header);
@@ -1015,7 +1075,10 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.header.ResumeLayout(false);
+            this.header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menu.ResumeLayout(false);
+            this.menu.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tP_DsPhim.ResumeLayout(false);
             this.tP_BanVe.ResumeLayout(false);
@@ -1034,8 +1097,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.menu.ResumeLayout(false);
-            this.menu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1110,6 +1171,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_VeVIP;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ThoiGian;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_PhongChieu;
+        private System.Windows.Forms.ToolStripMenuItem mi_Account;
+        private System.Windows.Forms.ImageList imgList_Icon;
+        private System.Windows.Forms.Label label16;
     }
 }
 

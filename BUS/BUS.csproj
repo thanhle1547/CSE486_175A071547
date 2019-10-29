@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountKH_BUS.cs" />
+    <Compile Include="AccountNV_BUS.cs" />
+    <Compile Include="CT_Phim_BUS.cs" />
+    <Compile Include="LC_PhimBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

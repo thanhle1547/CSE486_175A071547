@@ -70,7 +70,6 @@
             this.txB_Pass.PasswordChar = '*';
             this.txB_Pass.Size = new System.Drawing.Size(250, 33);
             this.txB_Pass.TabIndex = 1;
-            this.txB_Pass.TextChanged += new System.EventHandler(this.TxB_Pass_TextChanged);
             // 
             // label2
             // 

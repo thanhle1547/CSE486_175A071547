@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
+using DTO;
 
-namespace Sales_App
+namespace Book_Tickets_App
 {
     public partial class LoginForm : Form
     {
@@ -31,15 +33,33 @@ namespace Sales_App
             }
         }
 
-        private void Btn_Close_Click(object sender, EventArgs e)
+        private void btn_Login_Click(object sender, EventArgs e)
         {
-            this.Close();
-            // Application.Exit();
+            if (String.IsNullOrWhiteSpace(txB_UserName.Text) || String.IsNullOrWhiteSpace(txB_Pass.Text))
+                return;
+            try
+            {
+                KhachHang kh = AccountKH_BUS.Ins.Login(txB_UserName.Text, txB_Pass.Text);
+                if (kh.ID != "")
+                {
+                    Properties.Settings.Default.UserId = kh.ID;
+                    BookForm form = new BookForm();
+                    this.Hide();
+                    form.Show();
+                }
+                else
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác", "Lỗi đăng nhập");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
-        private void TxB_Pass_TextChanged(object sender, EventArgs e)
+        private void btn_SignUp_Click(object sender, EventArgs e)
         {
-
+            SignUp_Form form = new SignUp_Form();
+            form.ShowDialog();
         }
     }
 }

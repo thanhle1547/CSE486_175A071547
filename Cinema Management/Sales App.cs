@@ -8,19 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
+using BUS;
 
 namespace Sales_App
 {
     public partial class SalesForm : Form
     {
-        public SalesForm()
+        public SalesForm(/*string hoTenNv*/)
         {
             InitializeComponent();
+            //menu_Account.Text = hoTenNv;
+
+            tP_ChonGhe.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            menu_Account.Text =
+            
+
+            // Hiển thị các bộ phim - lv_DsPhim
         }
 
         #region Windows Methods
@@ -76,12 +82,20 @@ namespace Sales_App
 
         // C2
         // https://stackoverflow.com/questions/1592876/make-a-borderless-form-movable
+
         #endregion
 
         #region Menu Tài khoản
+        private void Mi_Account_Click(object sender, EventArgs e)
+        {
+            using (AccountForm form = new AccountForm())
+                form.ShowDialog();
+        }
+
         private void Mi_ChangeAcc_Click(object sender, EventArgs e)
         {
-
+            using (LoginForm form = new LoginForm())
+                form.ShowDialog();
         }
 
         private void Mi_SignOut_Click(object sender, EventArgs e)
@@ -89,9 +103,24 @@ namespace Sales_App
 
         }
 
-        private void Lb_NhanVien_Click(object sender, EventArgs e)
+        private void Menu_Account_MouseLeave(object sender, EventArgs e)
         {
+            ((ToolStripMenuItem)sender).ForeColor = Color.White;
+        }
 
+        private void Menu_Account_MouseEnter(object sender, EventArgs e)
+        {
+            ((ToolStripMenuItem)sender).ForeColor = Color.Black;
+        }
+
+        private void menu_Account_DropDownOpened(object sender, EventArgs e)
+        {
+            ((ToolStripMenuItem)sender).ForeColor = Color.Black;
+        }
+
+        private void menu_Account_DropDownClosed(object sender, EventArgs e)
+        {
+            ((ToolStripMenuItem)sender).ForeColor = Color.White;
         }
         #endregion
 
@@ -127,13 +156,17 @@ namespace Sales_App
 
         private void Btn_Huy_Click(object sender, EventArgs e)
         {
-
+            // Xóa hết dl trong dataGridView 'dgv_dsDatVe'
+            // Quay lại tab 'Danh sách phim'
+            dgv_dsDatVe.Rows.Clear();
+            num_SlgVe.Value = 1;
         }
 
         private void Btn_ChonGhe_Click(object sender, EventArgs e)
         {
-            tP_ChonGhe.Hide();
+            tP_ChonGhe.Show();
         }
         #endregion
+
     }
 }

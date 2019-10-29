@@ -3,7 +3,6 @@ D:\Learning\C#\Cinema Management\DAO\bin\Debug\DAO.pdb
 D:\Learning\C#\Cinema Management\DAO\bin\Debug\DTO.dll
 D:\Learning\C#\Cinema Management\DAO\bin\Debug\DTO.pdb
 D:\Learning\C#\Cinema Management\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
-D:\Learning\C#\Cinema Management\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 D:\Learning\C#\Cinema Management\DAO\obj\Debug\DAO.csproj.CopyComplete
 D:\Learning\C#\Cinema Management\DAO\obj\Debug\DAO.dll
 D:\Learning\C#\Cinema Management\DAO\obj\Debug\DAO.pdb

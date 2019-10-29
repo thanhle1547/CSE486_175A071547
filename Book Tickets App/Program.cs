@@ -16,7 +16,7 @@ namespace Book_Tickets_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BookForm());
+            Application.Run(new LoginForm());
         }
     }
 }

@@ -12,6 +12,23 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,7 +49,25 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7472FB4D6A8831C29FDCD17581CBBED82013D7F7</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Book Tickets App_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LollipoUi">
+      <HintPath>..\..\..\..\Source\LollipoUi.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin">
+      <HintPath>..\..\MDesign_Tickets Sales System\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +81,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountForm.Designer.cs">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Book App.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,13 +99,49 @@
     <Compile Include="Login Form.Designer.cs">
       <DependentUpon>Login Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Paying Tickets.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Paying Tickets.Designer.cs">
+      <DependentUpon>Paying Tickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PickingSeat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PickingSeat.Designer.cs">
+      <DependentUpon>PickingSeat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieDetailts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovieDetailts.Designer.cs">
+      <DependentUpon>MovieDetailts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignUp Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUp Form.Designer.cs">
+      <DependentUpon>SignUp Form.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AccountForm.resx">
+      <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Book App.resx">
       <DependentUpon>Book App.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login Form.resx">
       <DependentUpon>Login Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paying Tickets.resx">
+      <DependentUpon>Paying Tickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PickingSeat.resx">
+      <DependentUpon>PickingSeat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieDetailts.resx">
+      <DependentUpon>MovieDetailts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,7 +151,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SignUp Form.resx">
+      <DependentUpon>SignUp Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Book Tickets App_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +169,96 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{ca35a17f-21a7-4b4d-b12c-bfdc38179a1b}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomControl\CustomControl.csproj">
+      <Project>{1ef2b44d-817a-4602-a7cd-85f1a1a09188}</Project>
+      <Name>CustomControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{3ed25ca7-06dc-4b8d-bf43-c221bc6799e5}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{ecc9cc9d-acb6-4bf1-b829-d34f0935e6db}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cinema-Pastel Glyph-100-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-male-user-Windows 10-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tune-Material Outlined-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_it_chapter_two-_vietnamese_poster.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-image-iOS Glyph-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-male-user-Windows 10-24-ECF0F1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-male-user-Windows 10-24-CCCCCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tune-Material Outlined-24-CCCCCC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\24-24-7e81c2f3697b91ee17fe6ed6348c232a-Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-back-iOS-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-change-user-Windows 10-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-export-iOS-22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-25-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1200x630wa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vietcombank-vector-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-momo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1200x630wa %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1200x630wa %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

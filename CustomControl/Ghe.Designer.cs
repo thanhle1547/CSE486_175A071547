@@ -1,4 +1,4 @@
-﻿namespace Sales_App
+﻿namespace CustomControl
 {
     partial class Ghe
     {
@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Ghe
+            // 
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Ghe_MouseClick);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

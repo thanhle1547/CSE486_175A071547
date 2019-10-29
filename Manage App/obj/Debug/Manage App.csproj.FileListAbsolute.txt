@@ -1,22 +1,35 @@
+D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage App.csprojAssemblyReference.cache
+D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage_App.Function_Form.PersonnelDetails.resources
 D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage_App.LoginForm.resources
+D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage_App.AccPersonnel.resources
 D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage_App.Manage.resources
+D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage_App.Customer.resources
+D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage_App.Personnel.resources
+D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage_App.Schedule.resources
 D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage_App.MoviesList.resources
 D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage_App.Properties.Resources.resources
+D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage_App.Statistic.resources
+D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage_App.Start_Screen.resources
 D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage App.csproj.GenerateResource.cache
-D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage App.csproj.CoreCompileInputs.cache
+D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage_App.Function_Form.Movie_Details.resources
 D:\Learning\C#\Cinema Management\Manage App\bin\Debug\Manage App.exe.config
 D:\Learning\C#\Cinema Management\Manage App\bin\Debug\Manage App.exe
 D:\Learning\C#\Cinema Management\Manage App\bin\Debug\Manage App.pdb
+D:\Learning\C#\Cinema Management\Manage App\bin\Debug\BUS.dll
+D:\Learning\C#\Cinema Management\Manage App\bin\Debug\CustomControl.dll
+D:\Learning\C#\Cinema Management\Manage App\bin\Debug\DAO.dll
+D:\Learning\C#\Cinema Management\Manage App\bin\Debug\DTO.dll
 D:\Learning\C#\Cinema Management\Manage App\bin\Debug\LollipoUi.dll
+D:\Learning\C#\Cinema Management\Manage App\bin\Debug\MaterialSkin.dll
+D:\Learning\C#\Cinema Management\Manage App\bin\Debug\BUS.pdb
+D:\Learning\C#\Cinema Management\Manage App\bin\Debug\DAO.pdb
+D:\Learning\C#\Cinema Management\Manage App\bin\Debug\DTO.pdb
 D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage App.csproj.CopyComplete
 D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage App.exe
 D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage App.pdb
-D:\Learning\C#\Cinema Management\Manage App\bin\Debug\BUS.dll
-D:\Learning\C#\Cinema Management\Manage App\bin\Debug\DTO.dll
-D:\Learning\C#\Cinema Management\Manage App\bin\Debug\DAO.dll
-D:\Learning\C#\Cinema Management\Manage App\bin\Debug\BUS.pdb
-D:\Learning\C#\Cinema Management\Manage App\bin\Debug\DTO.pdb
-D:\Learning\C#\Cinema Management\Manage App\bin\Debug\DAO.pdb
-D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage App.csprojAssemblyReference.cache
-D:\Learning\C#\Cinema Management\Manage App\bin\Debug\CustomControl.dll
+D:\Learning\C#\Cinema Management\Manage App\bin\Debug\Manage App.exe.manifest
+D:\Learning\C#\Cinema Management\Manage App\bin\Debug\Manage App.application
+D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage App.exe.manifest
+D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage App.application
+D:\Learning\C#\Cinema Management\Manage App\obj\Debug\Manage_App.Function_Form.ScheduleDetails.resources
 D:\Learning\C#\Cinema Management\Manage App\bin\Debug\CustomControl.pdb

@@ -3,7 +3,6 @@ D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales_App.SalesForm
 D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales_App.LoginForm.resources
 D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales_App.Properties.Resources.resources
 D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales App.csproj.GenerateResource.cache
-D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales App.csproj.CoreCompileInputs.cache
 D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\Sales App.exe.config
 D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\Sales App.exe
 D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\Sales App.pdb
@@ -18,3 +17,6 @@ D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\DAO.dll
 D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\DAO.pdb
 D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\CustomControl.dll
 D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\CustomControl.pdb
+D:\Learning\C#\Cinema Management\Cinema Management\obj\Debug\Sales_App.AccountForm.resources
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\LollipoUi.dll
+D:\Learning\C#\Cinema Management\Cinema Management\bin\Debug\MaterialSkin.dll

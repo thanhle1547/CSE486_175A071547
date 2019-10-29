@@ -1,4 +1,4 @@
-﻿namespace Sales_App
+﻿namespace CustomControl
 {
     partial class SoDoPhong1
     {
@@ -31,70 +31,70 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.ghe3 = new Sales_App.Ghe();
-            this.ghe2 = new Sales_App.Ghe();
-            this.ghe62 = new Sales_App.Ghe();
-            this.ghe1 = new Sales_App.Ghe();
-            this.ghe4 = new Sales_App.Ghe();
-            this.ghe15 = new Sales_App.Ghe();
-            this.ghe5 = new Sales_App.Ghe();
-            this.ghe27 = new Sales_App.Ghe();
-            this.ghe50 = new Sales_App.Ghe();
-            this.ghe16 = new Sales_App.Ghe();
-            this.ghe38 = new Sales_App.Ghe();
-            this.ghe39 = new Sales_App.Ghe();
-            this.ghe26 = new Sales_App.Ghe();
-            this.ghe6 = new Sales_App.Ghe();
-            this.ghe14 = new Sales_App.Ghe();
-            this.ghe51 = new Sales_App.Ghe();
-            this.ghe61 = new Sales_App.Ghe();
-            this.ghe28 = new Sales_App.Ghe();
-            this.ghe49 = new Sales_App.Ghe();
-            this.ghe17 = new Sales_App.Ghe();
-            this.ghe37 = new Sales_App.Ghe();
-            this.ghe40 = new Sales_App.Ghe();
-            this.ghe25 = new Sales_App.Ghe();
-            this.ghe7 = new Sales_App.Ghe();
-            this.ghe13 = new Sales_App.Ghe();
-            this.ghe52 = new Sales_App.Ghe();
-            this.ghe60 = new Sales_App.Ghe();
-            this.ghe29 = new Sales_App.Ghe();
-            this.ghe48 = new Sales_App.Ghe();
-            this.ghe18 = new Sales_App.Ghe();
-            this.ghe36 = new Sales_App.Ghe();
-            this.ghe41 = new Sales_App.Ghe();
-            this.ghe24 = new Sales_App.Ghe();
-            this.ghe53 = new Sales_App.Ghe();
-            this.ghe12 = new Sales_App.Ghe();
-            this.ghe30 = new Sales_App.Ghe();
-            this.ghe59 = new Sales_App.Ghe();
-            this.ghe42 = new Sales_App.Ghe();
-            this.ghe47 = new Sales_App.Ghe();
-            this.ghe54 = new Sales_App.Ghe();
-            this.ghe35 = new Sales_App.Ghe();
-            this.ghe19 = new Sales_App.Ghe();
-            this.ghe23 = new Sales_App.Ghe();
-            this.ghe31 = new Sales_App.Ghe();
-            this.ghe11 = new Sales_App.Ghe();
-            this.ghe43 = new Sales_App.Ghe();
-            this.ghe58 = new Sales_App.Ghe();
-            this.ghe55 = new Sales_App.Ghe();
-            this.ghe46 = new Sales_App.Ghe();
-            this.ghe8 = new Sales_App.Ghe();
-            this.ghe34 = new Sales_App.Ghe();
-            this.ghe20 = new Sales_App.Ghe();
-            this.ghe22 = new Sales_App.Ghe();
-            this.ghe32 = new Sales_App.Ghe();
-            this.ghe10 = new Sales_App.Ghe();
-            this.ghe44 = new Sales_App.Ghe();
-            this.ghe57 = new Sales_App.Ghe();
-            this.ghe56 = new Sales_App.Ghe();
-            this.ghe45 = new Sales_App.Ghe();
-            this.ghe9 = new Sales_App.Ghe();
-            this.ghe33 = new Sales_App.Ghe();
-            this.ghe21 = new Sales_App.Ghe();
-            this.panel1.SuspendLayout();
+            this.container = new System.Windows.Forms.Panel();
+            this.ghe62 = new CustomControl.Ghe();
+            this.ghe1 = new CustomControl.Ghe();
+            this.ghe4 = new CustomControl.Ghe();
+            this.ghe15 = new CustomControl.Ghe();
+            this.ghe5 = new CustomControl.Ghe();
+            this.ghe27 = new CustomControl.Ghe();
+            this.ghe50 = new CustomControl.Ghe();
+            this.ghe16 = new CustomControl.Ghe();
+            this.ghe38 = new CustomControl.Ghe();
+            this.ghe39 = new CustomControl.Ghe();
+            this.ghe26 = new CustomControl.Ghe();
+            this.ghe6 = new CustomControl.Ghe();
+            this.ghe14 = new CustomControl.Ghe();
+            this.ghe51 = new CustomControl.Ghe();
+            this.ghe61 = new CustomControl.Ghe();
+            this.ghe28 = new CustomControl.Ghe();
+            this.ghe49 = new CustomControl.Ghe();
+            this.ghe17 = new CustomControl.Ghe();
+            this.ghe37 = new CustomControl.Ghe();
+            this.ghe40 = new CustomControl.Ghe();
+            this.ghe25 = new CustomControl.Ghe();
+            this.ghe7 = new CustomControl.Ghe();
+            this.ghe13 = new CustomControl.Ghe();
+            this.ghe52 = new CustomControl.Ghe();
+            this.ghe60 = new CustomControl.Ghe();
+            this.ghe29 = new CustomControl.Ghe();
+            this.ghe48 = new CustomControl.Ghe();
+            this.ghe18 = new CustomControl.Ghe();
+            this.ghe36 = new CustomControl.Ghe();
+            this.ghe41 = new CustomControl.Ghe();
+            this.ghe24 = new CustomControl.Ghe();
+            this.ghe53 = new CustomControl.Ghe();
+            this.ghe12 = new CustomControl.Ghe();
+            this.ghe30 = new CustomControl.Ghe();
+            this.ghe59 = new CustomControl.Ghe();
+            this.ghe42 = new CustomControl.Ghe();
+            this.ghe47 = new CustomControl.Ghe();
+            this.ghe54 = new CustomControl.Ghe();
+            this.ghe35 = new CustomControl.Ghe();
+            this.ghe19 = new CustomControl.Ghe();
+            this.ghe23 = new CustomControl.Ghe();
+            this.ghe31 = new CustomControl.Ghe();
+            this.ghe11 = new CustomControl.Ghe();
+            this.ghe43 = new CustomControl.Ghe();
+            this.ghe58 = new CustomControl.Ghe();
+            this.ghe55 = new CustomControl.Ghe();
+            this.ghe46 = new CustomControl.Ghe();
+            this.ghe8 = new CustomControl.Ghe();
+            this.ghe34 = new CustomControl.Ghe();
+            this.ghe20 = new CustomControl.Ghe();
+            this.ghe22 = new CustomControl.Ghe();
+            this.ghe32 = new CustomControl.Ghe();
+            this.ghe10 = new CustomControl.Ghe();
+            this.ghe44 = new CustomControl.Ghe();
+            this.ghe57 = new CustomControl.Ghe();
+            this.ghe56 = new CustomControl.Ghe();
+            this.ghe45 = new CustomControl.Ghe();
+            this.ghe9 = new CustomControl.Ghe();
+            this.ghe33 = new CustomControl.Ghe();
+            this.ghe21 = new CustomControl.Ghe();
+            this.ghe3 = new CustomControl.Ghe();
+            this.ghe2 = new CustomControl.Ghe();
+            this.container.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -134,101 +134,74 @@
             this.label3.Text = "Ghế đã đặt";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // container
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.ghe62);
-            this.panel1.Controls.Add(this.ghe1);
-            this.panel1.Controls.Add(this.ghe4);
-            this.panel1.Controls.Add(this.ghe15);
-            this.panel1.Controls.Add(this.ghe5);
-            this.panel1.Controls.Add(this.ghe27);
-            this.panel1.Controls.Add(this.ghe50);
-            this.panel1.Controls.Add(this.ghe16);
-            this.panel1.Controls.Add(this.ghe38);
-            this.panel1.Controls.Add(this.ghe39);
-            this.panel1.Controls.Add(this.ghe26);
-            this.panel1.Controls.Add(this.ghe6);
-            this.panel1.Controls.Add(this.ghe14);
-            this.panel1.Controls.Add(this.ghe51);
-            this.panel1.Controls.Add(this.ghe61);
-            this.panel1.Controls.Add(this.ghe28);
-            this.panel1.Controls.Add(this.ghe49);
-            this.panel1.Controls.Add(this.ghe17);
-            this.panel1.Controls.Add(this.ghe37);
-            this.panel1.Controls.Add(this.ghe40);
-            this.panel1.Controls.Add(this.ghe25);
-            this.panel1.Controls.Add(this.ghe7);
-            this.panel1.Controls.Add(this.ghe13);
-            this.panel1.Controls.Add(this.ghe52);
-            this.panel1.Controls.Add(this.ghe60);
-            this.panel1.Controls.Add(this.ghe29);
-            this.panel1.Controls.Add(this.ghe48);
-            this.panel1.Controls.Add(this.ghe18);
-            this.panel1.Controls.Add(this.ghe36);
-            this.panel1.Controls.Add(this.ghe41);
-            this.panel1.Controls.Add(this.ghe24);
-            this.panel1.Controls.Add(this.ghe53);
-            this.panel1.Controls.Add(this.ghe12);
-            this.panel1.Controls.Add(this.ghe30);
-            this.panel1.Controls.Add(this.ghe59);
-            this.panel1.Controls.Add(this.ghe42);
-            this.panel1.Controls.Add(this.ghe47);
-            this.panel1.Controls.Add(this.ghe54);
-            this.panel1.Controls.Add(this.ghe35);
-            this.panel1.Controls.Add(this.ghe19);
-            this.panel1.Controls.Add(this.ghe23);
-            this.panel1.Controls.Add(this.ghe31);
-            this.panel1.Controls.Add(this.ghe11);
-            this.panel1.Controls.Add(this.ghe43);
-            this.panel1.Controls.Add(this.ghe58);
-            this.panel1.Controls.Add(this.ghe55);
-            this.panel1.Controls.Add(this.ghe46);
-            this.panel1.Controls.Add(this.ghe8);
-            this.panel1.Controls.Add(this.ghe34);
-            this.panel1.Controls.Add(this.ghe20);
-            this.panel1.Controls.Add(this.ghe22);
-            this.panel1.Controls.Add(this.ghe32);
-            this.panel1.Controls.Add(this.ghe10);
-            this.panel1.Controls.Add(this.ghe44);
-            this.panel1.Controls.Add(this.ghe57);
-            this.panel1.Controls.Add(this.ghe56);
-            this.panel1.Controls.Add(this.ghe45);
-            this.panel1.Controls.Add(this.ghe9);
-            this.panel1.Controls.Add(this.ghe33);
-            this.panel1.Controls.Add(this.ghe21);
-            this.panel1.Location = new System.Drawing.Point(54, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(850, 389);
-            this.panel1.TabIndex = 5;
-            // 
-            // ghe3
-            // 
-            this.ghe3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ghe3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ghe3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ghe3.ForeColor = System.Drawing.Color.White;
-            this.ghe3.Location = new System.Drawing.Point(925, 349);
-            this.ghe3.Name = "ghe3";
-            this.ghe3.Size = new System.Drawing.Size(25, 90);
-            this.ghe3.TabIndex = 3;
-            this.ghe3.Text = "Cửa";
-            this.ghe3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ghe2
-            // 
-            this.ghe2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ghe2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ghe2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ghe2.ForeColor = System.Drawing.Color.White;
-            this.ghe2.Location = new System.Drawing.Point(23, 458);
-            this.ghe2.Name = "ghe2";
-            this.ghe2.Size = new System.Drawing.Size(904, 29);
-            this.ghe2.TabIndex = 2;
-            this.ghe2.Text = "Màn chiếu";
-            this.ghe2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.container.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.container.BackColor = System.Drawing.Color.Transparent;
+            this.container.Controls.Add(this.ghe62);
+            this.container.Controls.Add(this.ghe1);
+            this.container.Controls.Add(this.ghe4);
+            this.container.Controls.Add(this.ghe15);
+            this.container.Controls.Add(this.ghe5);
+            this.container.Controls.Add(this.ghe27);
+            this.container.Controls.Add(this.ghe50);
+            this.container.Controls.Add(this.ghe16);
+            this.container.Controls.Add(this.ghe38);
+            this.container.Controls.Add(this.ghe39);
+            this.container.Controls.Add(this.ghe26);
+            this.container.Controls.Add(this.ghe6);
+            this.container.Controls.Add(this.ghe14);
+            this.container.Controls.Add(this.ghe51);
+            this.container.Controls.Add(this.ghe61);
+            this.container.Controls.Add(this.ghe28);
+            this.container.Controls.Add(this.ghe49);
+            this.container.Controls.Add(this.ghe17);
+            this.container.Controls.Add(this.ghe37);
+            this.container.Controls.Add(this.ghe40);
+            this.container.Controls.Add(this.ghe25);
+            this.container.Controls.Add(this.ghe7);
+            this.container.Controls.Add(this.ghe13);
+            this.container.Controls.Add(this.ghe52);
+            this.container.Controls.Add(this.ghe60);
+            this.container.Controls.Add(this.ghe29);
+            this.container.Controls.Add(this.ghe48);
+            this.container.Controls.Add(this.ghe18);
+            this.container.Controls.Add(this.ghe36);
+            this.container.Controls.Add(this.ghe41);
+            this.container.Controls.Add(this.ghe24);
+            this.container.Controls.Add(this.ghe53);
+            this.container.Controls.Add(this.ghe12);
+            this.container.Controls.Add(this.ghe30);
+            this.container.Controls.Add(this.ghe59);
+            this.container.Controls.Add(this.ghe42);
+            this.container.Controls.Add(this.ghe47);
+            this.container.Controls.Add(this.ghe54);
+            this.container.Controls.Add(this.ghe35);
+            this.container.Controls.Add(this.ghe19);
+            this.container.Controls.Add(this.ghe23);
+            this.container.Controls.Add(this.ghe31);
+            this.container.Controls.Add(this.ghe11);
+            this.container.Controls.Add(this.ghe43);
+            this.container.Controls.Add(this.ghe58);
+            this.container.Controls.Add(this.ghe55);
+            this.container.Controls.Add(this.ghe46);
+            this.container.Controls.Add(this.ghe8);
+            this.container.Controls.Add(this.ghe34);
+            this.container.Controls.Add(this.ghe20);
+            this.container.Controls.Add(this.ghe22);
+            this.container.Controls.Add(this.ghe32);
+            this.container.Controls.Add(this.ghe10);
+            this.container.Controls.Add(this.ghe44);
+            this.container.Controls.Add(this.ghe57);
+            this.container.Controls.Add(this.ghe56);
+            this.container.Controls.Add(this.ghe45);
+            this.container.Controls.Add(this.ghe9);
+            this.container.Controls.Add(this.ghe33);
+            this.container.Controls.Add(this.ghe21);
+            this.container.Location = new System.Drawing.Point(54, 1);
+            this.container.Name = "container";
+            this.container.Size = new System.Drawing.Size(850, 389);
+            this.container.TabIndex = 5;
             // 
             // ghe62
             // 
@@ -1010,6 +983,33 @@
             this.ghe21.Text = "7B";
             this.ghe21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // ghe3
+            // 
+            this.ghe3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ghe3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ghe3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ghe3.ForeColor = System.Drawing.Color.White;
+            this.ghe3.Location = new System.Drawing.Point(925, 349);
+            this.ghe3.Name = "ghe3";
+            this.ghe3.Size = new System.Drawing.Size(25, 90);
+            this.ghe3.TabIndex = 3;
+            this.ghe3.Text = "Cửa";
+            this.ghe3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ghe2
+            // 
+            this.ghe2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ghe2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ghe2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ghe2.ForeColor = System.Drawing.Color.White;
+            this.ghe2.Location = new System.Drawing.Point(23, 458);
+            this.ghe2.Name = "ghe2";
+            this.ghe2.Size = new System.Drawing.Size(904, 29);
+            this.ghe2.TabIndex = 2;
+            this.ghe2.Text = "Màn chiếu";
+            this.ghe2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // SoDoPhong1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1020,12 +1020,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ghe3);
             this.Controls.Add(this.ghe2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.container);
             this.Location = new System.Drawing.Point(0, 44);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "SoDoPhong1";
             this.Size = new System.Drawing.Size(950, 487);
-            this.panel1.ResumeLayout(false);
+            this.container.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1096,6 +1096,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel container;
     }
 }

@@ -43,7 +43,13 @@
   <ItemGroup>
     <Compile Include="Account_KH.cs" />
     <Compile Include="Account_NV.cs" />
+    <Compile Include="BookingClient.cs" />
+    <Compile Include="ChiTietPhim.cs" />
+    <Compile Include="KhachHang.cs" />
+    <Compile Include="LichChieuPhim.cs" />
     <Compile Include="NhanVien.cs" />
+    <Compile Include="Phim_DN.cs" />
+    <Compile Include="PhongChieu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

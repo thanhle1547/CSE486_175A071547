@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sales_App
+namespace CustomControl
 {
     public partial class Ghe : Label
     {
@@ -21,12 +21,20 @@ namespace Sales_App
             this.BackColor = Color.White;
             this.TextAlign = ContentAlignment.MiddleCenter;
         }
+        public event EventHandler<EventArgs> WasClicked;
 
-        protected override void OnClick(EventArgs e)
+        /*protected override void OnClick(EventArgs e)
         {
             base.OnClick(e);
             if (this.BackColor == Color.Fuchsia || this.BackColor == Color.White)
                 this.BackColor = Color.Gainsboro;
+        }*/
+
+        private void Ghe_MouseClick(object sender, MouseEventArgs e)
+        {
+            var wasClicked = WasClicked;
+            if (wasClicked != null)
+                WasClicked(this, EventArgs.Empty);
         }
     }
 }

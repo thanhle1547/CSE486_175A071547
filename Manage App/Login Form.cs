@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using BUS;
 
 namespace Manage_App
 {
@@ -37,9 +39,27 @@ namespace Manage_App
             // Application.Exit();
         }
 
-        private void TxB_Pass_TextChanged(object sender, EventArgs e)
+        private void btn_Login_Click(object sender, EventArgs e)
         {
-
+            if (String.IsNullOrWhiteSpace(txB_UserName.Text) || String.IsNullOrWhiteSpace(txB_Pass.Text))
+                return;
+            try
+            {
+                NhanVien nv = AccountNV_BUS.Ins.Login(txB_UserName.Text, txB_Pass.Text);
+                if (nv.ID.ToString() != "")
+                {
+                    Properties.Settings.Default.UserId = nv.ID;
+                    Manage form = new Manage();
+                    this.Hide();
+                    form.Show();
+                }
+                else
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác", "Lỗi đăng nhập");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
     }
 }

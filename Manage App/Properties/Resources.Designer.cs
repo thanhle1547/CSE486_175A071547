@@ -63,6 +63,26 @@ namespace Manage_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_image_iOS_Glyph_60 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-image-iOS Glyph-60", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_change_user_Windows_10_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-change-user-Windows 10-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_delete_20 {
             get {
                 object obj = ResourceManager.GetObject("icons8-delete-20", resourceCulture);
@@ -83,6 +103,36 @@ namespace Manage_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_edit_iOS_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-edit-iOS-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_export_iOS_22 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-export-iOS-22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_filter_iOS_Filled_20_95A5A6 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-filter-iOS Filled-20-95A5A6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_graph_iOS_Filled_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-graph-iOS Filled-24", resourceCulture);
@@ -96,6 +146,16 @@ namespace Manage_App.Properties {
         internal static System.Drawing.Bitmap icons8_male_user_Windows_10_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-male-user-Windows 10-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_management_iOS_Filled_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-management-iOS Filled-24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +186,26 @@ namespace Manage_App.Properties {
         internal static System.Drawing.Bitmap icons8_movie_Cute_Clipart_512 {
             get {
                 object obj = ResourceManager.GetObject("icons8_movie_Cute_Clipart_512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_movie_ticket_Cloud_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_movie_ticket_Cloud_100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_people_iOS_Glyph_24_white {
+            get {
+                object obj = ResourceManager.GetObject("icons8-people-iOS Glyph-24-white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -171,6 +251,16 @@ namespace Manage_App.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Man_Laptop_Cinema_Ticket_Bubbles_100 {
+            get {
+                object obj = ResourceManager.GetObject("Man Laptop Cinema Ticket_Bubbles_100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] Roboto_Medium {
@@ -187,6 +277,16 @@ namespace Manage_App.Properties {
             get {
                 object obj = ResourceManager.GetObject("Roboto_Regular", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ticket_Purchase_Color_100 {
+            get {
+                object obj = ResourceManager.GetObject("Ticket_Purchase_Color_100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

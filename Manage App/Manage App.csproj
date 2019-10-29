@@ -12,6 +12,22 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,9 +48,25 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>504A0AF385B19AE2035EDC4B41BEFC4E958F8CCC</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Manage App_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="LollipoUi">
       <HintPath>..\..\..\..\Source\LollipoUi.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MDesign_Tickets Sales System\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,11 +87,35 @@
     <Compile Include="FlatButton.Designer.cs">
       <DependentUpon>FlatButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Function Form\Movie Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function Form\Movie Details.Designer.cs">
+      <DependentUpon>Movie Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Function Form\PersonnelDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function Form\PersonnelDetails.Designer.cs">
+      <DependentUpon>PersonnelDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Function Form\ScheduleDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Function Form\ScheduleDetails.Designer.cs">
+      <DependentUpon>ScheduleDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login Form.Designer.cs">
       <DependentUpon>Login Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\AccPersonnel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\AccPersonnel.Designer.cs">
+      <DependentUpon>AccPersonnel.cs</DependentUpon>
     </Compile>
     <Compile Include="Manage.cs">
       <SubType>Form</SubType>
@@ -67,26 +123,78 @@
     <Compile Include="Manage.Designer.cs">
       <DependentUpon>Manage.cs</DependentUpon>
     </Compile>
-    <Compile Include="MoviesList.cs">
+    <Compile Include="Main\Customer.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MoviesList.Designer.cs">
-      <DependentUpon>MoviesList.cs</DependentUpon>
+    <Compile Include="Main\Customer.Designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Main\Personnel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Personnel.Designer.cs">
+      <DependentUpon>Personnel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Main\Schedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Schedule.Designer.cs">
+      <DependentUpon>Schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\MoviesList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\MoviesList.Designer.cs">
+      <DependentUpon>MoviesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Main\Statistic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Statistic.Designer.cs">
+      <DependentUpon>Statistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Start Screen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Start Screen.Designer.cs">
+      <DependentUpon>Start Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Function Form\Movie Details.resx">
+      <DependentUpon>Movie Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Function Form\PersonnelDetails.resx">
+      <DependentUpon>PersonnelDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Function Form\ScheduleDetails.resx">
+      <DependentUpon>ScheduleDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login Form.resx">
       <DependentUpon>Login Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\AccPersonnel.resx">
+      <DependentUpon>AccPersonnel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage.resx">
       <DependentUpon>Manage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MoviesList.resx">
+    <EmbeddedResource Include="Main\Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Personnel.resx">
+      <DependentUpon>Personnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Schedule.resx">
+      <DependentUpon>Schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\MoviesList.resx">
       <DependentUpon>MoviesList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -94,6 +202,13 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main\Statistic.resx">
+      <DependentUpon>Statistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Start Screen.resx">
+      <DependentUpon>Start Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Manage App_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -175,10 +290,83 @@
       <Project>{1ef2b44d-817a-4602-a7cd-85f1a1a09188}</Project>
       <Name>CustomControl</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{3ed25ca7-06dc-4b8d-bf43-c221bc6799e5}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{ecc9cc9d-acb6-4bf1-b829-d34f0935e6db}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-iOS-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-iOS Filled-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-iOS Filled-20-95A5A6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-change-user-Windows 10-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sign-out-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sign-out-Windows 10-24png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-export-Windows 10-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-export-iOS-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-export-iOS-22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-movie-ticket-Cloud-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movie-ticket-Cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-ticket-purchase-Color-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-man-laptop-cinema-ticket-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Man Laptop Cinema Ticket_Bubbles_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ticket Purchase_Color_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-management-iOS Filled-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-change-user-iOS Filled-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-image-iOS Glyph-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-people-iOS Glyph-24-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

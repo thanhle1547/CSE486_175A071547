@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin">
+      <HintPath>..\..\MDesign_Tickets Sales System\packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,11 +45,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BottomBorder TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BottomBorder TextBox.Designer.cs">
+      <DependentUpon>BottomBorder TextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Card.Designer.cs">
+      <DependentUpon>Card.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ColorBorder TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ColorBorder TextBox.Designer.cs">
+      <DependentUpon>ColorBorder TextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ghe.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Ghe.Designer.cs">
       <DependentUpon>Ghe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GrowLabel .cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GrowLabel .Designer.cs">
+      <DependentUpon>GrowLabel .cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageCard.Designer.cs">
+      <DependentUpon>ImageCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InforCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InforCard.Designer.cs">
+      <DependentUpon>InforCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Round Button.cs">
       <SubType>Component</SubType>
@@ -54,11 +98,74 @@
     <Compile Include="Round Button.Designer.cs">
       <DependentUpon>Round Button.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rounded RichTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rounded RichTextBox.Designer.cs">
+      <DependentUpon>Rounded RichTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rounded TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rounded TextBox.Designer.cs">
+      <DependentUpon>Rounded TextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScheduleCard.Designer.cs">
+      <DependentUpon>ScheduleCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Set 2 Type Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Set 2 Type Control.Designer.cs">
+      <DependentUpon>Set 2 Type Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmallRound_Card.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SmallRound_Card.Designer.cs">
+      <DependentUpon>SmallRound_Card.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmallRound_TextCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SmallRound_TextCard.Designer.cs">
+      <DependentUpon>SmallRound_TextCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SoDoPhong\SoDoPhong2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SoDoPhong\SoDoPhong2.Designer.cs">
+      <DependentUpon>SoDoPhong2.cs</DependentUpon>
+    </Compile>
     <Compile Include="SoDoPhong\SoDoPhong1.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SoDoPhong\SoDoPhong1.Designer.cs">
       <DependentUpon>SoDoPhong1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Transparent Grow Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Transparent Grow Label.Designer.cs">
+      <DependentUpon>Transparent Grow Label.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transparent Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Transparent Label.Designer.cs">
+      <DependentUpon>Transparent Label.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transparent Panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Transparent Panel.Designer.cs">
+      <DependentUpon>Transparent Panel.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -70,9 +177,73 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Card.resx">
+      <DependentUpon>Card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ghe.resx">
+      <DependentUpon>Ghe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageCard.resx">
+      <DependentUpon>ImageCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InforCard.resx">
+      <DependentUpon>InforCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rounded RichTextBox.resx">
+      <DependentUpon>Rounded RichTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rounded TextBox.resx">
+      <DependentUpon>Rounded TextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleCard.resx">
+      <DependentUpon>ScheduleCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Set 2 Type Control.resx">
+      <DependentUpon>Set 2 Type Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmallRound_Card.resx">
+      <DependentUpon>SmallRound_Card.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmallRound_TextCard.resx">
+      <DependentUpon>SmallRound_TextCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SoDoPhong\SoDoPhong2.resx">
+      <DependentUpon>SoDoPhong2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SoDoPhong\SoDoPhong1.resx">
       <DependentUpon>SoDoPhong1.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rsz_it_chapter_two-_vietnamese_poster.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White Blur Transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blur_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avengers-endgame-poster-3d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1200x630wa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-15-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{ecc9cc9d-acb6-4bf1-b829-d34f0935e6db}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

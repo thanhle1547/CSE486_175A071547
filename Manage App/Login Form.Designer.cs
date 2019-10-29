@@ -34,10 +34,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cB_Remember = new LollipopCheckBox();
             this.ckB_ShowPass = new LollipopCheckBox();
-            this.round_Button1 = new CustomControl.Round_Button();
             this.txB_UserName = new LollipopTextBox();
             this.txB_Pass = new LollipopTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Login = new CustomControl.Round_Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +96,7 @@
             this.cB_Remember.TabIndex = 10;
             this.cB_Remember.Text = "Nhớ tài khoản";
             this.cB_Remember.UseVisualStyleBackColor = true;
+            this.cB_Remember.Visible = false;
             // 
             // ckB_ShowPass
             // 
@@ -108,26 +109,7 @@
             this.ckB_ShowPass.TabIndex = 10;
             this.ckB_ShowPass.Text = "Hiện mật khẩu";
             this.ckB_ShowPass.UseVisualStyleBackColor = true;
-            // 
-            // round_Button1
-            // 
-            this.round_Button1.BorderColor = System.Drawing.Color.Silver;
-            this.round_Button1.ButtonColor = System.Drawing.Color.White;
-            this.round_Button1.FlatAppearance.BorderSize = 0;
-            this.round_Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.round_Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.round_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.round_Button1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.round_Button1.Location = new System.Drawing.Point(82, 446);
-            this.round_Button1.Name = "round_Button1";
-            this.round_Button1.OnHoverBorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.round_Button1.OnHoverButtonColor = System.Drawing.Color.DeepSkyBlue;
-            this.round_Button1.OnHoverTextColor = System.Drawing.Color.White;
-            this.round_Button1.Size = new System.Drawing.Size(167, 42);
-            this.round_Button1.TabIndex = 12;
-            this.round_Button1.Text = "Đăng nhập";
-            this.round_Button1.TextColor = System.Drawing.Color.Black;
-            this.round_Button1.UseVisualStyleBackColor = true;
+            this.ckB_ShowPass.Visible = false;
             // 
             // txB_UserName
             // 
@@ -141,7 +123,6 @@
             this.txB_UserName.ReadOnly = false;
             this.txB_UserName.Size = new System.Drawing.Size(249, 24);
             this.txB_UserName.TabIndex = 13;
-            this.txB_UserName.Text = "Tên đăng nhập";
             this.txB_UserName.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.txB_UserName.UseSystemPasswordChar = false;
             // 
@@ -157,9 +138,8 @@
             this.txB_Pass.ReadOnly = false;
             this.txB_Pass.Size = new System.Drawing.Size(249, 24);
             this.txB_Pass.TabIndex = 13;
-            this.txB_Pass.Text = "Mật khẩu";
             this.txB_Pass.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txB_Pass.UseSystemPasswordChar = false;
+            this.txB_Pass.UseSystemPasswordChar = true;
             // 
             // panel1
             // 
@@ -168,7 +148,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.txB_UserName);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.round_Button1);
+            this.panel1.Controls.Add(this.btn_Login);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.ckB_ShowPass);
             this.panel1.Controls.Add(this.label3);
@@ -177,6 +157,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(328, 509);
             this.panel1.TabIndex = 14;
+            // 
+            // btn_Login
+            // 
+            this.btn_Login.BorderColor = System.Drawing.Color.Silver;
+            this.btn_Login.ButtonColor = System.Drawing.Color.White;
+            this.btn_Login.ButtonImage = null;
+            this.btn_Login.ButtonImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Login.FlatAppearance.BorderSize = 0;
+            this.btn_Login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_Login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Login.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Login.Location = new System.Drawing.Point(82, 446);
+            this.btn_Login.Name = "btn_Login";
+            this.btn_Login.OnHoverBorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_Login.OnHoverButtonColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_Login.OnHoverTextColor = System.Drawing.Color.White;
+            this.btn_Login.Size = new System.Drawing.Size(167, 42);
+            this.btn_Login.TabIndex = 12;
+            this.btn_Login.Text = "Đăng nhập";
+            this.btn_Login.TextColor = System.Drawing.Color.Black;
+            this.btn_Login.UseVisualStyleBackColor = true;
+            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // LoginForm
             // 
@@ -205,7 +208,7 @@
         private System.Windows.Forms.Label label3;
         private LollipopCheckBox cB_Remember;
         private LollipopCheckBox ckB_ShowPass;
-        private CustomControl.Round_Button round_Button1;
+        private CustomControl.Round_Button btn_Login;
         private LollipopTextBox txB_UserName;
         private LollipopTextBox txB_Pass;
         private System.Windows.Forms.Panel panel1;

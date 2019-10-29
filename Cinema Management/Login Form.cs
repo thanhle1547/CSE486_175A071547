@@ -19,8 +19,6 @@ namespace Sales_App // Presentation Layer (GUI)
             InitializeComponent();
         }
 
-        SalesForm form;
-
         // C# - Adding a Simple Drop Shadow in Borderless WinForm
         // https://www.youtube.com/watch?v=UoYD_6VgazE
         private const int FORM_Shadow = 0x00020000; // 0x00020000
@@ -41,19 +39,24 @@ namespace Sales_App // Presentation Layer (GUI)
             // Application.Exit();
         }
 
-        private void TxB_Pass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Btn_DangNhap_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(txB_UserName.Text) || String.IsNullOrWhiteSpace(txB_Pass.Text))
+                return;
             try
             {
-                if (AccountKH_BUS.Ins.Login(txB_UserName.Text, txB_Pass.Text))
+                string hoTenNv = AccountNV_BUS.Ins.Login(txB_UserName.Text, txB_Pass.Text);
+                if (hoTenNv != "")
                 {
-                    form = new SalesForm();
-                    this.Close();
+                    // C1
+                    SalesForm form = new SalesForm(/*hoTenNv*/);
+                    this.Hide();
+                    // C# Form.Close vs Form.Dispose
+                    // https://stackoverflow.com/a/3097383
+                    //this.Dispose();
+                    form.Show();
+
+                    // C2: https://www.youtube.com/watch?v=eVBzrEdk_0s 
                 }
                 else
                     MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác", "Lỗi đăng nhập");
