@@ -56,10 +56,9 @@ Create Proc Get_dsNV @IDChucVu tinyint
 As
 Begin
 	--Declare @HoTen nvarchar(30)
-	Select HoTen, a.IDNhanVien
-		From Account_NV a, NhanVien n
-			Where TenDangNhap = @userName and MatKhau = @passWord
-				and a.IDNhanVien = n.IDNhanVien
+	Select IDNhanVien, HoTen, NgaySinh, Que, SoChungMinhThu, GioiTinh, ChucVu
+		From v_dl_Nhanvien
+			Where IDChucVu = @IDChucVu
 	/*if (@HoTen = '')
 		return;
 	Select @HoTen as HoTen*/
@@ -177,7 +176,7 @@ GO
 -- tham số đầu vào là IDPhim, Ngày mà khách hàng chọn
 Alter Proc Get_LichChieu_Ngay @IDPhim int, @Ngay date
 As
-	Select v.ID_LichChieu, ThoiGianChieu as ThoiGian, TenDinhDang as DinhDang, NgonNgu, TenPhong, SoLuongVe as SoGheTrong
+	Select v.ID_LichChieu, ThoiGianChieu as ThoiGian, DN, TenPhong, SoLuongVe as SoGheTrong
 							-- dùng TenPhong thay cho id
 			From v_LichChieuPhim v, (Select * From Get_GhePhim(@IDPhim)) g
 				Where cast(ThoiGianChieu as date) = @Ngay and v.IDPhim = @IDPhim and g.ID_LichChieu = v.ID_LichChieu
@@ -206,20 +205,31 @@ Exec Get_2Table*/
 GO
 -- Store Proc trả về lịch chiếu của 1 bộ phim từ view_LichChieuPhim theo PHÒNG
 -- tham số đầu vào là IDPhim, Phòng chiếu
-Create Proc Get_LichChieu_Phong @IDPhim int = null, @TenPhong varchar(5) = ''
+Alter Proc Get_LichChieu_Phong @IDPhim int = null, @TenPhong varchar(5) = ''
 As
 	if (@TenPhong = '')
-		Select TenPhong, ThoiGianChieu, TenDinhDang, NgonNgu
+		Select TenPhong, ThoiGianChieu, DN
 			From v_LichChieuPhim
 				Where IDPhim = @IDPhim
 	else if (@IDPhim is Null)
-		Select TenPhim, ThoiGianChieu, TenDinhDang, NgonNgu
+		Select TenPhim, ThoiGianChieu, DN
 			From v_LichChieuPhim v, Phim p
 				Where v.IDPhim = @IDPhim and TenPhong = @TenPhong and v.IDPhim = p.IDPhim
 	else
-		Select ID_LichChieu, ThoiGianChieu, TenDinhDang, NgonNgu
+		Select ID_LichChieu, ThoiGianChieu, DN
 			From v_LichChieuPhim
 				Where IDPhim = @IDPhim and TenPhong = @TenPhong
+
+
+Exec Get_LichChieu_Phong 1
+
+GO
+-- Lấy Định dạng, Ngôn ngữ của phim ->> dùng luôn view v_DinhDangNN
+Alter Proc Get_PhimDN @IDPhim int
+As
+	Select ID_PDN, Concat_WS( ' - ', TenDinhDang, NgonNgu) as DN
+		From v_DinhDangNN
+			Where IDPhim = @IDPhim
 
 
 
@@ -365,4 +375,29 @@ Exec Get_DonGia 9, '2D'
 
 Select * From v_LichChieuPhim
 Select * From v_DonGia
-			
+
+
+GO
+-- Add 1 Nhân viên
+Create Proc Add_Personnel @HoTen nvarchar(30), @NgaySinh date, @Que nvarchar(20), 
+	@SoChungMinhThu varchar(15), @GioiTinh nvarchar(3), @TenDangNhap varchar(20), @MatKhau varchar(10), @IDChucVu tinyint
+As
+Begin
+	Declare @IDNhanVien int
+	Insert into NhanVien (HoTen, NgaySinh, Que, SoChungMinhThu, GioiTinh)
+		OUTPUT inserted.IDNhanVien into @IDNhanVien
+			Values (@HoTen, @NgaySinh, @Que, @SoChungMinhThu, @GioiTinh)
+
+	Insert into Account_NV
+		Values (@IDNhanVien, @TenDangNhap, @MatKhau, @IDChucVu)
+End
+
+
+GO
+-- DELETE 1 Nhân viên
+Create Proc Del_Personnel @IDNhanVien int
+As
+Begin
+	Delete From Account_NV Where IDNhanVien = @IDNhanVien
+	Delete From NhanVien Where IDNhanVien = @IDNhanVien
+End

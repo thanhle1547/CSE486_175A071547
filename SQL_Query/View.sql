@@ -40,7 +40,7 @@ GO
 Create View v_DinhDangNN
 As
 	Select pdn.ID_PDN, IDPhim,
-		   nn.ngonngu, dd.TenDinhDang
+		   nn.Ngonngu, dd.TenDinhDang
 		From P_DN pdn, NgonNgu nn, DinhDang dd
 			Where pdn.ID_NgonNgu = nn.ID_NgonNgu
 			and   pdn.ID_DinhDang = dd.ID_DinhDang
@@ -65,16 +65,20 @@ GO
 -- View lấy lịch chiếu phim
 ALter View v_LichChieuPhim
 As 
-    Select vdd.IDPhim, ID_LichChieu, lcp.ID_PDN , lcp.IDPhong, TenPhong, 
+    Select vdd.IDPhim, ID_LichChieu, lcp.ID_PDN, lcp.IDPhong, TenPhong, -- IDPhong cho Trigger
 		   ThoiGianChieu, DateAdd(Minute, ThoiLuong, ThoiGianChieu) as ThoiGianKetThuc,
-		   TenDinhDang, NgonNgu
-		From LichChieuPhim lcp, PhongChieuPhim pcp, v_DinhDangNN vdd, Phim p
+		   Concat(TenDinhDang, ' - ', NgonNgu) as DN
+		From LichChieuPhim lcp, PhongChieuPhim pcp, v_DinhDangNN vdd, Phim p -- Phim p cho ThoiLuong
 			Where ThoiGianChieu >= GETDATE()
 			and lcp.IDPhong = pcp.IDPhong
 			and lcp.ID_PDN = vdd.ID_PDN
+			and lcp.IDPhong = pcp.IDPhong
 			and vdd.IDPhim = p.IDPhim
 
 Select * From v_LichChieuPhim
+Select * From v_LichChieuPhim
+	Where cast('2019-10-29 15:30' as datetime) Between ThoiGianChieu and ThoiGianKetThuc
+
 
 GO    
 -- View lấy các dữ liệu liên quan của 1 khách hàng
@@ -91,9 +95,9 @@ Select * From v_dl_KhachHang
 
 GO
 -- View lấy các dữ liệu liên quan của 1 nhân viên
-Create View v_dl_Nhanvien
+Alter View v_dl_Nhanvien
 As
-	Select nv.IDNhanVien, HoTen, NgaySinh, Que, SoChungMinhThu, GioiTinh, ChucVu
+	Select nv.IDNhanVien, HoTen, NgaySinh, Que, SoChungMinhThu, GioiTinh, cv.IDChucVu, ChucVu
 		From NhanVien nv,Account_NV a,ChucVu cv
 			Where nv.IDNhanVien = a.IDNhanVien 
 			and cv.IDChucVu = a.IDChucvu
