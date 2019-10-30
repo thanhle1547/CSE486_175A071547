@@ -67,7 +67,6 @@
             this.txB_Pass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txB_Pass.Location = new System.Drawing.Point(50, 284);
             this.txB_Pass.Name = "txB_Pass";
-            this.txB_Pass.PasswordChar = '*';
             this.txB_Pass.Size = new System.Drawing.Size(250, 33);
             this.txB_Pass.TabIndex = 1;
             // 
@@ -129,6 +128,7 @@
             this.ckB_ShowPass.TabIndex = 7;
             this.ckB_ShowPass.Text = "Hiện mật khẩu";
             this.ckB_ShowPass.UseVisualStyleBackColor = true;
+            this.ckB_ShowPass.CheckedChanged += new System.EventHandler(this.ckB_ShowPass_CheckedChanged);
             // 
             // label3
             // 
@@ -146,6 +146,8 @@
             this.btn_DangNhap.BackColor = System.Drawing.Color.White;
             this.btn_DangNhap.BorderColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_DangNhap.ButtonColor = System.Drawing.SystemColors.Window;
+            this.btn_DangNhap.ButtonImage = null;
+            this.btn_DangNhap.ButtonImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_DangNhap.FlatAppearance.BorderSize = 0;
             this.btn_DangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DangNhap.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

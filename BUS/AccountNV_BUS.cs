@@ -27,6 +27,7 @@ namespace BUS
                 NhanVien nv = new NhanVien();
                 nv.Hoten = dt.Rows[0].Field<string>("HoTen");
                 nv.ID = (int)dt.Rows[0].Field<int>("IDNhanVien");
+                nv.ChucVu = dt.Rows[0].Field<string>("ChucVu");
 
                 return nv;
             }

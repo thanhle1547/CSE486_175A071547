@@ -44,6 +44,7 @@
     <Compile Include="Account_KH.cs" />
     <Compile Include="Account_NV.cs" />
     <Compile Include="BookingClient.cs" />
+    <Compile Include="BookingDataClient.cs" />
     <Compile Include="ChiTietPhim.cs" />
     <Compile Include="KhachHang.cs" />
     <Compile Include="LichChieuPhim.cs" />

@@ -56,5 +56,27 @@ namespace Manage_App.Properties {
                 this["ListOfMovies"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::DTO.NhanVien NhanVien {
+            get {
+                return ((global::DTO.NhanVien)(this["NhanVien"]));
+            }
+            set {
+                this["NhanVien"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::DTO.Account_NV Account {
+            get {
+                return ((global::DTO.Account_NV)(this["Account"]));
+            }
+            set {
+                this["Account"] = value;
+            }
+        }
     }
 }

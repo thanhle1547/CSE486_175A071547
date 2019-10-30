@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
 
 namespace CustomControl
 {
@@ -15,6 +9,17 @@ namespace CustomControl
         public InforCard()
         {
             InitializeComponent();
+        }
+
+        public InforCard(BookingDataClient b)
+        {
+            InitializeComponent();
+            lb_TenPhim.Text = b.TenPhim;
+            lb_MaVe.Text = "Mã vé: " + b.ID;
+            lb_PhongSo.Text = "Phòng số " + b.TenPhong;
+            lb_SoVe.Text = b.SoLuongVe + " vé";
+            lb_Ghe.Text = "Ghế: " + b.MaGheNgoi;
+            lb_TG.Text = "Thời gian: " + b.ThoiGianChieu;
         }
 
         [System.Runtime.InteropServices.DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]

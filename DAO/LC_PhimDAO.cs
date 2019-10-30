@@ -32,6 +32,17 @@ namespace DAO
             return DataProvider.Ins.ExecProc<LichChieuPhim>("Get_LichChieu_Ngay", param);
         }
 
+        public IEnumerable<LichChieuPhim> GetScheduleDate(int id) // DataSet
+        {
+            SqlParameter param = new SqlParameter(){
+                ParameterName = "@IDPhim",
+                SqlDbType = System.Data.SqlDbType.Int,
+                Value = id,
+            };
+
+            return DataProvider.Ins.ExecProc<LichChieuPhim>("Get_LichChieu_Ngay", param);
+        }
+
         public DataTable GetScheduleRoom(int? id = 0, string tenPhong = "(none)")
         {
             List<SqlParameter> param = new List<SqlParameter>();

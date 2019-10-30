@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
   <asmv1:assemblyIdentity name="Manage App.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="icons8-cinema-Pastel Glyph-100.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Manage App" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -49,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9Q1KaQRrUPl+0EHRn3POu2FqfMHaWsd+c8sAmMQx3PA=</dsig:DigestValue>
+        <dsig:DigestValue>/QY2Pj8i+o0h0VsJBbOotUxuJ3D6sBugsfbS2uxuRFE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,19 +74,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UZ3mVobchaPieX09a7/5ICcolmtyt2IVorl3A05d+Zg=</dsig:DigestValue>
+        <dsig:DigestValue>7JeRPI5VZ5+WRrNWhFlKg5shA/HPafYKEAeKl1Taf6Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DTO.dll" size="14848">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DTO.dll" size="15872">
       <assemblyIdentity name="DTO" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ofrt9EZhGu00AlEBnZcS8GUwlf7MUvcUpOBe8h783Jc=</dsig:DigestValue>
+        <dsig:DigestValue>MQ27OsqKeT/2rbSgqAlx9upk0LowGCnFzsJoacV2eas=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -102,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Manage App.exe" size="846848">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Manage App.exe" size="974336">
       <assemblyIdentity name="Manage App" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UQpG0LD5GK2pllc54XhmNopikBTdg5u6EG36MXqBX7g=</dsig:DigestValue>
+        <dsig:DigestValue>BbUSxMgwBc2Ig8fz6BWRimu/Tp5O69iCGlsVTCrjnuY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -125,6 +126,15 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="icons8-cinema-Pastel Glyph-100.ico" size="41662">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nHCH7MOhDS6VlEGAulzhezMwrdv3yuO8au8PDO1rgVw=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Manage App.exe.config" size="1200">
     <hash>
       <dsig:Transforms>

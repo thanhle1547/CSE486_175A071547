@@ -92,15 +92,14 @@
             this.btn_Add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Add.BorderColor = System.Drawing.Color.Transparent;
             this.btn_Add.ButtonColor = System.Drawing.Color.Transparent;
-            this.btn_Add.ButtonImage = null;
-            this.btn_Add.ButtonImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Add.ButtonImage = global::Manage_App.Properties.Resources.icons8_plus_math_20;
+            this.btn_Add.ButtonImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_Add.FlatAppearance.BorderSize = 0;
             this.btn_Add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Add.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Add.Image = global::Manage_App.Properties.Resources.icons8_plus_math_20;
             this.btn_Add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Add.Location = new System.Drawing.Point(530, 8);
             this.btn_Add.Name = "btn_Add";
@@ -120,15 +119,14 @@
             this.btn_Edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Edit.BorderColor = System.Drawing.Color.Transparent;
             this.btn_Edit.ButtonColor = System.Drawing.Color.Transparent;
-            this.btn_Edit.ButtonImage = null;
-            this.btn_Edit.ButtonImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Edit.ButtonImage = global::Manage_App.Properties.Resources.icons8_edit_iOS_20;
+            this.btn_Edit.ButtonImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_Edit.FlatAppearance.BorderSize = 0;
             this.btn_Edit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Edit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Edit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Edit.Image = global::Manage_App.Properties.Resources.icons8_edit_iOS_20;
             this.btn_Edit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Edit.Location = new System.Drawing.Point(623, 8);
             this.btn_Edit.Name = "btn_Edit";
@@ -141,7 +139,6 @@
             this.btn_Edit.Text = "     Sửa";
             this.btn_Edit.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_Edit.UseVisualStyleBackColor = true;
-            this.btn_Edit.Visible = false;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Delete
@@ -149,15 +146,14 @@
             this.btn_Delete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_Delete.BorderColor = System.Drawing.Color.Transparent;
             this.btn_Delete.ButtonColor = System.Drawing.Color.Transparent;
-            this.btn_Delete.ButtonImage = null;
-            this.btn_Delete.ButtonImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Delete.ButtonImage = global::Manage_App.Properties.Resources.icons8_delete_20;
+            this.btn_Delete.ButtonImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btn_Delete.FlatAppearance.BorderSize = 0;
             this.btn_Delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_Delete.Image = global::Manage_App.Properties.Resources.icons8_delete_20;
             this.btn_Delete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Delete.Location = new System.Drawing.Point(716, 8);
             this.btn_Delete.Name = "btn_Delete";
@@ -183,7 +179,6 @@
             this.btn_Refresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Refresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Refresh.Image = global::Manage_App.Properties.Resources.icons8_refresh_iOS_Glyph_20;
             this.btn_Refresh.Location = new System.Drawing.Point(809, 8);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -230,7 +225,9 @@
             this.dgv_NhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_NhanVien.GridColor = System.Drawing.SystemColors.MenuBar;
             this.dgv_NhanVien.Location = new System.Drawing.Point(0, 55);
+            this.dgv_NhanVien.MultiSelect = false;
             this.dgv_NhanVien.Name = "dgv_NhanVien";
+            this.dgv_NhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_NhanVien.Size = new System.Drawing.Size(869, 478);
             this.dgv_NhanVien.TabIndex = 1;
             // 

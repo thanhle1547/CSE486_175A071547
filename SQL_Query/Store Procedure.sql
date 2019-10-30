@@ -1,12 +1,12 @@
 ﻿-- Store Procedure accountLogin kiểm tra dữ liệu tài khoản NHÂN VIÊN đăng nhập có tồn tại 0
-Create Proc ckLogin_NV @userName varchar(20), @passWord varchar(16)
+Alter Proc ckLogin_NV @userName varchar(20), @passWord varchar(16)
 As
 Begin
 	--Declare @HoTen nvarchar(30)
-	Select HoTen, a.IDNhanVien
-		From Account_NV a, NhanVien n
+	Select HoTen, a.IDNhanVien, ChucVu
+		From Account_NV a, NhanVien n, ChucVu c
 			Where TenDangNhap = @userName and MatKhau = @passWord
-				and a.IDNhanVien = n.IDNhanVien
+				and a.IDNhanVien = n.IDNhanVien and a.IDChucVu = c.IDChucVu
 	/*if (@HoTen = '')
 		return;
 	Select @HoTen as HoTen*/
@@ -30,7 +30,7 @@ End
 
 
 GO
--- Store Procedure
+-- Store Procedure đăng ký 1 tài khoản của khách hàng
 Create Proc SignUp_KH @IDKhachHang varchar(9), @userName varchar(20), @passWord varchar(16),
 	@HoTen nvarchar(30), @NgaySinh date, @GioiTinh nvarchar(3)
 As
@@ -176,7 +176,7 @@ GO
 -- tham số đầu vào là IDPhim, Ngày mà khách hàng chọn
 Alter Proc Get_LichChieu_Ngay @IDPhim int, @Ngay date
 As
-	Select v.ID_LichChieu, ThoiGianChieu as ThoiGian, DN, TenPhong, SoLuongVe as SoGheTrong
+	Select v.ID_LichChieu, ThoiGianChieu, DN, TenPhong, SoLuongVe as SoGheTrong
 							-- dùng TenPhong thay cho id
 			From v_LichChieuPhim v, (Select * From Get_GhePhim(@IDPhim)) g
 				Where cast(ThoiGianChieu as date) = @Ngay and v.IDPhim = @IDPhim and g.ID_LichChieu = v.ID_LichChieu
@@ -193,6 +193,10 @@ As
 		From v_LichChieuPhim v, (Select * From Get_GhePhim()) s
 			Where v.IDPhim = @IDPhim and v.ID_LichChieu = s.ID_LichChieu*/
 
+Exec Get_LichChieu_Ngay 1, @Ngay = '2019-10-30'
+
+
+
 /*	OK
 Create Proc Get_2Table
 As
@@ -208,15 +212,15 @@ GO
 Alter Proc Get_LichChieu_Phong @IDPhim int = null, @TenPhong varchar(5) = ''
 As
 	if (@TenPhong = '')
-		Select TenPhong, ThoiGianChieu, DN
+		Select TenPhong, ThoiGianChieu, ThoiGianKetThuc, DN
 			From v_LichChieuPhim
 				Where IDPhim = @IDPhim
 	else if (@IDPhim is Null)
-		Select TenPhim, ThoiGianChieu, DN
+		Select TenPhim, ThoiGianChieu, ThoiGianKetThuc, DN
 			From v_LichChieuPhim v, Phim p
 				Where v.IDPhim = @IDPhim and TenPhong = @TenPhong and v.IDPhim = p.IDPhim
 	else
-		Select ID_LichChieu, ThoiGianChieu, DN
+		Select ID_LichChieu, ThoiGianChieu, ThoiGianKetThuc, DN
 			From v_LichChieuPhim
 				Where IDPhim = @IDPhim and TenPhong = @TenPhong
 
@@ -232,9 +236,31 @@ As
 			Where IDPhim = @IDPhim
 
 
+GO
+-- Lấy tất cả dl phim mà khách hàng đã đặt vé
+Create Proc Get_dlDatVe @IDKhachHang varchar(9)
+As
+	Select ID, TenPhim, TenPhong, SoLuongVe, MaGheNgoi, ThoiGianChieu
+		From Booking_Client b, LichChieuPhim l, PhongChieuPhim p, Phim h, P_DN d
+			Where	IDKhachHang = @IDKhachHang
+			and		b.ID_LichChieu = l.ID_LichChieu
+			and		l.IDPhong = p.IDPhong
+			and		l.ID_PDN = d.ID_PDN
+			and		d.IDPhim = h.IDPhim 
+
+GO
 
 
-
+-- Lấy dl vé mà khách hàng đã đặt
+Create Proc Get_dlVe @ID varchar(6)
+As
+	Select TenPhim, TenPhong, SoLuongVe, MaGheNgoi, ThoiGianChieu, TongTien
+		From Booking_Client b, LichChieuPhim l, PhongChieuPhim p, Phim h, P_DN d
+			Where	ID = @ID
+			and		b.ID_LichChieu = l.ID_LichChieu
+			and		l.IDPhong = p.IDPhong
+			and		l.ID_PDN = d.ID_PDN
+			and		d.IDPhim = h.IDPhim 
 
 
 

@@ -15,7 +15,7 @@ namespace Manage_App.Function_Form
 {
     public partial class PersonnelDetails : Form
     {
-        NhanVien nv;
+        NhanVien nv = new NhanVien();
         DataTable chucVu;
 
         public PersonnelDetails(bool isUpdate, DataTable chucvu, NhanVien nv = null)
@@ -43,20 +43,26 @@ namespace Manage_App.Function_Form
             txB_HoTen.DataBindings.Add("Text", nv, "Hoten", false, DataSourceUpdateMode.OnPropertyChanged, "");
             dtp_NgaySinh.DataBindings.Add("Text", nv, "NgaySinh", false, DataSourceUpdateMode.OnPropertyChanged);
             cB_GioiTinh.DataBindings.Add("SelectedValue", nv, "GioiTinh", false, DataSourceUpdateMode.OnPropertyChanged);
-            txB_Que.DataBindings.Add("Value", nv, "QueQuan", false, DataSourceUpdateMode.OnPropertyChanged, "");
-            txB_CMT.DataBindings.Add("Value", nv, "SoCMT", false, DataSourceUpdateMode.OnPropertyChanged, "");
+            txB_Que.DataBindings.Add("Text", nv, "QueQuan", false, DataSourceUpdateMode.OnPropertyChanged, "");
+            txB_CMT.DataBindings.Add("Text", nv, "SoCMT", false, DataSourceUpdateMode.OnPropertyChanged, "");
             cB_ChucVu.DataBindings.Add("SelectedValue", nv, "ChucVu", false, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void btn_Huy_Click(object sender, EventArgs e)
         {
-            chucVu.Dispose();
+            //chucVu.Dispose(); nếu Dispose -> comboBox chức vụ ở form trước sẽ lỗi vì 0 còn dl
             this.Close();
         }
 
 
         // thuộc NhanVienBUS
         private void btn_Update_Click(object sender, EventArgs e)
+        {
+            AccountNV_BUS.Ins.UpdatePer(nv, Tag as NhanVien);
+
+        }
+
+        private void btn_Add_Click(object sender, EventArgs e)
         {
             /*NhanVien_DAO.Ins.AddPer(new NhanVien() { 
                 Hoten = txB_HoTen.Text,
@@ -75,11 +81,6 @@ namespace Manage_App.Function_Form
                 Password = txB_Pass.Text,
                 IDChucVu = ((DataRowView)cB_ChucVu.SelectedItem).Row["IDChucVu"].ToString()
             });
-        }
-
-        private void btn_Add_Click(object sender, EventArgs e)
-        {
-            AccountNV_BUS.Ins.UpdatePer(nv, Tag as NhanVien);
         }
     }
 }

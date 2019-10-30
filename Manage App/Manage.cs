@@ -22,14 +22,16 @@ namespace Manage_App
         public Manage()
         {
             InitializeComponent();
-            //MoviesList f = new MoviesList();
+            MoviesList f = new MoviesList();
             //Customer f = new Customer();
-            Statistic f = new Statistic();
+            //Statistic f = new Statistic();
             container.Controls.Add(f);
 
             //SubMenu_timer = new Timer();
             //SubMenu_timer.Tick += SubMenu_timer_Tick;
             //SubMenu_timer.Interval = 30;
+
+
         }
 
         #region Menu Animation
@@ -176,6 +178,20 @@ namespace Manage_App
         private void Manage_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Dispose();
+        }
+
+        private void CheckPosition()
+        {
+            switch (Properties.Settings.Default.NhanVien.ChucVu)
+            {
+                case "Staff":
+                    btn_DsNV.Enabled = false;
+                    break;
+                case "Personnel Management":
+                    btn_DsPhim.Enabled = false;
+                    btn_LichChieu.Enabled = false;
+                    break;
+            }
         }
     }
 }

@@ -11,5 +11,11 @@
     <Setting Name="ListOfMovies" Type="System.Data.DataTable" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="NhanVien" Type="DTO.NhanVien" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Account" Type="DTO.Account_NV" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

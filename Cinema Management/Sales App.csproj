@@ -165,6 +165,10 @@
       <Project>{1ef2b44d-817a-4602-a7cd-85f1a1a09188}</Project>
       <Name>CustomControl</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{3ed25ca7-06dc-4b8d-bf43-c221bc6799e5}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{ecc9cc9d-acb6-4bf1-b829-d34f0935e6db}</Project>
       <Name>DTO</Name>

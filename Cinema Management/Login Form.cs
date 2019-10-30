@@ -45,11 +45,11 @@ namespace Sales_App // Presentation Layer (GUI)
                 return;
             try
             {
-                string hoTenNv = AccountNV_BUS.Ins.Login(txB_UserName.Text, txB_Pass.Text);
-                if (hoTenNv != "")
+                Properties.Settings.Default.NhanVien = AccountNV_BUS.Ins.Login(txB_UserName.Text, txB_Pass.Text);
+                if (Properties.Settings.Default.NhanVien.Hoten != null)
                 {
                     // C1
-                    SalesForm form = new SalesForm(/*hoTenNv*/);
+                    SalesForm form = new SalesForm();
                     this.Hide();
                     // C# Form.Close vs Form.Dispose
                     // https://stackoverflow.com/a/3097383
@@ -65,6 +65,11 @@ namespace Sales_App // Presentation Layer (GUI)
             {
                 MessageBox.Show(ex.Message, "Error");
             }
+        }
+
+        private void ckB_ShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            txB_Pass.UseSystemPasswordChar = ckB_ShowPass.Checked;
         }
     }
 }

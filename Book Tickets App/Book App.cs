@@ -92,11 +92,15 @@ namespace Book_Tickets_App
                         LoadMovies(ref flp_dsPhimSC, "GetMovies", true);
                     break;
                 case 2:
-                    InforCard card = new InforCard();
-                    card.Margin = new Padding(50, 50, 50, 0);
-                    // https://stackoverflow.com/a/10600215
-                    card.Size = new Size(flp_VeDaDat.Width - card.Margin.Horizontal, card.Height);
-                    flp_VeDaDat.Controls.Add(card);
+                    foreach (var item in
+                        Booking_DAO.Ins.GetBookingDataClient(Properties.Settings.Default.UserId))
+                    {
+                        InforCard card = new InforCard(item);
+                        card.Margin = new Padding(50, 50, 50, 0);
+                        // https://stackoverflow.com/a/10600215
+                        card.Size = new Size(flp_VeDaDat.Width - card.Margin.Horizontal, card.Height);
+                        flp_VeDaDat.Controls.Add(card);
+                    }
                     break;
             }
         }
@@ -125,6 +129,12 @@ namespace Book_Tickets_App
         {
             foreach (Control card in flp_VeDaDat.Controls)
                 card.Size = new Size(flp_VeDaDat.Width - card.Margin.Horizontal, card.Height);
+        }
+
+        private void BookForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // https://stackoverflow.com/a/42214518
+            Application.Exit();
         }
     }
 }

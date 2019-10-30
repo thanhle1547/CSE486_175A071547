@@ -49,10 +49,8 @@
             this.lb_SoVe = new CustomControl.GrowLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.lb_PhongSo = new CustomControl.GrowLabel();
-            this.label8 = new System.Windows.Forms.Label();
             this.lb_ThoiGian = new CustomControl.GrowLabel();
-            this.lb_DinhDang = new CustomControl.GrowLabel();
-            this.lb_NgonNgu = new CustomControl.GrowLabel();
+            this.lb_DN = new CustomControl.GrowLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -222,33 +220,31 @@
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.85567F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.14433F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.83267F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.16733F));
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lb_Rated, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lb_ViTriGhe, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lb_SoVe, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lb_PhongSo, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lb_ThoiGian, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lb_DinhDang, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lb_NgonNgu, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lb_Rated, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lb_ViTriGhe, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lb_SoVe, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lb_PhongSo, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lb_ThoiGian, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lb_DN, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 60);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.tableLayoutPanel1.RowCount = 7;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.12903F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.12903F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.12903F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.12903F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.12903F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.35484F));
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.23077F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.23077F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.23077F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.23077F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.07693F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 17F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(502, 174);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
@@ -257,20 +253,20 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 0);
+            this.label7.Location = new System.Drawing.Point(3, 1);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 23);
+            this.label7.Size = new System.Drawing.Size(203, 25);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Ngôn ngữ";
+            this.label7.Text = "Ngôn ngữ - Định dạng";
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 143);
+            this.label5.Location = new System.Drawing.Point(3, 145);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 21);
+            this.label5.Size = new System.Drawing.Size(60, 19);
             this.label5.TabIndex = 1;
             this.label5.Text = "Rated";
             // 
@@ -290,7 +286,7 @@
             this.lb_Rated.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lb_Rated.AutoSize = true;
             this.lb_Rated.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.lb_Rated.Location = new System.Drawing.Point(112, 143);
+            this.lb_Rated.Location = new System.Drawing.Point(212, 145);
             this.lb_Rated.Name = "lb_Rated";
             this.lb_Rated.Size = new System.Drawing.Size(79, 25);
             this.lb_Rated.TabIndex = 2;
@@ -301,9 +297,9 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 92);
+            this.label6.Location = new System.Drawing.Point(3, 85);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 23);
+            this.label6.Size = new System.Drawing.Size(57, 25);
             this.label6.TabIndex = 1;
             this.label6.Text = "Số vé";
             // 
@@ -312,7 +308,7 @@
             this.lb_ViTriGhe.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lb_ViTriGhe.AutoSize = true;
             this.lb_ViTriGhe.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.lb_ViTriGhe.Location = new System.Drawing.Point(112, 116);
+            this.lb_ViTriGhe.Location = new System.Drawing.Point(212, 116);
             this.lb_ViTriGhe.Name = "lb_ViTriGhe";
             this.lb_ViTriGhe.Size = new System.Drawing.Size(78, 25);
             this.lb_ViTriGhe.TabIndex = 2;
@@ -323,9 +319,9 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 69);
+            this.label2.Location = new System.Drawing.Point(3, 57);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 23);
+            this.label2.Size = new System.Drawing.Size(91, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Phòng số";
             // 
@@ -334,7 +330,7 @@
             this.lb_SoVe.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lb_SoVe.AutoSize = true;
             this.lb_SoVe.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.lb_SoVe.Location = new System.Drawing.Point(112, 92);
+            this.lb_SoVe.Location = new System.Drawing.Point(212, 85);
             this.lb_SoVe.Name = "lb_SoVe";
             this.lb_SoVe.Size = new System.Drawing.Size(78, 25);
             this.lb_SoVe.TabIndex = 2;
@@ -345,9 +341,9 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 46);
+            this.label1.Location = new System.Drawing.Point(3, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 23);
+            this.label1.Size = new System.Drawing.Size(91, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Thời gian";
             // 
@@ -356,55 +352,33 @@
             this.lb_PhongSo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lb_PhongSo.AutoSize = true;
             this.lb_PhongSo.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.lb_PhongSo.Location = new System.Drawing.Point(112, 69);
+            this.lb_PhongSo.Location = new System.Drawing.Point(212, 57);
             this.lb_PhongSo.Name = "lb_PhongSo";
             this.lb_PhongSo.Size = new System.Drawing.Size(89, 25);
             this.lb_PhongSo.TabIndex = 2;
             this.lb_PhongSo.Text = "DienVien";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 23);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 23);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Định dạng";
             // 
             // lb_ThoiGian
             // 
             this.lb_ThoiGian.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lb_ThoiGian.AutoSize = true;
             this.lb_ThoiGian.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.lb_ThoiGian.Location = new System.Drawing.Point(112, 46);
+            this.lb_ThoiGian.Location = new System.Drawing.Point(212, 29);
             this.lb_ThoiGian.Name = "lb_ThoiGian";
             this.lb_ThoiGian.Size = new System.Drawing.Size(88, 25);
             this.lb_ThoiGian.TabIndex = 2;
             this.lb_ThoiGian.Text = "ThoiGIan";
             // 
-            // lb_DinhDang
+            // lb_DN
             // 
-            this.lb_DinhDang.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lb_DinhDang.AutoSize = true;
-            this.lb_DinhDang.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.lb_DinhDang.Location = new System.Drawing.Point(112, 23);
-            this.lb_DinhDang.Name = "lb_DinhDang";
-            this.lb_DinhDang.Size = new System.Drawing.Size(88, 25);
-            this.lb_DinhDang.TabIndex = 2;
-            this.lb_DinhDang.Text = "ThoiGIan";
-            // 
-            // lb_NgonNgu
-            // 
-            this.lb_NgonNgu.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lb_NgonNgu.AutoSize = true;
-            this.lb_NgonNgu.Font = new System.Drawing.Font("Segoe UI", 14.25F);
-            this.lb_NgonNgu.Location = new System.Drawing.Point(112, 0);
-            this.lb_NgonNgu.Name = "lb_NgonNgu";
-            this.lb_NgonNgu.Size = new System.Drawing.Size(88, 25);
-            this.lb_NgonNgu.TabIndex = 2;
-            this.lb_NgonNgu.Text = "ThoiGIan";
+            this.lb_DN.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lb_DN.AutoSize = true;
+            this.lb_DN.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.lb_DN.Location = new System.Drawing.Point(212, 1);
+            this.lb_DN.Name = "lb_DN";
+            this.lb_DN.Size = new System.Drawing.Size(88, 25);
+            this.lb_DN.TabIndex = 2;
+            this.lb_DN.Text = "ThoiGIan";
             // 
             // panel3
             // 
@@ -573,9 +547,7 @@
         private CustomControl.SmallRound_Card smallRoundCard2;
         private System.Windows.Forms.FlowLayoutPanel flp_ptThanhToan;
         private System.Windows.Forms.Label label7;
-        private CustomControl.GrowLabel lb_DinhDang;
-        private System.Windows.Forms.Label label8;
-        private CustomControl.GrowLabel lb_NgonNgu;
+        private CustomControl.GrowLabel lb_DN;
         private System.Windows.Forms.Panel panel4;
     }
 }

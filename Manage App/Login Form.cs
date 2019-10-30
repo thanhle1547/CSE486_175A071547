@@ -46,9 +46,15 @@ namespace Manage_App
             try
             {
                 NhanVien nv = AccountNV_BUS.Ins.Login(txB_UserName.Text, txB_Pass.Text);
+                if (nv.ChucVu == "Saler")
+                {
+                    MessageBox.Show("Bạn không có quyền!");
+                    return;
+                }
+
                 if (nv.ID.ToString() != "")
                 {
-                    Properties.Settings.Default.UserId = nv.ID;
+                    Properties.Settings.Default.NhanVien = nv;
                     Manage form = new Manage();
                     this.Hide();
                     form.Show();
@@ -60,6 +66,11 @@ namespace Manage_App
             {
                 MessageBox.Show(ex.Message, "Error");
             }
+        }
+
+        private void ckB_ShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            txB_Pass.UseSystemPasswordChar = ckB_ShowPass.Checked;
         }
     }
 }

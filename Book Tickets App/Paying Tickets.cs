@@ -16,6 +16,9 @@ namespace Book_Tickets_App
     public partial class Paying_Tickets : UserControl
     {
         //LichChieuPhim l;
+        int tongTienThuong;
+        int tongTienVIP;
+
         public Paying_Tickets()
         {
             InitializeComponent();
@@ -26,9 +29,8 @@ namespace Book_Tickets_App
             picB_Poster.DataBindings.Add("BackgroundImage", Properties.Settings.Default.ChiTietPhim, 
                 "Poster", true, DataSourceUpdateMode.Never);
             lb_TenPhim.Text = Properties.Settings.Default.ChiTietPhim.TenPhim;
-            lb_NgonNgu.Text = Properties.Settings.Default.LichChieuPhim.NgonNgu;
-            lb_DinhDang.Text = Properties.Settings.Default.LichChieuPhim.DinhDang;
-            lb_ThoiGian.Text = Properties.Settings.Default.LichChieuPhim.ThoiGian;
+            lb_DN.Text = Properties.Settings.Default.LichChieuPhim.DN;
+            lb_ThoiGian.Text = Properties.Settings.Default.LichChieuPhim.ThoiGianChieu;
             lb_PhongSo.Text = Properties.Settings.Default.LichChieuPhim.TenPhong;
             lb_SoVe.Text =
                 ( (String.IsNullOrEmpty(Properties.Settings.Default.GheThuong) ?
@@ -50,12 +52,12 @@ namespace Book_Tickets_App
 
         private void Paying_Tickets_Load(object sender, EventArgs e)
         {
-            lb_TongTien.Text = 
-                (Convert.ToInt32( Booking_DAO.Ins.GetTongTien(
+            tongTienThuong = Convert.ToInt32(Booking_DAO.Ins.GetTongTien(
                 Properties.Settings.Default.LichChieuPhim.ID_LichChieu,
-                Properties.Settings.Default.LichChieuPhim.DinhDang
-                ) )
-                * Convert.ToInt32(lb_SoVe.Text) ).ToString() + " ₫";
+                Properties.Settings.Default.LichChieuPhim.DN.Split('-')[0].Trim()
+                );
+            tongTienVIP = tongTienThuong + 5000;
+            lb_TongTien.Text =  ( (tongTienThuong + tongTienVIP) * Convert.ToInt32(lb_SoVe.Text) ).ToString() + " ₫";
         }
 
         private void btn_XacNhan_Click(object sender, EventArgs e)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace DAO
 
         public static Booking_DAO Ins { get { if (ins == null) ins = new Booking_DAO(); return ins; } private set => ins = value; }
 
-        public void BookingClient(BookingClient b, string MaGheThuong, string MaGheVIP, int TongTien)
+        public void BookingClient(BookingClient b, string MaGheThuong, string MaGheVIP, int TongTienThuong, int TongTienVIP)
         {
             if (MaGheThuong != null || MaGheThuong != "")
             {
@@ -34,7 +35,7 @@ namespace DAO
                     + b.IDKhachHang.Substring(0, 2).ToString()
                     + date.Millisecond.ToString()),
                 b.IDKhachHang, b.ID_LichChieu.ToString(), date.ToString(),
-                MaGheThuong.Split(',').Count(), MaGheThuong, 0, TongTien
+                MaGheThuong.Split(',').Count(), MaGheThuong, 0, TongTienThuong
             });
                 DataProvider.Ins.ExecQuery(
 "Insert into Booking_Client Values (@ID, @IDKhachHang, @ID_LichChieu, @TG_MuaVe, @SoLuongVe, @MaGheNgoi, @GheVIP, @TongTien )", parameters
@@ -57,10 +58,59 @@ namespace DAO
                     + b.IDKhachHang.Substring(0, 2).ToString()
                     + date.Millisecond.ToString()),
                 b.IDKhachHang, b.ID_LichChieu.ToString(), date.ToString(),
-                MaGheVIP.Split(',').Count(), MaGheVIP, 1, TongTien
+                MaGheVIP.Split(',').Count(), MaGheVIP, 1, TongTienVIP
             });
                 DataProvider.Ins.ExecQuery(
 "Insert into Booking_Client Values (@ID, @IDKhachHang, @ID_LichChieu, @TG_MuaVe, @SoLuongVe, @MaGheNgoi, @GheVIP, @TongTien )", parameters
+    );
+            }
+        }
+
+        public void BookingPOS(BookingClient b, string MaGheThuong, string MaGheVIP, int TongTienThuong, int TongTienVIP)
+        {
+            if (MaGheThuong != null || MaGheThuong != "")
+            {
+                var date = DateTime.Now;
+
+                SqlParameter[] parameters = new SqlParameter[7];
+                parameters[0] = new SqlParameter("@ID", System.Data.SqlDbType.VarChar, 6);
+                parameters[1] = new SqlParameter("@ID_LichChieu", System.Data.SqlDbType.Int);
+                parameters[2] = new SqlParameter("@TG_MuaVe", System.Data.SqlDbType.SmallDateTime);
+                parameters[3] = new SqlParameter("@SoLuongVe", System.Data.SqlDbType.TinyInt);
+                parameters[4] = new SqlParameter("@MaGheNgoi", System.Data.SqlDbType.VarChar);
+                parameters[5] = new SqlParameter("@GheVIP", System.Data.SqlDbType.Bit);
+                parameters[6] = new SqlParameter("@TongTien", System.Data.SqlDbType.Real);
+                DataProvider.Ins.AddParams(ref parameters, new object[] {
+                (b.ID_LichChieu.ToString()
+                    + date.Millisecond.ToString()
+                    + date.Second.ToString()),
+                b.ID_LichChieu.ToString(), date.ToString(),
+                MaGheThuong.Split(',').Count(), MaGheThuong, 0, TongTienThuong
+            });
+                DataProvider.Ins.ExecQuery(
+"Insert into Booking_POS Values (@ID, @ID_LichChieu, @TG_MuaVe, @SoLuongVe, @MaGheNgoi, @GheVIP, @TongTien )", parameters
+    );
+            }
+            if (MaGheThuong != null || MaGheVIP != "")
+            {
+                var date = DateTime.Now;
+                SqlParameter[] parameters = new SqlParameter[7];
+                parameters[0] = new SqlParameter("@ID", System.Data.SqlDbType.VarChar, 6);
+                parameters[1] = new SqlParameter("@ID_LichChieu", System.Data.SqlDbType.Int);
+                parameters[2] = new SqlParameter("@TG_MuaVe", System.Data.SqlDbType.SmallDateTime);
+                parameters[3] = new SqlParameter("@SoLuongVe", System.Data.SqlDbType.TinyInt);
+                parameters[4] = new SqlParameter("@MaGheNgoi", System.Data.SqlDbType.VarChar);
+                parameters[5] = new SqlParameter("@GheVIP", System.Data.SqlDbType.Bit);
+                parameters[6] = new SqlParameter("@TongTien", System.Data.SqlDbType.Real);
+                DataProvider.Ins.AddParams(ref parameters, new object[] {
+                (b.ID_LichChieu.ToString()
+                    + date.Millisecond.ToString()
+                    + date.Second.ToString()),
+                b.ID_LichChieu.ToString(), date.ToString(),
+                MaGheVIP.Split(',').Count(), MaGheVIP, 1, TongTienVIP
+            });
+                DataProvider.Ins.ExecQuery(
+"Insert into Booking_POS Values (@ID, @ID_LichChieu, @TG_MuaVe, @SoLuongVe, @MaGheNgoi, @GheVIP, @TongTien )", parameters
     );
             }
         }
@@ -82,6 +132,26 @@ namespace DAO
                 SqlValue = TenDinhDang
             };
             return DataProvider.Ins.ExecScalar("Get_DonGia", p, System.Data.CommandType.StoredProcedure).ToString();
+        }
+
+        public IEnumerable<BookingDataClient> GetBookingDataClient (string IDKhachHang)
+        {
+            return DataProvider.Ins.ExecProc<BookingDataClient>("Get_dlDatVe", new SqlParameter() { 
+                ParameterName = "@IDKhachHang",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 9,
+                SqlValue = IDKhachHang
+            });
+        }
+
+        public DataTable GetBooking(string ID)
+        {
+            return DataProvider.Ins.ExecProc("Get_dlVe", new SqlParameter() {
+                ParameterName = "@ID",
+                SqlDbType = SqlDbType.VarChar,
+                Size = 6,
+                SqlValue = ID
+            });
         }
     }
 }

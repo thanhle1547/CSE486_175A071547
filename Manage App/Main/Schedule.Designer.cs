@@ -261,7 +261,10 @@
             this.dgv_Phim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Phim.GridColor = System.Drawing.SystemColors.MenuBar;
             this.dgv_Phim.Location = new System.Drawing.Point(0, 55);
+            this.dgv_Phim.MultiSelect = false;
             this.dgv_Phim.Name = "dgv_Phim";
+            this.dgv_Phim.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dgv_Phim.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_Phim.Size = new System.Drawing.Size(974, 478);
             this.dgv_Phim.TabIndex = 1;
             // 
@@ -289,10 +292,11 @@
             // 
             // col_PhongChieu
             // 
-            this.col_PhongChieu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_PhongChieu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.col_PhongChieu.DataPropertyName = "TenPhong";
             this.col_PhongChieu.HeaderText = "Phòng chiếu";
             this.col_PhongChieu.Name = "col_PhongChieu";
+            this.col_PhongChieu.Width = 111;
             // 
             // col_ThoiGianChieu
             // 
@@ -303,6 +307,7 @@
             // 
             // col_TGKetThuc
             // 
+            this.col_TGKetThuc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.col_TGKetThuc.DataPropertyName = "ThoiGianKetThuc";
             this.col_TGKetThuc.HeaderText = "Thời gian kết thúc";
             this.col_TGKetThuc.Name = "col_TGKetThuc";

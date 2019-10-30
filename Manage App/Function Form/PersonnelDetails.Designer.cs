@@ -40,17 +40,17 @@
             this.btn_Add = new CustomControl.Round_Button();
             this.lb_TenPhim = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.cB_GioiTinh = new System.Windows.Forms.ComboBox();
             this.cB_ChucVu = new System.Windows.Forms.ComboBox();
             this.dtp_NgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.txB_CMT = new CustomControl.BottomBorder_TextBox();
-            this.txB_Que = new CustomControl.BottomBorder_TextBox();
-            this.txB_HoTen = new CustomControl.BottomBorder_TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txB_UserName = new CustomControl.BottomBorder_TextBox();
             this.txB_Pass = new CustomControl.BottomBorder_TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.txB_CMT = new CustomControl.BottomBorder_TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txB_UserName = new CustomControl.BottomBorder_TextBox();
+            this.txB_Que = new CustomControl.BottomBorder_TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txB_HoTen = new CustomControl.BottomBorder_TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -108,7 +108,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightCyan;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.panel1.Controls.Add(this.btn_Update);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_Huy);
@@ -132,7 +132,7 @@
             this.btn_Update.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Update.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.btn_Update.ForeColor = System.Drawing.Color.Black;
+            this.btn_Update.ForeColor = System.Drawing.Color.White;
             this.btn_Update.Location = new System.Drawing.Point(658, 11);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -152,7 +152,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(310, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 26);
@@ -172,7 +172,7 @@
             this.btn_Huy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_Huy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Huy.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.btn_Huy.ForeColor = System.Drawing.Color.Black;
+            this.btn_Huy.ForeColor = System.Drawing.Color.White;
             this.btn_Huy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Huy.Location = new System.Drawing.Point(35, 11);
             this.btn_Huy.Name = "btn_Huy";
@@ -200,7 +200,7 @@
             this.btn_Add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Add.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.btn_Add.ForeColor = System.Drawing.Color.Black;
+            this.btn_Add.ForeColor = System.Drawing.Color.White;
             this.btn_Add.Location = new System.Drawing.Point(658, 11);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -234,6 +234,32 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.panel2.Size = new System.Drawing.Size(800, 506);
             this.panel2.TabIndex = 30;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel3.AutoSize = true;
+            this.panel3.Controls.Add(this.cB_GioiTinh);
+            this.panel3.Controls.Add(this.cB_ChucVu);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.dtp_NgaySinh);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.txB_Pass);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.txB_CMT);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.txB_UserName);
+            this.panel3.Controls.Add(this.lb_TenPhim);
+            this.panel3.Controls.Add(this.txB_Que);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.txB_HoTen);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Location = new System.Drawing.Point(112, 26);
+            this.panel3.Margin = new System.Windows.Forms.Padding(10);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(577, 460);
+            this.panel3.TabIndex = 47;
             // 
             // cB_GioiTinh
             // 
@@ -271,6 +297,21 @@
             this.dtp_NgaySinh.TabIndex = 45;
             this.dtp_NgaySinh.Value = new System.DateTime(2019, 10, 23, 0, 16, 0, 0);
             // 
+            // txB_Pass
+            // 
+            this.txB_Pass.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(220)))), ((int)(((byte)(224)))));
+            this.txB_Pass.BorderSize = 2F;
+            this.txB_Pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txB_Pass.FocusBorderColor = System.Drawing.Color.Fuchsia;
+            this.txB_Pass.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txB_Pass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txB_Pass.HoverBorderColor = System.Drawing.Color.Fuchsia;
+            this.txB_Pass.Location = new System.Drawing.Point(198, 409);
+            this.txB_Pass.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.txB_Pass.Name = "txB_Pass";
+            this.txB_Pass.Size = new System.Drawing.Size(327, 26);
+            this.txB_Pass.TabIndex = 43;
+            // 
             // txB_CMT
             // 
             this.txB_CMT.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(220)))), ((int)(((byte)(224)))));
@@ -286,36 +327,6 @@
             this.txB_CMT.Size = new System.Drawing.Size(327, 26);
             this.txB_CMT.TabIndex = 43;
             // 
-            // txB_Que
-            // 
-            this.txB_Que.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(220)))), ((int)(((byte)(224)))));
-            this.txB_Que.BorderSize = 2F;
-            this.txB_Que.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txB_Que.FocusBorderColor = System.Drawing.Color.Fuchsia;
-            this.txB_Que.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txB_Que.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txB_Que.HoverBorderColor = System.Drawing.Color.Fuchsia;
-            this.txB_Que.Location = new System.Drawing.Point(198, 187);
-            this.txB_Que.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.txB_Que.Name = "txB_Que";
-            this.txB_Que.Size = new System.Drawing.Size(327, 26);
-            this.txB_Que.TabIndex = 43;
-            // 
-            // txB_HoTen
-            // 
-            this.txB_HoTen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(220)))), ((int)(((byte)(224)))));
-            this.txB_HoTen.BorderSize = 2F;
-            this.txB_HoTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txB_HoTen.FocusBorderColor = System.Drawing.Color.Fuchsia;
-            this.txB_HoTen.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txB_HoTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txB_HoTen.HoverBorderColor = System.Drawing.Color.Fuchsia;
-            this.txB_HoTen.Location = new System.Drawing.Point(198, 25);
-            this.txB_HoTen.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.txB_HoTen.Name = "txB_HoTen";
-            this.txB_HoTen.Size = new System.Drawing.Size(327, 26);
-            this.txB_HoTen.TabIndex = 43;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -325,16 +336,6 @@
             this.label3.Size = new System.Drawing.Size(91, 25);
             this.label3.TabIndex = 25;
             this.label3.Text = "Mật khẩu";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(52, 351);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(124, 25);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Tên tài khoản";
             // 
             // txB_UserName
             // 
@@ -351,46 +352,45 @@
             this.txB_UserName.Size = new System.Drawing.Size(327, 26);
             this.txB_UserName.TabIndex = 43;
             // 
-            // txB_Pass
+            // txB_Que
             // 
-            this.txB_Pass.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(220)))), ((int)(((byte)(224)))));
-            this.txB_Pass.BorderSize = 2F;
-            this.txB_Pass.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txB_Pass.FocusBorderColor = System.Drawing.Color.Fuchsia;
-            this.txB_Pass.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txB_Pass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txB_Pass.HoverBorderColor = System.Drawing.Color.Fuchsia;
-            this.txB_Pass.Location = new System.Drawing.Point(198, 409);
-            this.txB_Pass.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.txB_Pass.Name = "txB_Pass";
-            this.txB_Pass.Size = new System.Drawing.Size(327, 26);
-            this.txB_Pass.TabIndex = 43;
+            this.txB_Que.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(220)))), ((int)(((byte)(224)))));
+            this.txB_Que.BorderSize = 2F;
+            this.txB_Que.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txB_Que.FocusBorderColor = System.Drawing.Color.Fuchsia;
+            this.txB_Que.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txB_Que.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txB_Que.HoverBorderColor = System.Drawing.Color.Fuchsia;
+            this.txB_Que.Location = new System.Drawing.Point(198, 187);
+            this.txB_Que.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.txB_Que.Name = "txB_Que";
+            this.txB_Que.Size = new System.Drawing.Size(327, 26);
+            this.txB_Que.TabIndex = 43;
             // 
-            // panel3
+            // label8
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel3.AutoSize = true;
-            this.panel3.Controls.Add(this.cB_GioiTinh);
-            this.panel3.Controls.Add(this.cB_ChucVu);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.dtp_NgaySinh);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.txB_Pass);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.txB_CMT);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.txB_UserName);
-            this.panel3.Controls.Add(this.lb_TenPhim);
-            this.panel3.Controls.Add(this.txB_Que);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.txB_HoTen);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Location = new System.Drawing.Point(112, 26);
-            this.panel3.Margin = new System.Windows.Forms.Padding(10);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(577, 460);
-            this.panel3.TabIndex = 47;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(52, 351);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(124, 25);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Tên tài khoản";
+            // 
+            // txB_HoTen
+            // 
+            this.txB_HoTen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(220)))), ((int)(((byte)(224)))));
+            this.txB_HoTen.BorderSize = 2F;
+            this.txB_HoTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txB_HoTen.FocusBorderColor = System.Drawing.Color.Fuchsia;
+            this.txB_HoTen.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txB_HoTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txB_HoTen.HoverBorderColor = System.Drawing.Color.Fuchsia;
+            this.txB_HoTen.Location = new System.Drawing.Point(198, 25);
+            this.txB_HoTen.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.txB_HoTen.Name = "txB_HoTen";
+            this.txB_HoTen.Size = new System.Drawing.Size(327, 26);
+            this.txB_HoTen.TabIndex = 43;
             // 
             // PersonnelDetails
             // 
@@ -403,6 +403,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PersonnelDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "PersonnelDetails";
             this.Load += new System.EventHandler(this.PersonnelDetails_Load);
             this.panel1.ResumeLayout(false);

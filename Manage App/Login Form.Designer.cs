@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -109,7 +110,7 @@
             this.ckB_ShowPass.TabIndex = 10;
             this.ckB_ShowPass.Text = "Hiện mật khẩu";
             this.ckB_ShowPass.UseVisualStyleBackColor = true;
-            this.ckB_ShowPass.Visible = false;
+            this.ckB_ShowPass.CheckedChanged += new System.EventHandler(this.ckB_ShowPass_CheckedChanged);
             // 
             // txB_UserName
             // 
@@ -190,6 +191,7 @@
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

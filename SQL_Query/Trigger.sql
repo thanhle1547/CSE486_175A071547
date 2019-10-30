@@ -5,9 +5,9 @@ Create Trigger insert_Phim
 GO
 -- Khi INSERT vào lịch 1 bản ghi ->> kiểm tra thời gian chiếu của phim đó có 
 -- bị trùng với thời gian chiếu của phim trước đó
-Alter Trigger Insert_LCP -- LichChieuPhim
+Create Trigger Insert_LCP -- LichChieuPhim
 On LichChieuPhim
-For INSERT, UPDATE
+For INSERT
 AS
 Begin
 	if ( Exists (Select 1 From Phim p, P_DN d, inserted i 
@@ -31,9 +31,9 @@ Begin
 		Begin
 -- https://docs.microsoft.com/en-us/sql/relational-databases/errors-events/database-engine-error-severities?view=sql-server-ver15
 			--Select * From inserted
-			Select l.* From v_LichChieuPhim l, inserted i
-					Where i.ThoiGianChieu Between l.ThoiGianChieu and l.ThoiGianKetThuc
-					and l.IDPhong = i.IDPhong
+			--Select l.* From v_LichChieuPhim l, inserted i
+			--		Where i.ThoiGianChieu Between l.ThoiGianChieu and l.ThoiGianKetThuc
+			--		and l.IDPhong = i.IDPhong
 			RaisError(N'Lịch chiếu trùng thời gian', 16, 1)
 			RollBack Tran
 		End
@@ -59,3 +59,23 @@ Insert into v_LichChieuPhim ([ID_PDN], [IDPhong], [ThoiGianChieu])
 --  chèn vào 1 thời gian cũ
 Insert into LichChieuPhim ([ID_PDN], [IDPhong], [ThoiGianChieu])
 	Values (1, 1, '2019-10-28 15:20')
+
+
+
+Create Trigger Update_LCP -- LichChieuPhim
+On LichChieuPhim
+For UPDATE
+AS
+Begin
+	if ( Exists
+			(Select 1 From v_LichChieuPhim l, inserted i
+					Where i.ThoiGianChieu Between l.ThoiGianChieu and l.ThoiGianKetThuc
+					and l.IDPhong = i.IDPhong
+						Having Count(1) > 1
+				)
+		)
+		Begin
+			RaisError(N'Lịch chiếu trùng thời gian', 16, 1)
+			RollBack Tran
+		End
+End

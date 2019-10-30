@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookForm));
             this.p_Navigation = new System.Windows.Forms.Panel();
             this.TabSelector = new MaterialSkin.Controls.MaterialTabSelector();
             this.TabControl = new MaterialSkin.Controls.MaterialTabControl();
@@ -243,9 +244,11 @@
             this.ClientSize = new System.Drawing.Size(823, 495);
             this.Controls.Add(this.TabControl);
             this.Controls.Add(this.p_Navigation);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(839, 534);
             this.Name = "BookForm";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BookForm_FormClosed);
             this.Load += new System.EventHandler(this.BookForm_Load);
             this.SizeChanged += new System.EventHandler(this.BookForm_SizeChanged);
             this.p_Navigation.ResumeLayout(false);

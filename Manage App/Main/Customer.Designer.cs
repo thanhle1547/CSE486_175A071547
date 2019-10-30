@@ -162,7 +162,7 @@
             this.btn_Refresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Image = global::Manage_App.Properties.Resources.icons8_refresh_iOS_Glyph_20;
-            this.btn_Refresh.Location = new System.Drawing.Point(2547, 8);
+            this.btn_Refresh.Location = new System.Drawing.Point(3416, 8);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.OnHoverBorderColor = System.Drawing.Color.Transparent;
             this.btn_Refresh.OnHoverButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
@@ -205,7 +205,9 @@
             this.dgv_KhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_KhachHang.GridColor = System.Drawing.SystemColors.MenuBar;
             this.dgv_KhachHang.Location = new System.Drawing.Point(0, 55);
+            this.dgv_KhachHang.MultiSelect = false;
             this.dgv_KhachHang.Name = "dgv_KhachHang";
+            this.dgv_KhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_KhachHang.Size = new System.Drawing.Size(869, 478);
             this.dgv_KhachHang.TabIndex = 1;
             // 

@@ -30,12 +30,12 @@
         {
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.Picture = new System.Windows.Forms.PictureBox();
-            this.transparent_Label5 = new CustomControl.Transparent_Label();
-            this.transparent_Label6 = new CustomControl.Transparent_Label();
-            this.transparent_Label4 = new CustomControl.Transparent_Label();
-            this.transparent_Label3 = new CustomControl.Transparent_Label();
-            this.transparent_Label2 = new CustomControl.Transparent_Label();
-            this.transparent_Label1 = new CustomControl.Transparent_Label();
+            this.lb_TG = new CustomControl.Transparent_Label();
+            this.lb_SoVe = new CustomControl.Transparent_Label();
+            this.lb_PhongSo = new CustomControl.Transparent_Label();
+            this.lb_Ghe = new CustomControl.Transparent_Label();
+            this.lb_MaVe = new CustomControl.Transparent_Label();
+            this.lb_TenPhim = new CustomControl.Transparent_Label();
             ((System.ComponentModel.ISupportInitialize)(this.Picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,82 +63,82 @@
             this.Picture.TabIndex = 1;
             this.Picture.TabStop = false;
             // 
-            // transparent_Label5
+            // lb_TG
             // 
-            this.transparent_Label5.AutoSize = true;
-            this.transparent_Label5.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.transparent_Label5.ForeColor = System.Drawing.Color.White;
-            this.transparent_Label5.Location = new System.Drawing.Point(140, 137);
-            this.transparent_Label5.Name = "transparent_Label5";
-            this.transparent_Label5.Size = new System.Drawing.Size(98, 25);
-            this.transparent_Label5.TabIndex = 4;
-            this.transparent_Label5.Text = "Thời gian: ";
+            this.lb_TG.AutoSize = true;
+            this.lb_TG.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lb_TG.ForeColor = System.Drawing.Color.White;
+            this.lb_TG.Location = new System.Drawing.Point(140, 137);
+            this.lb_TG.Name = "lb_TG";
+            this.lb_TG.Size = new System.Drawing.Size(98, 25);
+            this.lb_TG.TabIndex = 4;
+            this.lb_TG.Text = "Thời gian: ";
             // 
-            // transparent_Label6
+            // lb_SoVe
             // 
-            this.transparent_Label6.AutoSize = true;
-            this.transparent_Label6.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.transparent_Label6.ForeColor = System.Drawing.Color.White;
-            this.transparent_Label6.Location = new System.Drawing.Point(140, 100);
-            this.transparent_Label6.Name = "transparent_Label6";
-            this.transparent_Label6.Size = new System.Drawing.Size(46, 25);
-            this.transparent_Label6.TabIndex = 4;
-            this.transparent_Label6.Text = "2 vé";
+            this.lb_SoVe.AutoSize = true;
+            this.lb_SoVe.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lb_SoVe.ForeColor = System.Drawing.Color.White;
+            this.lb_SoVe.Location = new System.Drawing.Point(140, 100);
+            this.lb_SoVe.Name = "lb_SoVe";
+            this.lb_SoVe.Size = new System.Drawing.Size(46, 25);
+            this.lb_SoVe.TabIndex = 4;
+            this.lb_SoVe.Text = "2 vé";
             // 
-            // transparent_Label4
+            // lb_PhongSo
             // 
-            this.transparent_Label4.AutoSize = true;
-            this.transparent_Label4.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.transparent_Label4.ForeColor = System.Drawing.Color.White;
-            this.transparent_Label4.Location = new System.Drawing.Point(259, 100);
-            this.transparent_Label4.Name = "transparent_Label4";
-            this.transparent_Label4.Size = new System.Drawing.Size(105, 25);
-            this.transparent_Label4.TabIndex = 4;
-            this.transparent_Label4.Text = "Phòng số 2";
+            this.lb_PhongSo.AutoSize = true;
+            this.lb_PhongSo.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lb_PhongSo.ForeColor = System.Drawing.Color.White;
+            this.lb_PhongSo.Location = new System.Drawing.Point(230, 100);
+            this.lb_PhongSo.Name = "lb_PhongSo";
+            this.lb_PhongSo.Size = new System.Drawing.Size(105, 25);
+            this.lb_PhongSo.TabIndex = 4;
+            this.lb_PhongSo.Text = "Phòng số 2";
             // 
-            // transparent_Label3
+            // lb_Ghe
             // 
-            this.transparent_Label3.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
-            this.transparent_Label3.ForeColor = System.Drawing.Color.White;
-            this.transparent_Label3.Location = new System.Drawing.Point(405, 100);
-            this.transparent_Label3.Name = "transparent_Label3";
-            this.transparent_Label3.Size = new System.Drawing.Size(167, 25);
-            this.transparent_Label3.TabIndex = 4;
-            this.transparent_Label3.Text = "Ghế: ";
+            this.lb_Ghe.Font = new System.Drawing.Font("Segoe UI Semibold", 13F, System.Drawing.FontStyle.Bold);
+            this.lb_Ghe.ForeColor = System.Drawing.Color.White;
+            this.lb_Ghe.Location = new System.Drawing.Point(364, 100);
+            this.lb_Ghe.Name = "lb_Ghe";
+            this.lb_Ghe.Size = new System.Drawing.Size(199, 25);
+            this.lb_Ghe.TabIndex = 4;
+            this.lb_Ghe.Text = "Ghế: ";
             // 
-            // transparent_Label2
+            // lb_MaVe
             // 
-            this.transparent_Label2.AutoSize = true;
-            this.transparent_Label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.transparent_Label2.ForeColor = System.Drawing.Color.White;
-            this.transparent_Label2.Location = new System.Drawing.Point(140, 63);
-            this.transparent_Label2.Name = "transparent_Label2";
-            this.transparent_Label2.Size = new System.Drawing.Size(75, 25);
-            this.transparent_Label2.TabIndex = 4;
-            this.transparent_Label2.Text = "Mã vé: ";
+            this.lb_MaVe.AutoSize = true;
+            this.lb_MaVe.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.lb_MaVe.ForeColor = System.Drawing.Color.White;
+            this.lb_MaVe.Location = new System.Drawing.Point(140, 63);
+            this.lb_MaVe.Name = "lb_MaVe";
+            this.lb_MaVe.Size = new System.Drawing.Size(75, 25);
+            this.lb_MaVe.TabIndex = 4;
+            this.lb_MaVe.Text = "Mã vé: ";
             // 
-            // transparent_Label1
+            // lb_TenPhim
             // 
-            this.transparent_Label1.AutoSize = true;
-            this.transparent_Label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.transparent_Label1.ForeColor = System.Drawing.Color.White;
-            this.transparent_Label1.Location = new System.Drawing.Point(138, 13);
-            this.transparent_Label1.Name = "transparent_Label1";
-            this.transparent_Label1.Size = new System.Drawing.Size(37, 37);
-            this.transparent_Label1.TabIndex = 4;
-            this.transparent_Label1.Text = "It";
+            this.lb_TenPhim.AutoSize = true;
+            this.lb_TenPhim.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
+            this.lb_TenPhim.ForeColor = System.Drawing.Color.White;
+            this.lb_TenPhim.Location = new System.Drawing.Point(138, 13);
+            this.lb_TenPhim.Name = "lb_TenPhim";
+            this.lb_TenPhim.Size = new System.Drawing.Size(37, 37);
+            this.lb_TenPhim.TabIndex = 4;
+            this.lb_TenPhim.Text = "It";
             // 
             // InforCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(2)))), ((int)(((byte)(39)))), ((int)(((byte)(35)))));
-            this.Controls.Add(this.transparent_Label5);
-            this.Controls.Add(this.transparent_Label6);
-            this.Controls.Add(this.transparent_Label4);
-            this.Controls.Add(this.transparent_Label3);
-            this.Controls.Add(this.transparent_Label2);
-            this.Controls.Add(this.transparent_Label1);
+            this.Controls.Add(this.lb_TG);
+            this.Controls.Add(this.lb_SoVe);
+            this.Controls.Add(this.lb_PhongSo);
+            this.Controls.Add(this.lb_Ghe);
+            this.Controls.Add(this.lb_MaVe);
+            this.Controls.Add(this.lb_TenPhim);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.Picture);
             this.Name = "InforCard";
@@ -153,11 +153,11 @@
 
         private System.Windows.Forms.PictureBox Picture;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
-        private Transparent_Label transparent_Label1;
-        private Transparent_Label transparent_Label2;
-        private Transparent_Label transparent_Label3;
-        private Transparent_Label transparent_Label4;
-        private Transparent_Label transparent_Label6;
-        private Transparent_Label transparent_Label5;
+        private Transparent_Label lb_TenPhim;
+        private Transparent_Label lb_MaVe;
+        private Transparent_Label lb_Ghe;
+        private Transparent_Label lb_PhongSo;
+        private Transparent_Label lb_SoVe;
+        private Transparent_Label lb_TG;
     }
 }

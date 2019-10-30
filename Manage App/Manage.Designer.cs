@@ -338,6 +338,7 @@
             this.ClientSize = new System.Drawing.Size(1230, 556);
             this.Controls.Add(this.container);
             this.Controls.Add(this.p_menu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1180, 595);
             this.Name = "Manage";
             this.Text = "Cinema Management";

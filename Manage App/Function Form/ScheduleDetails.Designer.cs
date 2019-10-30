@@ -178,7 +178,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightCyan;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.panel1.Controls.Add(this.btn_Update);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_Huy);
@@ -202,7 +202,7 @@
             this.btn_Update.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Update.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.btn_Update.ForeColor = System.Drawing.Color.Black;
+            this.btn_Update.ForeColor = System.Drawing.Color.White;
             this.btn_Update.Location = new System.Drawing.Point(594, 11);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.OnHoverBorderColor = System.Drawing.Color.Transparent;
@@ -222,7 +222,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(296, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 26);
@@ -243,7 +243,7 @@
             this.btn_Huy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_Huy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Huy.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.btn_Huy.ForeColor = System.Drawing.Color.Black;
+            this.btn_Huy.ForeColor = System.Drawing.Color.White;
             this.btn_Huy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_Huy.Location = new System.Drawing.Point(35, 11);
             this.btn_Huy.Name = "btn_Huy";
@@ -271,7 +271,7 @@
             this.btn_Add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Add.Font = new System.Drawing.Font("Calibri", 15.75F);
-            this.btn_Add.ForeColor = System.Drawing.Color.Black;
+            this.btn_Add.ForeColor = System.Drawing.Color.White;
             this.btn_Add.Location = new System.Drawing.Point(594, 11);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.OnHoverBorderColor = System.Drawing.Color.Transparent;

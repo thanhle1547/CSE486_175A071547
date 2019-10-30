@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp_Form));
             this.txB_Pass = new LollipopTextBox();
             this.txB_UserName = new LollipopTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -276,6 +277,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_SignUp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SignUp_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SignUp_Form";
