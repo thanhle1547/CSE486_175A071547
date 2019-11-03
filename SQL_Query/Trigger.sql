@@ -40,7 +40,7 @@ Begin
 End
 
 Insert into LichChieuPhim ([ID_PDN], [IDPhong], [ThoiGianChieu])
-	Values (1, 2, '2019-10-29 20:10')
+	Values (1, 2, '2019-10-30 20:10')
 
 Insert into LichChieuPhim ([ID_PDN], [IDPhong], [ThoiGianChieu])
 	Values (1, 1, '2019-10-29 15:20')

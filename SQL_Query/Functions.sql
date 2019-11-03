@@ -9,6 +9,7 @@ GO
 --------------------------
 Create Function DienVien_Phim()
 	RETURNS @tb Table (IDPhim int, TenDienVien nvarchar(20))
+-- string or binary data would be truncated ->> do nvarchar(20) nhưng STRING_AGG trả về chuỗi dài hơn
 As
 Begin
 	Insert Into @tb

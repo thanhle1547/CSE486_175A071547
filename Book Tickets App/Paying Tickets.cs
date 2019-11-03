@@ -55,7 +55,7 @@ namespace Book_Tickets_App
             tongTienThuong = Convert.ToInt32(Booking_DAO.Ins.GetTongTien(
                 Properties.Settings.Default.LichChieuPhim.ID_LichChieu,
                 Properties.Settings.Default.LichChieuPhim.DN.Split('-')[0].Trim()
-                );
+                ));
             tongTienVIP = tongTienThuong + 5000;
             lb_TongTien.Text =  ( (tongTienThuong + tongTienVIP) * Convert.ToInt32(lb_SoVe.Text) ).ToString() + " ₫";
         }
@@ -68,7 +68,8 @@ namespace Book_Tickets_App
                 },
                 Properties.Settings.Default.GheThuong,
                 Properties.Settings.Default.GheVIP,
-                Convert.ToInt32( lb_TongTien.Text.Replace('₫', ' ').TrimEnd() )
+                tongTienThuong,
+                tongTienVIP
             );
             MessageBox.Show("Giao dịch thành công");
             MessageBox.Show("Mô phỏng đến đây là kết thúc!");
